@@ -11,5 +11,8 @@ public class ConditionalConstructions {
         } else {
             // do this
         }
+
+        int a = 5;
+        int b = (a == 5) ? 1 : 2;
     }
 }
