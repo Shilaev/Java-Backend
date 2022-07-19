@@ -1,1 +1,14 @@
+# Примитивные типы
 <img src="./images/JavaPrimitiveTypes.png" alt="alt text" width="900"/>
+
+# Описание структуры проекта Intelije
+<img src="./images/ideaFolder.png" alt="alt text" width="200"/>
+
+Это кастомизация самого IDE в виде конфигураций, настроек, промежуточные состояния. Все это сохранятеся здесь. 
+Этот каталог не нужен, его можно добавлять в .gitignore
+
+.iml - так же файл, в котором информация, которая нужна только для меня, можно не обавлять в гит.
+
+[Рекомендации по организации файлов в проекте Maven](https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html)
+
+<img src="./images/mavenLayout.png" alt="alt text" width="900"/>
