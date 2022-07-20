@@ -1,9 +1,9 @@
 package JavaSyntaxis;
 
-class MyThread extends Thread {
+class Threads extends Thread {
 
     public static void main(String[] args) {
-        Thread myThread = new MyThread();
+        Thread myThread = new Threads();
         myThread.start();
     }
 

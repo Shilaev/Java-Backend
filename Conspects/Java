@@ -20,7 +20,45 @@ extends - разрешен для предоставления инфы, но з
 public static <T> void copy (List<? super T> dest, List<? extends T> src){} 
 ```
 
-Дальнейшее мне не очень важно, так как я хорошо знаю C#, а эти языки очень похожи
+## Generics
+Обобщения позволяют уйти от жесткого определения используемых типов.
+T - заглушка для типа. называется Универсальным параметром, вместо него можно подставить любой тип.
+При создании объекта указывается какйо тип будет исопльзоваться вместо T.
+```Java
+class Account<T> {
+    private T id;
+    private int sum;
+
+    public Account(T id, int sum) {
+        this.id = id;
+        this.sum = sum;
+    }
+
+    public T getId() {
+        return id;
+    }
+
+    public int getSum() {
+        return sum;
+    }
+
+    public void setSum(int sum) {
+        this.sum = sum;
+    }
+}
+
+public class Generics {
+    public static void main(String[] args) {
+        Account tomAcc = new Account<Integer>(1, 100000);
+        System.out.println(tomAcc.getId());
+        System.out.println(tomAcc.getSum());
+
+        Account mariAcc = new Account<String>("second", 10000);
+        System.out.println(mariAcc.getId());
+        System.out.println(mariAcc.getSum());
+    }
+}
+```
 
 ## Многопоточность Java
 __Процесс и поток (Thread)_ - Это совокупность кода и данных, разделяющих общее виртуальное адрессное пространство.

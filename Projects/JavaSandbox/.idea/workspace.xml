@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38dbacf7-dbde-4bb5-a0ab-d743fc3c75a3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/MyThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/While.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Generics/Example1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Generics/Example2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Conspects/Java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Conspects/Java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Array.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Array.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Threads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Threads.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,19 +40,20 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "D:/JavaBackend/Projects/JavaSandbox",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "inlay.hints"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.HelloWorld">
+  <component name="RunManager" selected="Application.JavaSyntaxis.HelloWorld">
     <configuration name="Array" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.Array" />
       <module name="JavaSandbox" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="JavaSyntaxis.*" />
+          <option name="PATTERN" value="JavaSyntaxis.Generics.Account" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -65,7 +66,7 @@
       <module name="JavaSandbox" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="JavaSyntaxis.*" />
+          <option name="PATTERN" value="JavaSyntaxis.Generics.Account" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -73,12 +74,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyThread" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.MyThread" />
+    <configuration name="JavaSyntaxis.Threads" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.Threads" />
       <module name="JavaSandbox" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="JavaSyntaxis.*" />
+          <option name="PATTERN" value="JavaSyntaxis.Generics.Account" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -88,9 +89,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HelloWorld" />
-        <item itemvalue="Application.MyThread" />
-        <item itemvalue="Application.JavaSyntaxis.Array" />
+        <item itemvalue="Application.JavaSyntaxis.HelloWorld" />
+        <item itemvalue="Application.JavaSyntaxis.Threads" />
       </list>
     </recent_temporary>
   </component>
