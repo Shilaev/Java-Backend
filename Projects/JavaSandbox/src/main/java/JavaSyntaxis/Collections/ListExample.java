@@ -1,4 +1,4 @@
-package JavaSyntaxis.Generics;
+package JavaSyntaxis.Collections;
 
 
 import java.util.ArrayList;
