@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38dbacf7-dbde-4bb5-a0ab-d743fc3c75a3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Generics/Example3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Generics/Example4.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Conspects/Java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Conspects/Java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Generics/Example2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Generics/Example2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/HelloWorld$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/HelloWorld$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/HelloWorld$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/HelloWorld$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/HelloWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/HelloWorld.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/MyThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/Example3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/Example3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/Printer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/Printer.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +47,7 @@
     "settings.editor.selected.configurable": "inlay.hints"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Example3">
+  <component name="RunManager" selected="Application.JavaSyntaxis.Generics.Example4">
     <configuration name="Array" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.Array" />
       <module name="JavaSandbox" />
@@ -64,8 +61,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Example3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.Generics.Example3" />
+    <configuration name="Example4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.Generics.Example4" />
       <module name="JavaSandbox" />
       <extension name="coverage">
         <pattern>
@@ -90,6 +87,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="JavaSyntaxis.Generics.Example3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.Generics.Example3" />
+      <module name="JavaSandbox" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="JavaSyntaxis.Generics.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="JavaSyntaxis.Threads" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.Threads" />
       <module name="JavaSandbox" />
@@ -105,7 +115,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Example3" />
+        <item itemvalue="Application.JavaSyntaxis.Generics.Example4" />
+        <item itemvalue="Application.JavaSyntaxis.Generics.Example3" />
         <item itemvalue="Application.JavaSyntaxis.HelloWorld" />
         <item itemvalue="Application.JavaSyntaxis.Threads" />
       </list>
