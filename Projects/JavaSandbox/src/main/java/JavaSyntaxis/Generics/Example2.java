@@ -8,26 +8,37 @@ interface PersonalAccount<T> {
     void setSum(T newSum);
 }
 
-class MyPersonalAccount implements PersonalAccount{
+class MyPersonalAccount implements PersonalAccount<Integer> {
 
-    @Override
-    public Object getId() {
-        return null;
+    int id;
+    int sum;
+
+    public MyPersonalAccount(int id, int sum) {
+        this.id = id;
+        this.sum = sum;
     }
 
     @Override
-    public Object getSum() {
-        return null;
+    public Integer getId() {
+        return id;
     }
 
     @Override
-    public void setSum(Object newSum) {
+    public Integer getSum() {
+        return sum;
+    }
 
+    @Override
+    public void setSum(Integer newSum) {
+        sum = newSum;
     }
 }
 
 public class Example2 {
     public static void main(String[] args) {
-
+        MyPersonalAccount myPersonalAccount = new MyPersonalAccount(1, 123);
+        System.out.println(myPersonalAccount.getId());
+        myPersonalAccount.setSum(123);
+        System.out.println(myPersonalAccount.getSum());
     }
 }

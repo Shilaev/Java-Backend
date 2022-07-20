@@ -21,6 +21,7 @@ public static <T> void copy (List<? super T> dest, List<? extends T> src){}
 ```
 
 ## Generics
+__Основа__
 Обобщения позволяют уйти от жесткого определения используемых типов.
 T - заглушка для типа. называется Универсальным параметром, вместо него можно подставить любой тип.
 При создании объекта указывается какйо тип будет исопльзоваться вместо T.
@@ -56,6 +57,75 @@ public class Generics {
         Account mariAcc = new Account<String>("second", 10000);
         System.out.println(mariAcc.getId());
         System.out.println(mariAcc.getSum());
+    }
+}
+```
+
+__Обобщенные интерфейсы__
+```Java
+Можно сразу указывать тип, которым будет заменяться T, либо делать класс <T>.
+interface PersonalAccount<T> {
+    T getId();
+
+    T getSum();
+
+    void setSum(T newSum);
+}
+
+class MyPersonalAccount implements PersonalAccount<Integer> {
+
+    int id;
+    int sum;
+
+    public MyPersonalAccount(int id, int sum) {
+        this.id = id;
+        this.sum = sum;
+    }
+
+    @Override
+    public Integer getId() {
+        return id;
+    }
+
+    @Override
+    public Integer getSum() {
+        return sum;
+    }
+
+    @Override
+    public void setSum(Integer newSum) {
+        sum = newSum;
+    }
+}
+
+public class Example2 {
+    public static void main(String[] args) {
+        MyPersonalAccount myPersonalAccount = new MyPersonalAccount(1, 123);
+        System.out.println(myPersonalAccount.getId());
+        myPersonalAccount.setSum(123);
+        System.out.println(myPersonalAccount.getSum());
+    }
+}
+```
+
+__Обобщенные методы__
+```Java
+class Printer {
+    public static <T> void print(T[] items) {
+        for (T item : items) System.out.println(item);
+    }
+}
+
+public class Example3 {
+    public static void main(String[] args) {
+        Printer.print(
+                new String[]{
+                        "123123",
+                        "1425354",
+                        "lkdfjqwef",
+                        "ajd;flaksjdf"
+                }
+        );
     }
 }
 ```
