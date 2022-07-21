@@ -3,6 +3,7 @@ package JavaSyntaxis.Collections;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 
 
 class Car {
@@ -42,7 +43,10 @@ public class ListExample {
         Comparator<Car> carComparator = Comparator.comparingInt(Car::getMaxSpeed);
 
         cars.sort(carComparator);
-
-        for (Car car : cars) System.out.println(car.getModel());
+        
+        List<Car> x = cars.subList(0, 2);
+        for (var elem : x) {
+            System.out.println(elem.getModel());
+        }
     }
 }
