@@ -59,6 +59,9 @@ class MyLinkList<E> {
     }
 
     public void remove(int index) {
+        if (index == 0)
+            head = head.getNext();
+
         Node<E> temp = head;
         int counter = 0;
 

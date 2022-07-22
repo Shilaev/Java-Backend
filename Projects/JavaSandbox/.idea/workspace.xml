@@ -7,8 +7,6 @@
     <list default="true" id="38dbacf7-dbde-4bb5-a0ab-d743fc3c75a3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Collections/LinkedList_Example.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Collections/LinkedList_Example.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Collections/LinkedList_Example.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Collections/LinkedList_Example.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Collections/MyLinkList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Collections/MyLinkList.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
