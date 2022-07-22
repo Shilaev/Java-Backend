@@ -1,6 +1,5 @@
 package JavaSyntaxis.Collections;
 
-
 import java.util.ArrayList;
 import java.util.List;
 

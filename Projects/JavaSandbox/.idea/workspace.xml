@@ -46,13 +46,13 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.JavaSyntaxis.Collections.LinkedList_Example">
-    <configuration name="Example3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.Generics.Example3" />
+  <component name="RunManager" selected="Application.IterationSolution">
+    <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.HelloWorld" />
       <module name="JavaSandbox" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="JavaSyntaxis.Collections.*" />
+          <option name="PATTERN" value="JavaSyntaxis.Generics.Account" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -60,12 +60,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.HelloWorld" />
+    <configuration name="IterationSolution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.Collections.IterationSolution" />
       <module name="JavaSandbox" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="JavaSyntaxis.Generics.Account" />
+          <option name="PATTERN" value="JavaSyntaxis.Collections.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -114,6 +114,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.IterationSolution" />
         <item itemvalue="Application.JavaSyntaxis.Collections.LinkedList_Example" />
         <item itemvalue="Application.JavaSyntaxis.Generics.Example4" />
         <item itemvalue="Application.JavaSyntaxis.Threads" />
