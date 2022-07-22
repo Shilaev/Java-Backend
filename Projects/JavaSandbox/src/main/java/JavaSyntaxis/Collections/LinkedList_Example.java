@@ -66,15 +66,15 @@ class MyLinkList<E> {
         int counter = 0;
 
         while (temp != null) {
-            if (counter + 1 == index) {
+            if (counter == index - 1) {
                 temp.setNext(temp.getNext().getNext());
-                size--;
                 return;
             } else {
                 temp = temp.getNext();
                 counter++;
             }
         }
+        size--;
     }
 
     @Override
