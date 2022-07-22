@@ -43,7 +43,7 @@ public class ListExample {
         Comparator<Car> carComparator = Comparator.comparingInt(Car::getMaxSpeed);
 
         cars.sort(carComparator);
-        
+
         List<Car> x = cars.subList(0, 2);
         for (var elem : x) {
             System.out.println(elem.getModel());
