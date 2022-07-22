@@ -59,6 +59,22 @@ class MyLinkList<E> {
         return temp.getItem();
     }
 
+    public void remove(int index) {
+        Node<E> temp = head;
+        int counter = 0;
+
+        while (temp != null) {
+            if (counter + 1 == index) {
+                temp.setNext(temp.getNext().getNext());
+                size--;
+                return;
+            } else {
+                temp = temp.getNext();
+                counter++;
+            }
+        }
+    }
+
     @Override
     public String toString() {
         String result = "";
@@ -83,9 +99,9 @@ public class LinkedList_Example {
         myLinkList.add(124);
         myLinkList.add(125);
 
+        myLinkList.remove(1);
         System.out.println(myLinkList.toString());
 
-        System.out.println(myLinkList.get(2));
 
     }
 
