@@ -1,10 +1,8 @@
 package JavaSyntaxis.Collections;
 
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-
 
 class Car {
 
@@ -30,7 +28,7 @@ class Car {
 public class ListExample {
     public static void main(String[] args) {
 
-        ArrayList<Car> cars = new ArrayList<>();
+        List<Car> cars = new ArrayList<>();
 
         Car ferrari = new Car(1990, "Ferrari 360 Spider", 310);
         Car lambo = new Car(2012, "Lamborghini Gallardo", 290);
