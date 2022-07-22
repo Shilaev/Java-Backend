@@ -25,7 +25,7 @@ class Car {
     }
 }
 
-public class ListExample {
+public class ArrayList_Example {
     public static void main(String[] args) {
 
         List<Car> cars = new ArrayList<>();
