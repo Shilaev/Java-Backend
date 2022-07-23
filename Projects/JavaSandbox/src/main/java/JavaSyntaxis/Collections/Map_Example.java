@@ -15,8 +15,7 @@ public class Map_Example {
         for(int elem: map.keySet()) System.out.println(elem);
 
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            entry.getKey();
-            entry.getValue();
+            System.out.println(entry.getKey() + " " + entry.getValue());
         }
 
     }
