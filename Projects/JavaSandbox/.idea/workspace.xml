@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38dbacf7-dbde-4bb5-a0ab-d743fc3c75a3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Collections/Map_Example.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Conspects/Java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Conspects/Java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Collections/LinkedList_Example.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Collections/LinkedList_Example.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,20 +45,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.JavaSyntaxis.Collections.LinkedList_Example">
-    <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.HelloWorld" />
-      <module name="JavaSandbox" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="JavaSyntaxis.Generics.Account" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Map_Example">
     <configuration name="IterationSolution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.Collections.IterationSolution" />
       <module name="JavaSandbox" />
@@ -110,8 +98,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Map_Example" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.Collections.Map_Example" />
+      <module name="JavaSandbox" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="JavaSyntaxis.Collections.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Map_Example" />
         <item itemvalue="Application.JavaSyntaxis.Collections.LinkedList_Example" />
         <item itemvalue="Application.IterationSolution" />
         <item itemvalue="Application.JavaSyntaxis.Generics.Example4" />
