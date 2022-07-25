@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38dbacf7-dbde-4bb5-a0ab-d743fc3c75a3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Collections/StackExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Conspects/Java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Conspects/Java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Collections/QueueExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Collections/QueueExample.java" afterDir="false" />
@@ -45,7 +46,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.QueueExample">
+  <component name="RunManager" selected="Application.StackExample">
     <configuration name="CustomSortExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.Collections.CustomSortExample" />
       <module name="JavaSandbox" />
@@ -98,8 +99,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SetExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.Collections.SetExample" />
+    <configuration name="StackExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.Collections.StackExample" />
       <module name="JavaSandbox" />
       <extension name="coverage">
         <pattern>
@@ -113,11 +114,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.StackExample" />
         <item itemvalue="Application.QueueExample" />
         <item itemvalue="Application.CustomSortExample" />
         <item itemvalue="Application.LinkedHashMapExample" />
         <item itemvalue="Application.HashExplanationExample" />
-        <item itemvalue="Application.SetExample" />
       </list>
     </recent_temporary>
   </component>

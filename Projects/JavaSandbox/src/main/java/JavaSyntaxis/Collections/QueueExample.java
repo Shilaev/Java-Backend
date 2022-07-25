@@ -30,7 +30,6 @@ public class QueueExample {
         while (!characterArrayBlockingQueue.isEmpty()){
             System.out.println(characterArrayBlockingQueue.poll().getName());
         }
-
     }
 }
 
