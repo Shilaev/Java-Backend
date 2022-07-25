@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38dbacf7-dbde-4bb5-a0ab-d743fc3c75a3" name="Changes" comment="" />
+    <list default="true" id="38dbacf7-dbde-4bb5-a0ab-d743fc3c75a3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Conspects/Java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Conspects/Java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Collections/CustomSortExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Collections/CustomSortExample.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,9 +45,9 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.HashExplanationExample">
-    <configuration name="HashExplanationExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.Collections.HashExplanationExample" />
+  <component name="RunManager" selected="Application.CustomSortExample">
+    <configuration name="CustomSortExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.Collections.CustomSortExample" />
       <module name="JavaSandbox" />
       <extension name="coverage">
         <pattern>
@@ -55,8 +59,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JavaSyntaxis.Collections.Map_Example" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.Collections.Map_Example" />
+    <configuration name="HashExplanationExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.Collections.HashExplanationExample" />
       <module name="JavaSandbox" />
       <extension name="coverage">
         <pattern>
@@ -109,11 +113,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CustomSortExample" />
+        <item itemvalue="Application.LinkedHashMapExample" />
         <item itemvalue="Application.HashExplanationExample" />
         <item itemvalue="Application.SetExample" />
         <item itemvalue="Application.TreeMapExample" />
-        <item itemvalue="Application.LinkedHashMapExample" />
-        <item itemvalue="Application.JavaSyntaxis.Collections.Map_Example" />
       </list>
     </recent_temporary>
   </component>
