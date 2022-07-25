@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38dbacf7-dbde-4bb5-a0ab-d743fc3c75a3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Conspects/Java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Conspects/Java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Collections/IterableExplanation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Array.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Basics/Array.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/ConditionalConstructions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Basics/ConditionalConstructions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/PrimitiveTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Basics/PrimitiveTypes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Switch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Basics/Switch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Threads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Basics/Threads.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/While.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Basics/While.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

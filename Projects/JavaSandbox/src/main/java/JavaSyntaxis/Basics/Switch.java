@@ -1,4 +1,4 @@
-package JavaSyntaxis;
+package JavaSyntaxis.Basics;
 
 public class Switch {
     public static void main(String[] args) {
