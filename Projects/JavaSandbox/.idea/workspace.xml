@@ -5,37 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38dbacf7-dbde-4bb5-a0ab-d743fc3c75a3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/multithreading/ExtendsThreadExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/multithreading/RunnableExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/multithreading/VolatileExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Conspects/Java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Conspects/Java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/multithreading/Example1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Array.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Collections/ArrayList_Example.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Collections/ArrayList_Example.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Collections/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Collections/Car.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Collections/LinkedList_Example.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Collections/LinkedList_Example.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Collections/Map_Example.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Collections/Map_Example.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Collections/MyLinkList$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Collections/MyLinkList$Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Collections/MyLinkList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Collections/MyLinkList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/ConditionalConstructions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/Account.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/BaseAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/BaseAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/ClassicAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/ClassicAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/Example1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/Example1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/Example2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/Example2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/Example3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/Example3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/Example4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/Example4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/MyPersonalAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/MyPersonalAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/PersonalAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/PersonalAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/Printer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/Printer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Generics/Transaction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/HelloWorld$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/HelloWorld$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/HelloWorld.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/PrimitiveTypes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Switch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/Threads.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JavaSyntaxis/While.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,13 +45,13 @@
     "settings.editor.selected.configurable": "inlay.hints"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.RunnableExample">
-    <configuration name="CustomSortExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.collections.CustomSortExample" />
+  <component name="RunManager" selected="Application.JavaSyntaxis.multithreading.VolatileExample">
+    <configuration name="JavaSyntaxis.multithreading.ExtendsThreadExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.multithreading.ExtendsThreadExample" />
       <module name="JavaSandbox" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="JavaSyntaxis.collections.*" />
+          <option name="PATTERN" value="JavaSyntaxis.multithreading.StringPrinter" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -87,12 +59,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExtendsThreadExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.multithreading.ExtendsThreadExample" />
+    <configuration name="JavaSyntaxis.multithreading.RunnableExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.multithreading.RunnableExample" />
       <module name="JavaSandbox" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="JavaSyntaxis.multithreading.*" />
+          <option name="PATTERN" value="JavaSyntaxis.multithreading.StringPrinter" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JavaSyntaxis.multithreading.VolatileExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.multithreading.VolatileExample" />
+      <module name="JavaSandbox" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="JavaSyntaxis.multithreading.StringPrinter" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -106,19 +91,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="JavaSyntaxis.collections.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RunnableExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.multithreading.RunnableExample" />
-      <module name="JavaSandbox" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="JavaSyntaxis.multithreading.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -141,11 +113,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.RunnableExample" />
-        <item itemvalue="Application.ExtendsThreadExample" />
+        <item itemvalue="Application.JavaSyntaxis.multithreading.VolatileExample" />
+        <item itemvalue="Application.JavaSyntaxis.multithreading.RunnableExample" />
+        <item itemvalue="Application.JavaSyntaxis.multithreading.ExtendsThreadExample" />
         <item itemvalue="Application.JavaSyntaxis.collections.StackExample" />
         <item itemvalue="Application.JavaSyntaxis.collections.QueueExample" />
-        <item itemvalue="Application.JavaSyntaxis.collections.CustomSortExample" />
       </list>
     </recent_temporary>
   </component>
