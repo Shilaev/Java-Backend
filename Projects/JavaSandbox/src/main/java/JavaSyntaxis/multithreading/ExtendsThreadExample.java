@@ -1,6 +1,5 @@
 package JavaSyntaxis.multithreading;
 
-
 class MyThread extends Thread {
     
     private String message = "";
@@ -19,7 +18,7 @@ class MyThread extends Thread {
     }
 }
 
-public class Example1 {
+public class ExtendsThreadExample {
     public static void main(String[] args) throws InterruptedException {
         MyThread myThread1 = new MyThread(
                 "Your hands Around My Throat",
@@ -31,7 +30,7 @@ public class Example1 {
                 100);
         
         myThread1.start();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         myThread2.start();
         
         System.out.println();
