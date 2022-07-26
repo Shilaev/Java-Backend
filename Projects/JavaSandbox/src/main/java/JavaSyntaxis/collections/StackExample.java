@@ -1,6 +1,5 @@
-package JavaSyntaxis.Collections;
+package JavaSyntaxis.collections;
 
-import java.util.List;
 import java.util.Stack;
 
 public class StackExample {

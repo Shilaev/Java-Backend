@@ -1,4 +1,4 @@
-package JavaSyntaxis.Generics;
+package JavaSyntaxis.generics;
 
 class Printer {
     public static <T> void print(T[] items) {

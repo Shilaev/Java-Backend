@@ -1,4 +1,4 @@
-package JavaSyntaxis.Basics;
+package JavaSyntaxis.basics;
 
 public class ConditionalConstructions {
     public static void main(String[] args) {

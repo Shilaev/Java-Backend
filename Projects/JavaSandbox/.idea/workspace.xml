@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38dbacf7-dbde-4bb5-a0ab-d743fc3c75a3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Array.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Basics/Array.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/ConditionalConstructions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Basics/ConditionalConstructions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/PrimitiveTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Basics/PrimitiveTypes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Switch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Basics/Switch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Threads.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Basics/Threads.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/While.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/Basics/While.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,13 +43,13 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.StackExample">
+  <component name="RunManager" selected="Application.JavaSyntaxis.collections.StackExample">
     <configuration name="CustomSortExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.Collections.CustomSortExample" />
+      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.collections.CustomSortExample" />
       <module name="JavaSandbox" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="JavaSyntaxis.Collections.*" />
+          <option name="PATTERN" value="JavaSyntaxis.collections.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -63,11 +58,11 @@
       </method>
     </configuration>
     <configuration name="HashExplanationExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.Collections.HashExplanationExample" />
+      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.collections.HashExplanationExample" />
       <module name="JavaSandbox" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="JavaSyntaxis.Collections.*" />
+          <option name="PATTERN" value="JavaSyntaxis.collections.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -76,11 +71,11 @@
       </method>
     </configuration>
     <configuration name="LinkedHashMapExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.Collections.LinkedHashMapExample" />
+      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.collections.LinkedHashMapExample" />
       <module name="JavaSandbox" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="JavaSyntaxis.Collections.*" />
+          <option name="PATTERN" value="JavaSyntaxis.collections.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -89,11 +84,11 @@
       </method>
     </configuration>
     <configuration name="QueueExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.Collections.QueueExample" />
+      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.collections.QueueExample" />
       <module name="JavaSandbox" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="JavaSyntaxis.Collections.*" />
+          <option name="PATTERN" value="JavaSyntaxis.collections.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -102,11 +97,11 @@
       </method>
     </configuration>
     <configuration name="StackExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.Collections.StackExample" />
+      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.collections.StackExample" />
       <module name="JavaSandbox" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="JavaSyntaxis.Collections.*" />
+          <option name="PATTERN" value="JavaSyntaxis.collections.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -116,11 +111,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StackExample" />
-        <item itemvalue="Application.QueueExample" />
-        <item itemvalue="Application.CustomSortExample" />
-        <item itemvalue="Application.LinkedHashMapExample" />
-        <item itemvalue="Application.HashExplanationExample" />
+        <item itemvalue="Application.JavaSyntaxis.collections.StackExample" />
+        <item itemvalue="Application.JavaSyntaxis.collections.QueueExample" />
+        <item itemvalue="Application.JavaSyntaxis.collections.CustomSortExample" />
+        <item itemvalue="Application.JavaSyntaxis.collections.LinkedHashMapExample" />
+        <item itemvalue="Application.JavaSyntaxis.collections.HashExplanationExample" />
       </list>
     </recent_temporary>
   </component>

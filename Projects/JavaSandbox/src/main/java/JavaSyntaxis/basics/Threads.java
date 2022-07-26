@@ -1,4 +1,4 @@
-package JavaSyntaxis.Basics;
+package JavaSyntaxis.basics;
 
 class Threads extends Thread {
 

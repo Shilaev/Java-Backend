@@ -1,4 +1,4 @@
-package JavaSyntaxis.Generics;
+package JavaSyntaxis.generics;
 
 class BaseAccount {
     private int id;

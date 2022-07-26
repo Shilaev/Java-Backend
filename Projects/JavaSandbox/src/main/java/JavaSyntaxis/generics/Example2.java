@@ -1,4 +1,4 @@
-package JavaSyntaxis.Generics;
+package JavaSyntaxis.generics;
 
 interface PersonalAccount<T> {
     T getId();

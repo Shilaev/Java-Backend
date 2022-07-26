@@ -1,6 +1,5 @@
-package JavaSyntaxis.Collections;
+package JavaSyntaxis.collections;
 
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;

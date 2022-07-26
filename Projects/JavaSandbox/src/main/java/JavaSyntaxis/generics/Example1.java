@@ -1,4 +1,4 @@
-package JavaSyntaxis.Generics;
+package JavaSyntaxis.generics;
 
 class Account<T> {
     private final T id;
