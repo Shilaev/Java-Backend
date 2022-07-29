@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38dbacf7-dbde-4bb5-a0ab-d743fc3c75a3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/multithreading/SynchronizedExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Conspects/Java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Conspects/Java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/JavaSyntaxis/multithreading/SynchronizeExample2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +44,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.SynchronizedExample">
+  <component name="RunManager" selected="Application.SynchronizeExample2">
     <configuration name="JavaSyntaxis.multithreading.ExtendsThreadExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.multithreading.ExtendsThreadExample" />
       <module name="JavaSandbox" />
@@ -85,12 +84,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StackExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.collections.StackExample" />
+    <configuration name="SynchronizeExample2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JavaSyntaxis.multithreading.SynchronizeExample2" />
       <module name="JavaSandbox" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="JavaSyntaxis.collections.*" />
+          <option name="PATTERN" value="JavaSyntaxis.multithreading.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -113,6 +112,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SynchronizeExample2" />
         <item itemvalue="Application.SynchronizedExample" />
         <item itemvalue="Application.JavaSyntaxis.multithreading.VolatileExample" />
         <item itemvalue="Application.JavaSyntaxis.multithreading.RunnableExample" />
