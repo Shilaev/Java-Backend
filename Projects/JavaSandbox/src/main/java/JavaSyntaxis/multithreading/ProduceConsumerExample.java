@@ -37,19 +37,9 @@ public class ProduceConsumerExample {
     }
     
     public static void main(String[] args) {
-        Thread producerThread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                produce();
-            }
-        });
+        Thread producerThread = new Thread(ProduceConsumerExample::produce);
         
-        Thread consumerThread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                consume();
-            }
-        });
+        Thread consumerThread = new Thread(ProduceConsumerExample::consume);
         
         producerThread.start();
         consumerThread.start();
