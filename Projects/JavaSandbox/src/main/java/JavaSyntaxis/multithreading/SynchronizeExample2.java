@@ -7,21 +7,28 @@ import java.util.Random;
 class Worker {
     Random random = new Random();
     
+    Object lock1 = new Object();
+    Object lock2 = new Object();
+    
     private List<Integer> list1 = new ArrayList<>();
     private List<Integer> list2 = new ArrayList<>();
     
-    public synchronized void incrementList(int listNumber) {
+    public void incrementList(int listNumber) {
         try {
             Thread.sleep(1);
         } catch (InterruptedException e) { throw new RuntimeException(e); }
         
         switch (listNumber) {
             case (1):
-                list1.add(random.nextInt(0, 101));
-                break;
+                synchronized (lock1) {
+                    list1.add(random.nextInt(0, 101));
+                    break;
+                }
             case (2):
-                list2.add(random.nextInt(0, 101));
-                break;
+                synchronized (lock2) {
+                    list2.add(random.nextInt(0, 101));
+                    break;
+                }
         }
     }
     
@@ -31,7 +38,7 @@ class Worker {
         Thread incrementList1Thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                for (int i = 0; i < 100; i++) {
+                for (int i = 0; i < 1000; i++) {
                     incrementList(1);
                 }
             }
@@ -40,8 +47,8 @@ class Worker {
         Thread incrementList2Thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                for (int i = 0; i < 100; i++) {
-                    incrementList(2);
+                for (int i = 0; i < 1000; i++) {
+                    incrementList(1);
                 }
             }
         });
