@@ -1,5 +1,6 @@
 package JavaSyntaxis.multithreading;
 
+import java.sql.Time;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -22,17 +23,19 @@ class Task implements Runnable {
 }
 
 public class ThreadPoolExample {
-    public static void main(String[] args) {
-        ExecutorService executorService = Executors.newFixedThreadPool(5);
+    public static void main(String[] args) throws InterruptedException {
+        ExecutorService executorService = Executors.newFixedThreadPool(10);
         
         for (int i = 0; i < 5; i++)
              executorService.submit(new Task(i));
         
         executorService.shutdown();
-        System.out.println("all tasks submitted");
         
-        try {
-            executorService.awaitTermination(1, TimeUnit.DAYS);
-        } catch (InterruptedException e) { throw new RuntimeException(e); }
+        boolean inTime = executorService.awaitTermination(10L, TimeUnit.SECONDS);
+        
+        if (inTime)
+            System.out.println("done!");
+        else if (!inTime)
+            System.out.println("slow!!!!");
     }
 }

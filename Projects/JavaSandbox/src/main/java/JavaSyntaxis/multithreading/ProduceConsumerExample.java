@@ -6,11 +6,11 @@ import java.util.concurrent.BlockingQueue;
 
 public class ProduceConsumerExample {
     
-    private static final BlockingQueue<Integer> queue = new ArrayBlockingQueue<>(20);
+    private static final BlockingQueue<Integer> queue = new ArrayBlockingQueue<>(100);
     private static boolean isRunning = true;
     
     private static void produce() {
-        Random random = new Random(151);
+        Random random = new Random(151); //151 for small iterations
         
         while (isRunning) {
             try {
@@ -22,7 +22,7 @@ public class ProduceConsumerExample {
     private static void consume() {
         while (isRunning) {
             try {
-//                Thread.sleep(1000);
+//                Thread.sleep(100);
                 
                 int element = queue.take();
                 
