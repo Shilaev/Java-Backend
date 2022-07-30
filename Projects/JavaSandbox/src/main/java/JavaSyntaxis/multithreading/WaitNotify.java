@@ -7,7 +7,7 @@ class WaitAndNotify {
         synchronized (this) {
             System.out.println("Producer thread started...");
             try {
-                wait();
+                this.wait();
             } catch (InterruptedException e) { throw new RuntimeException(e); }
             System.out.println("producer thread resumed...");
         }
@@ -21,13 +21,13 @@ class WaitAndNotify {
         synchronized (this) {
             System.out.println("Waiting for return key pressed");
             scanner.nextLine();
-            notify();
+            this.notify();
         }
         
     }
 }
 
-public class ProducerConsumerExample2 {
+public class WaitNotify {
     public static void main(String[] args) {
         WaitAndNotify waitAndNotify = new WaitAndNotify();
         
