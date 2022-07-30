@@ -4,6 +4,8 @@
 Для генерации случайного числа используйте метод Math.random(), который возвращает значение в промежутке [0, 1].
  */
 
+package HabrTasks;
+
 public class Task1MaxMinMidNumber {
 
 }
