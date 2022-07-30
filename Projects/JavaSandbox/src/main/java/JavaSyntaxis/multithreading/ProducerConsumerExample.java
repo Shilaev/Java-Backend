@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
-public class ProduceConsumerExample {
+public class ProducerConsumerExample {
     
     private static final BlockingQueue<Integer> queue = new ArrayBlockingQueue<>(100);
     private static boolean isRunning = true;
@@ -37,9 +37,9 @@ public class ProduceConsumerExample {
     }
     
     public static void main(String[] args) {
-        Thread producerThread = new Thread(ProduceConsumerExample::produce);
+        Thread producerThread = new Thread(ProducerConsumerExample::produce);
         
-        Thread consumerThread = new Thread(ProduceConsumerExample::consume);
+        Thread consumerThread = new Thread(ProducerConsumerExample::consume);
         
         producerThread.start();
         consumerThread.start();
