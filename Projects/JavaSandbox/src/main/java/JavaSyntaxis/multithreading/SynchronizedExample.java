@@ -3,7 +3,6 @@ package JavaSyntaxis.multithreading;
 class MyNumber {
     private int counter;
     
-    
     // неявное указаниее объекта синхронизации
 //    public synchronized void incrementCounter(){
 //        counter++;
