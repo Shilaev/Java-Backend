@@ -1,2 +1,5 @@
-package JavaSyntaxis.multithreading;public class CountDownLatchExample {
+package JavaSyntaxis.multithreading;
+
+public class CountDownLatchExample {
+    
 }
