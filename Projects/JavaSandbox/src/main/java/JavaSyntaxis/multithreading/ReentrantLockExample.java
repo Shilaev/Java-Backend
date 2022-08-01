@@ -1,2 +1,5 @@
-package JavaSyntaxis.multithreading;public class ReentrantLockExample {
+package JavaSyntaxis.multithreading;
+
+public class ReentrantLockExample {
+
 }
