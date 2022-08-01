@@ -1,2 +1,5 @@
-package JavaSyntaxis.multithreading;public class ProducerConsumerWaitNotifyExample {
+package JavaSyntaxis.multithreading;
+
+public class ProducerConsumerWaitNotifyExample {
+
 }
