@@ -1,2 +1,5 @@
-package JavaSyntaxis.multithreading;public class DeadLockExample {
+package JavaSyntaxis.multithreading;
+
+public class DeadLockExample {
+    
 }
