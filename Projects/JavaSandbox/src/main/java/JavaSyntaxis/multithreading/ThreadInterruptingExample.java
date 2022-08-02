@@ -1,2 +1,4 @@
-package JavaSyntaxis.multithreading;public class ThreadInterruptingExample {
+package JavaSyntaxis.multithreading;
+
+public class ThreadInterruptingExample {
 }
