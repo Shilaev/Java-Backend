@@ -8,7 +8,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 class Account {
-    private volatile int balance = 10_000;
+    private int balance = 10_000;
     
     public void deposit(int amount) { balance += amount; }
     
@@ -58,12 +58,14 @@ class DeadLockSolution {
             } finally {
                 if (isMonitor1Locked && isMonitor2Locked)
                     return;
-            }
-            if (isMonitor1Locked) {
-                monitor1.unlock();
-            }
-            if (isMonitor2Locked) {
-                monitor2.unlock();
+                
+                if (isMonitor1Locked) {
+                    monitor1.unlock();
+                }
+                
+                if (isMonitor2Locked) {
+                    monitor2.unlock();
+                }
             }
             
             try {

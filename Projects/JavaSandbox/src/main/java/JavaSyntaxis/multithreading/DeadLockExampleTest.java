@@ -10,7 +10,7 @@ class DeadLockExampleTest {
         int expected = 20_000;
         int actual;
     
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 300; i++) {
             try {
                 actual = DeadLockExample.solution();
             } catch (InterruptedException e) { throw new RuntimeException(e); }
