@@ -9,7 +9,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 class Connection {
     private static final Connection connection = new Connection();
-    private int connectionCount;
+    private volatile int connectionCount;
     private final Lock monitor = new ReentrantLock();
     private final Semaphore semaphore = new Semaphore(10);
     
@@ -55,7 +55,7 @@ class Connection {
 
 public class SemaphoreExample {
     public static void main(String[] args) throws InterruptedException {
-        int threadsNumber = 20;
+        int threadsNumber = 40;
         ExecutorService executorService = Executors.newFixedThreadPool(threadsNumber);
         
         Connection connection = Connection.getConnection();
