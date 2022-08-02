@@ -381,24 +381,18 @@
     И после этого не мало важная часть кода - __Thread.sleep(1)__, это нужно, чтобы другие потоки успели отдать эти локи.
     ```Java
     private void lock() {
-    boolean isMonitor1Locked = false;
-    boolean isMonitor2Locked = false;
+        boolean isMonitor1Locked = false;
+        boolean isMonitor2Locked = false;
         
         while (true) {
             try {
                 isMonitor1Locked = monitor1.tryLock();
                 isMonitor2Locked = monitor2.tryLock();
             } finally {
-                if (isMonitor1Locked && isMonitor2Locked)
-                    return;
-
-                if (isMonitor1Locked) {
-                    monitor1.unlock();
-                }
+                if (isMonitor1Locked && isMonitor2Locked) return;
                 
-                if (isMonitor2Locked) {
-                    monitor2.unlock();
-                }
+                if (isMonitor1Locked) monitor1.unlock();
+                else if (isMonitor2Locked) monitor2.unlock();
             }
             
             try {
@@ -438,8 +432,8 @@
         }
     }
     ```
-16. Что такое Deadlock и как избежать?
-    // с помощью synchronized нельзя избежать, а с помощью ReentantLock можно.
+16. __Что такое Deadlock?__
+    Допустим есть __2 контейнера__, а так же __10 процессов__, которые с этими 2-мя контейнерами работают. Так получилось, что для корректной работы, __в один момент времени__ одному процессу нужно забрать __монитор и 1 контейнера и 2__. Он забирает монитор 1 контейнера, но в этот же момент монитор 2 контейнера забрал __другой поток__. И в итоге процесс застрял, потому что пока каждый из этих двух потоков не завершит работу, они не отдадут монитор.
 17. Как прервать поток?
 18. Что такое Callable и Future?
 19. Что такое монитор?

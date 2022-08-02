@@ -56,16 +56,10 @@ class DeadLockSolution {
                 isMonitor1Locked = monitor1.tryLock();
                 isMonitor2Locked = monitor2.tryLock();
             } finally {
-                if (isMonitor1Locked && isMonitor2Locked)
-                    return;
+                if (isMonitor1Locked && isMonitor2Locked) return;
                 
-                if (isMonitor1Locked) {
-                    monitor1.unlock();
-                }
-                
-                if (isMonitor2Locked) {
-                    monitor2.unlock();
-                }
+                if (isMonitor1Locked) monitor1.unlock();
+                else if (isMonitor2Locked) monitor2.unlock();
             }
             
             try {
