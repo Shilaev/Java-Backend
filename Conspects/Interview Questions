@@ -458,7 +458,20 @@
         thread.join();
         System.out.println("Thread has finished");
     ```
-18. Что такое Callable и Future и как вернуть значение из потока?
+18. __Что такое Callable и Future?__
+    Это 2 интерфейса, с помощью которых можно __выводить данные__ из потока. Так как метод __run()__ внутри интерфейса __Runnable__ является __void__, то вывести данные из него не выйдет. Для этого при создании потока, нужно исопльзовать интерфейс __Callable<>()__, который содержит метод __call()__, возвращающий указанное значение.
+    Затем, чтобы __достать значение__ из метода __call()__ нужно использовать интерфейс __Future<>()__, в которое будет помещен результат __call()__ по завершению потока.
+    у Future<Type> есть метод __get()__, который возвращает то, что записалось внутрь __Future<>()__.
+    ```Java
+    Future<Integer> future = executorService.submit(new Callable<Integer>() {
+            @Override
+            public Integer call() throws Exception {                         
+                return -1;
+            }
+        });
+
+        System.out.println(future.get());
+    ```
 19. Что такое монитор?
 20. Что такое interrupt?
 
