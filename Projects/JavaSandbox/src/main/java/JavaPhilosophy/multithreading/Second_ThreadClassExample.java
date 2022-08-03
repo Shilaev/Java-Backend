@@ -1,2 +1,33 @@
-package JavaPhilosophy.multithreading;public class Second_ThreadClassExample {
+package JavaPhilosophy.multithreading;
+
+/*
+Традиционный способ преобразовать объект Runnable в выполняемую задачу -
+передаь его конструктору Thread.
+
+thread.start() - выполняет необходимую инициализацию потока,
+после чего вызывает метод run() объекта Runnable для запуска
+задачи в новом потоке.
+
+В самом начале появится надпись Waiting for LiftOff, так как время выполнения
+потока main бысрее, чем время выполнения потока thread.
+Любой поток может запустить другой поток, не только main.
+
+Далее в цикле for, показано, что можно создать много потоков, которые
+будут выполнять LiftOff одновременно. Таким образом LiftOff выполнится 5 раз.
+Потоки выполняются вперемежку, активизируясь и теряя управление.
+
+При создании объектов Thread метод main() не сохраняет ссылки на них и обычный объект
+был бы удален сборщиком мусора, но Thread регистрируется и ссылка на него хранится
+где-то в системе до тех пор, пока run() завершится и задача прекратит свое существование.
+ */
+
+public class Second_ThreadClassExample {
+    public static void main(String[] args) {
+        Thread thread = new Thread(new LiftOff());
+        thread.start();
+        System.out.println("Waiting for LiftOff");
+
+        for (int i = 0; i < 5; i++)
+            new Thread(new LiftOff()).start();
+    }
 }

@@ -42,7 +42,7 @@ class LiftOff implements Runnable {
     }
 }
 
-public class RunnableInterfaceExample {
+public class First_RunnableInterfaceExample {
     public static void main(String[] args) {
         LiftOff launch = new LiftOff();
         launch.run();
