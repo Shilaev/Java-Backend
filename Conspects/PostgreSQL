@@ -139,3 +139,49 @@ CONSTRAINT table_table PRIMARY KEY (table1_id, table2_id)
 # Учебная база данных от Microsoft
 [Ссылка на репозиторий с этой базой](https://github.com/pthom/northwind_psql)
 <img src="./images/Northwind_ER.png" alt="alt text" width="900"/>
+
+# Простые запросы к базе
+## Полная выборка
+Из-за звездочки сильно теряется производительность. Так как одновременно нужно вывести дохуища данных.
+SELECT * 
+FROM name1, name2
+
+## Выборка и элементарные арифметические операции
+```SQL
+SELECT order_id, shipped_date - order_date AS shiping_time 
+FROM orders;
+```
+
+__+__ сложение
+__-__ вычитание 
+__*__ умножение
+__/__ деление
+__^__ степень
+__|/__ квадратный корень
+
+## DISTINCT - вывод уникальных строк.
+Все лишние дубликаты не показываются.
+```SQL
+SELECT DISTINCT city
+FROM employees;
+```
+
+## COUNT - подстчет результирующих строк
+```SQL
+SELECT COUNT(*)
+FROM employees;
+
+SELECT COUNT(DISTINCT country)
+FROM employees;
+```
+
+## Вывод названия и тип данных столбцов.
+```SQL
+SELECT
+    column_name,
+    data_type
+FROM
+    information_schema.columns
+WHERE
+    table_name = 'products';
+```
