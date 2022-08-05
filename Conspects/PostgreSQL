@@ -292,3 +292,13 @@ WHERE discontinued != 1;
 SELECT SUM (unit_price)
 FROM products;
 ```
+
+## LIKE
+% - заполнитель, placeholder 0,1 и более символов.
+_ - 1 любой символ
+
+LIKE 'U%' - строки, начинаются с U
+LIKE '%a' - строки, заканчиваются на a
+LIKE '%John%' - строки, содержащие John
+LIKE '_oh_' - строки, где 2-й, 3-й символы oh, а первый и полсдений - любые
+ 
