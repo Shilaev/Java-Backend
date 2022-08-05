@@ -175,6 +175,56 @@ SELECT COUNT(DISTINCT country)
 FROM employees;
 ```
 
+## WHERE
+SELECT *
+FROM table
+WHERE condition;
+
+```SQL
+SELECT column_name
+FROM information_schema.columns
+WHERE "table_name" = 'customers';
+
+SELECT country, company_name, contact_name, phone
+FROM customers
+WHERE country = 'USA';
+
+SELECT *
+FROM products
+WHERE unit_price > 20
+ORDER BY unit_price;
+
+SELECT COUNT(*)
+FROM products
+WHERE unit_price > 20;
+
+SELECT *
+FROM products
+WHERE discontinued = 1;
+
+SELECT *
+FROM customers
+WHERE city != 'Berlin'
+ORDER BY city;
+
+SELECT order_date
+FROM orders
+WHERE order_date >= '1945-01-01'
+```
+
+## AND OR
+```SQL
+SELECT DISTINCT order_id, contact_name, shipped_date - order_date as shippimg_time
+FROM customers, orders
+WHERE (shipped_date - order_date) < 10 AND contact_name LIKE 'B%'
+ORDER BY contact_name;
+```
+
+## BETWEEN
+нестрогое
+[1; 100]
+'>=1 and <=100'
+
 ## Вывод названия и тип данных столбцов.
 ```SQL
 SELECT
@@ -184,4 +234,61 @@ FROM
     information_schema.columns
 WHERE
     table_name = 'products';
+```
+
+## IN, NOT IN
+Вместо OR в данном случае лучше исопльзовать IN
+```SQL
+SELECT contact_name, country
+FROM customers
+WHERE 
+country = 'Mexico' OR
+country = 'Germany' OR
+country = 'USA' OR
+country = 'Canada';
+
+SELECT contact_name, country
+FROM customers
+WHERE country IN (
+'Mexico',
+'Germany',
+'USA',
+'Canada'
+)
+```
+
+## ORDER BY
+упорядычивание по убывающей ASC
+по возрастающей DESC
+
+```SQL
+SELECT contact_name, country
+FROM customers
+WHERE country NOT IN (
+'Mexico',
+'Germany',
+'USA',
+'Canada'
+)
+ORDER BY country ASC, contact_name ASC;
+```
+
+## MIN MAX AVG SUM
+Выведет минимальное значение, максимальное или среднее арифметическое.
+SUM - выведет сумму всех значений.
+```SQL
+SELECT MIN (order_date)
+FROM orders 
+WHERE ship_city = 'London';
+
+SELECT MAX (order_date)
+FROM orders 
+WHERE ship_city = 'London';
+
+SELECT AVG (unit_price)
+FROM products
+WHERE discontinued != 1;
+
+SELECT SUM (unit_price)
+FROM products;
 ```
