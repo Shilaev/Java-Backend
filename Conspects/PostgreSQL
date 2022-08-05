@@ -1,6 +1,128 @@
+[Соглашение по синтаксису SQL](https://www.sqlstyle.guide/ru/)
 # Почему PostgreSQL?
 * Бесплатный. Open Source.
 * Легкая установка, даже без настройки.
 * Хорошая транзакционность из коробки.
 * Развитый диалект SQL.
 * 90% диалекта PostgreSQL можно исопльзовать в других СУБД.
+
+# Основные типы данных в PostgreSQL
+__decimal/numeric__ - желательно исопльзовать для денег. так как другие типы могут накапливать ошибки.
+__real/float4__ - исопльзуются в точных вычислениях.
+<img src="./images/Postgre_data_types.png" alt="alt text" width="500"/>
+__text__ - можно не указывать кол-во символов.
+__bool__ - No, N, 0, Yes, Y, 1 - конвертируются в bool.
+<img src="./images/postgresql_types_2.png" alt="alt text" width="500"/>
+Это основные временные типы данных, есть еще дофига.
+<img src="./images/postgresql_types_3.png" alt="alt text" width="500"/>
+Так же есть:
+* Arrays
+* JSON
+* XML
+* Геометрические и другие типы
+* custom - можно самому создавать типы данных
+* NULL
+
+# Создание БД
+DROP DATABASE/TABLE [имя] - удалить базу данных/таблицу
+CREATE DATABASE [имя] - создать базу данных
+CREATE TABLE [имя] - создать таблицу
+NOTNULL - Запрет пустого значения
+PRIMARY KEY - Отмечает первичный ключ
+CONSTRAINT - задание ограничений для таблицы, в данном случае создает имя для id
+
+```SQL
+CREATE TABLE publisher (
+	publisher_id INTEGER NOT NULL,
+	org_name VARCHAR(128) NOT NULL,
+	adress TEXT NOT NULL,
+	
+	CONSTRAINT pk_publisher_id PRIMARY KEY (publisher_id)
+);
+
+CREATE TABLE book ( 
+	book_id INTEGER NOT NULL,
+	title TEXT NOT NULL,
+	isbn VARCHAR(32) NOT NULL,
+	
+	CONSTRAINT pk_book_id PRIMARY KEY (book_id)
+);
+```
+
+# Вставка данных в таблицу
+INSERT - Вставить
+INTO - куда?
+VALUES - что?
+
+Вариант 1.
+```SQL
+INSERT INTO book VALUES (1, 'The Diary of a Young Girl', '0199535566');
+INSERT INTO book VALUES (2, 'Pride and Prejudice', '9780307594006');
+INSERT INTO book VALUES (3, 'To Kill a Mockingbird', '032453242');
+INSERT INTO book VALUES (4, 'The book of Gutsy Women', '2313428642');
+INSERT INTO book VALUES (5, 'War and Peace', '169332468762');
+```
+
+Вариант 2.
+```SQL
+INSERT INTO book 
+VALUES 
+(1, 'The Diary of a Young Girl', '0199535566'),
+(2, 'Pride and Prejudice', '9780307594006'),
+(3, 'To Kill a Mockingbird', '032453242'),
+(4, 'The book of Gutsy Women', '2313428642'),
+(5, 'War and Peace', '169332468762');
+```
+
+Вариант 3.
+```SQL
+INSERT INTO public.book(
+	book_id, title, isbn)
+	VALUES (42, 'Valentines book', '19087521342341345345');
+	
+INSERT INTO public.publisher(
+	publisher_id, org_name, adress)
+	VALUES (922, 'Valentines', 'Puschino');
+```
+
+```SQL
+INSERT INTO publisher
+VALUES
+(1, 'Everyman library', 'NY'),
+(2, 'Oxford press', 'NY'),
+(3, 'Grand publisher', 'Washington'),
+(4, 'Simon', 'Chicago')
+```
+
+Для создание отношений используются foreign keys.
+ALTER - для изменения
+ADD - Добавить
+REFERENCES - на что ссылается FOREIGN KEY
+```SQL
+ALTER TABLE book
+ADD COLUMN publisher_id INTEGER;
+
+ALTER TABLE book
+ADD CONSTRAINT fk_publisher_id
+FOREIGN KEY(publisher_id) REFERENCES publisher(publisher_id);
+```
+
+# Отношение один ко многим
+Один издатель может издать много книг
+У книги может быть один издатель
+__Один__ издатель __ко многим__ книгам
+```SQL
+CREATE TABLE book(
+	_id INTEGER NOT NULL,
+	title TEXT NOT NULL,
+	isbn VARCHAR(32) NOT NULL,
+	publisher_id INTEGER NOT NULL,
+	
+	CONSTRAINT pk_book_id PRIMARY KEY(_id),
+	CONSTRAINT fk_publisher_id FOREIGN KEY(publisher_id)
+	REFERENCES publisher(publisher_id)
+);
+```
+
+# Отношение один к одному
+# Отношение многие ко многим
