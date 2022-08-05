@@ -135,3 +135,7 @@ CREATE TABLE book(
 такого не должно быть.
 Для этого можно отдельно задать Primary key как пересечение двух таблиц:
 CONSTRAINT table_table PRIMARY KEY (table1_id, table2_id)
+
+# Учебная база данных от Microsoft
+[Ссылка на репозиторий с этой базой](https://github.com/pthom/northwind_psql)
+<img src="./images/Northwind_ER.png" alt="alt text" width="900"/>
