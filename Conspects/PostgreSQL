@@ -306,3 +306,10 @@ LIKE '_oh_' - строки, где 2-й, 3-й символы oh, а первый
 Ограничение кол-во записей в результирующей таблице.
 LIMIT 10 - 10 записей
 Ставится в конце.
+
+## IS NULL
+```SQL
+SELECT *
+FROM table_name
+WHERE item IS NULL или IS NOT NULL.
+```
