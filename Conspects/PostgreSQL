@@ -313,3 +313,47 @@ SELECT *
 FROM table_name
 WHERE item IS NULL или IS NOT NULL.
 ```
+
+## GROUP BY
+```SQL
+SELECT ship_country, 
+FROM orders
+WHERE freight > 50
+GROUP BY ship_country
+ORDER BY ship_country DESC
+```
+
+## HAVING
+это постфильтрация.
+после фильтра WHERE может понадобится прописать еще один фильтр, поэтому нужно исопльзовать HAVING - это вторичный фильтр.
+```SQL
+SELECT category_id, SUM (unit_price * unit_in_stock)
+FROM products
+WHERE discontinued != 1
+GROUP BY category_id
+HAVING SUM (unit_price * unit_in_stock) > 5000
+ORDER BY SUM (unit_price * unit_in_stock) DESC
+```
+
+## UNION INTERSECT EXCEPT
+UNION ALL - если есть дубликаты, то они останутся, без ALL дубликатов не будет.
+EXCEPT ALL - накладывает DISTINCT на левую часть выражения.
+```SQL
+SELECT country
+FROM customers
+UNION
+SELECT country
+FROM employees
+
+SELECT country
+FROM customers
+INTERSECT 
+SELECT country
+FROM suppliers
+
+SELECT country
+FROM customers
+EXCEPT
+SELECT country
+FROM suppliers
+```
