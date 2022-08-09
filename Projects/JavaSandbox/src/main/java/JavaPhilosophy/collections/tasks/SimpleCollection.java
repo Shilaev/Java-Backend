@@ -1,2 +1,5 @@
-package JavaPhilosophy.collections.tasks;public class SimpleCollection {
+package JavaPhilosophy.collections.tasks;
+
+public class SimpleCollection {
+
 }
