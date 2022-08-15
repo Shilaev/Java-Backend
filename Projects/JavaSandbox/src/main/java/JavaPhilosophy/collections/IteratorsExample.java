@@ -10,7 +10,7 @@ class PersonForIteratorsExample {
     public PersonForIteratorsExample(int id) {
         this.id = id;
     }
-    
+
     @Override
     public String toString() {
         return "" + id;
@@ -28,7 +28,9 @@ public class IteratorsExample {
         Iterator<PersonForIteratorsExample> personIterator = persons.iterator();
 
         while (personIterator.hasNext()){
-            System.out.println(personIterator.next());
+            System.out.print(personIterator.next() + " ");
+            personIterator.remove();
         }
+
     }
 }
