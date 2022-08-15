@@ -1,2 +1,5 @@
-package JavaPhilosophy.collections;public class LinkedListExample {
+package JavaPhilosophy.collections;
+
+public class LinkedListExample {
+    
 }
