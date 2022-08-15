@@ -24,12 +24,12 @@ public class MovieNameGeneratorTask4 {
         // Create
         MovieNameGenerator generator = new MovieNameGenerator();
 
-        List<String> myArrayList = new ArrayList<>(10);
-        List<String> myLinkedList = new LinkedList<>();
+        List<String> myArrayList = new ArrayList<>(10); // Обычный расширяющийся список данных
+        List<String> myLinkedList = new LinkedList<>(); // Двусвязный список данных
 
-        Set<String> myHashSet = new HashSet<String>(10);
-        Set<String> myLinkedHashSet = new LinkedHashSet<>(10);
-        Set<String> myTreeSet = new TreeSet<>();
+        Set<String> myHashSet = new HashSet<String>(10); // Хэш список - не гарантирует порядок
+        Set<String> myLinkedHashSet = new LinkedHashSet<>(10); // двусвязный хэш список - гарантирует порядок
+        Set<String> myTreeSet = new TreeSet<>(); // Дерево объектов гарантирует порядок + сортирует
 
         String[] actors = new String[25];
         for (int i = 0; i < actors.length; i++) actors[i] = generator.next();
