@@ -42,7 +42,6 @@ public class MovieNameGeneratorTask4 {
         myLinkedHashSet.addAll(Arrays.asList(actors));
         myTreeSet.addAll(Arrays.asList(actors));
 
-
         // Print
         System.out.println(myArrayList);
         System.out.println(myLinkedList);
