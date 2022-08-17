@@ -357,3 +357,11 @@ EXCEPT
 SELECT country
 FROM suppliers
 ```
+
+# Соединения
+## INNER JOIN
+## LEFT JOIN (left outer join)
+## RIGHT JOIN (right outer join)
+## FULL JOIN
+## CROSS JOIN (декартово произведение)
+## SELF JOIN
