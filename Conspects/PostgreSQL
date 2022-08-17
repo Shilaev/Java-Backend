@@ -460,3 +460,44 @@ LEFT JOIN employees as r ON e.employee_id = r.reports_to
 GROUP BY e.employee_id
 ORDER BY e.employee_id
 ```
+
+## USING и NATURAL JOIN
+Синтаксический сахар.
+Вместо этого запроса, можно сделать вот такой запрос
+```SQL
+SELECT contact_name, company_name, phone, first_name, last_name, title,
+			 order_date, product_name, ship_country, products.unit_price, quantity, discount
+FROM orders
+JOIN order_details ON orders.order_id = order_details.order_id
+JOIN products ON order_details.product_id = products.product_id
+JOIN customers ON orders.customer_id = customers.customer_id
+JOIN employees ON orders.employee_id = employees.employee_id
+WHERE ship_country = 'USA'			 
+```
+```SQL
+SELECT contact_name, company_name, phone, first_name, last_name, title,
+			 order_date, product_name, ship_country, products.unit_price, quantity, discount
+FROM orders
+JOIN order_details ON orders.order_id = order_details.order_id
+JOIN products ON order_details.product_id = products.product_id
+JOIN customers ON orders.customer_id = customers.customer_id
+JOIN employees ON orders.employee_id = employees.employee_id
+WHERE ship_country = 'USA'			 
+```
+Если одинаковые наименования. Исопльзуем USING(поле) и теперь код стал более читабельным.
+```SQL
+SELECT contact_name, company_name, phone, first_name, last_name, title,
+			 order_date, product_name, ship_country, products.unit_price, quantity, discount
+FROM orders
+JOIN order_details USING(order_id) -- ON orders.order_id = order_details.order_id
+JOIN products USING(product_id) -- ON order_details.product_id = products.product_id
+JOIN customers USING(customer_id) -- ON orders.customer_id = customers.customer_id
+JOIN employees USING(employee_id) -- ON orders.employee_id = employees.employee_id
+WHERE ship_country = 'USA'
+```
+А можно еще короче, даже без USING. Он сам проходит по всем столбцам и объединяет, но проблема в том, что код не читаемый. Сложнее отлаживать. А еще он часто багуется. Так как вдруг будут введены столбцы с одинаковыми именами.
+```SQL
+SELECT *
+FROM orders
+NATURAL JOIN employees
+```
