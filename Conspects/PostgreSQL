@@ -363,6 +363,33 @@ FROM suppliers
 Правая таблица - та, что идет второй.
 ## INNER JOIN
 При данном соединении в итоговую выборку попадут только те строки левой таблицы, которые имеют соответствие (по внешнему ключу) в правой таблице.
+```SQL
+SELECT product_name, suppliers.company_name, units_in_stock
+FROM products
+INNER JOIN suppliers ON products.supplier_id = suppliers.supplier_id
+ORDER BY units_in_stock DESC;
+
+SELECT category_name, SUM(units_in_stock)
+FROM products
+INNER JOIN categories ON products.category_id = categories.category_id
+GROUP BY category_name
+ORDER BY SUM(units_in_stock) DESC
+LIMIT 10
+
+SELECT order_date, product_name, ship_country, products.unit_price, quantity, discount
+FROM orders
+INNER JOIN order_details ON orders.order_id = order_details.order_id
+INNER JOIN products ON order_details.product_id = products.product_id;
+
+SELECT customers.contact_name, city,  products.product_name
+FROM customers
+INNER JOIN orders ON customers.customer_id = orders.customer_id
+INNER JOIN order_details ON orders.order_id = order_details.order_id
+INNER JOIN products ON order_details.product_id = products.product_id
+ORDER BY customers.contact_name ASC
+LIMIT 10
+```
+Можно просто JOIN - это означает INNER JOIN
 <img src="./images/Inner_join.png" alt="alt text" width="2000"/>
 
 ## LEFT JOIN (left outer join)
