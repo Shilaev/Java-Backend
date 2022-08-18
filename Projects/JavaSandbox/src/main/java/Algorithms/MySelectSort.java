@@ -20,18 +20,19 @@ public class MySelectSort {
                 case SelectionSortingMethod.DESC -> nextNumber = findBiggest(collection);
                 default -> throw new IllegalStateException("Unexpected value: " + method);
             }
+
             newArray.add(collection.remove(nextNumber));
         }
 
         return newArray;
     }
 
-    private static Integer findBiggest(LinkedList<Integer> collection) {
-        Integer biggest = Integer.MIN_VALUE;
+    private static int findBiggest(LinkedList<Integer> collection) {
+        int biggest = Integer.MIN_VALUE;
 
-        for (int j = 0; j < collection.size(); j++) {
-            Integer temp = collection.get(j);
-            if (biggest.compareTo(temp) < 0)
+        for (int i = 0; i < collection.size(); i++) {
+            int temp = collection.get(i);
+            if (biggest < temp)
                 biggest = temp;
         }
 
@@ -39,11 +40,11 @@ public class MySelectSort {
     }
 
     private static Integer findSmallest(LinkedList<Integer> collection) {
-        Integer smallest = Integer.MAX_VALUE;
+        int smallest = Integer.MAX_VALUE;
 
-        for (int j = 0; j < collection.size(); j++) {
-            Integer temp = collection.get(j);
-            if (smallest.compareTo(temp) > 0)
+        for (int i = 0; i < collection.size(); i++) {
+            int temp = collection.get(i);
+            if (smallest > temp)
                 smallest = temp;
         }
 
@@ -52,18 +53,12 @@ public class MySelectSort {
 
     public static void main(String[] args) {
         LinkedList<Integer> myNumbs = new LinkedList<>();
-        myNumbs.add(1);
-        myNumbs.add(4);
-        myNumbs.add(157);
-        myNumbs.add(190);
-        myNumbs.add(401);
-        myNumbs.add(300);
-        myNumbs.add(200);
-        myNumbs.add(240);
-        myNumbs.add(210);
-        myNumbs.add(3210);
-        myNumbs.add(0);
 
-        System.out.println(selectSort(myNumbs, SelectionSortingMethod.ASC));
+        Random random = new Random(127);
+        for (int i = 0; i < 1000; i++) {
+            myNumbs.add(random.nextInt(-10000, 10000));
+        }
+        
+        System.out.println(selectSort(myNumbs, SelectionSortingMethod.DESC));
     }
 }
