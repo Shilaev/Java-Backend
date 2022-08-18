@@ -12,8 +12,8 @@ public class MySelectSort {
     public static LinkedList<Integer> selectSort(LinkedList<Integer> collection, String method) {
         int size = collection.size();
         LinkedList<Integer> newArray = new LinkedList<>();
-        int nextNumber = 0;
 
+        int nextNumber;
         for (int i = 0; i < size; i++) {
             switch (method) {
                 case SelectionSortingMethod.ASC -> nextNumber = findSmallest(collection);
@@ -56,9 +56,16 @@ public class MySelectSort {
 
         Random random = new Random(127);
         for (int i = 0; i < 1000; i++) {
-            myNumbs.add(random.nextInt(-10000, 10000));
+            myNumbs.add(random.nextInt(-1000, 1000));
         }
-        
-        System.out.println(selectSort(myNumbs, SelectionSortingMethod.DESC));
+
+//        System.out.println("Original array: " + myNumbs);
+//        System.out.println("Sorted array: " +
+//                selectSort(myNumbs, SelectionSortingMethod.DESC));
+
+        double start = System.currentTimeMillis();
+        selectSort(myNumbs, SelectionSortingMethod.ASC);
+        double end = System.currentTimeMillis();
+        System.out.println(end - start + " Milliseconds");
     }
 }
