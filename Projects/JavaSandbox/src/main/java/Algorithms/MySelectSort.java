@@ -9,9 +9,9 @@ public class MySelectSort {
         static final String ASC = "ASC";
     }
 
-    public static List<Integer> selectSort(List<Integer> collection, String method) {
+    public static LinkedList<Integer> selectSort(LinkedList<Integer> collection, String method) {
         int size = collection.size();
-        List<Integer> newArray = new ArrayList<>(size);
+        LinkedList<Integer> newArray = new LinkedList<>();
         int nextNumber = 0;
 
         for (int i = 0; i < size; i++) {
@@ -26,7 +26,7 @@ public class MySelectSort {
         return newArray;
     }
 
-    private static Integer findBiggest(List<Integer> collection) {
+    private static Integer findBiggest(LinkedList<Integer> collection) {
         Integer biggest = Integer.MIN_VALUE;
 
         for (int j = 0; j < collection.size(); j++) {
@@ -38,7 +38,7 @@ public class MySelectSort {
         return collection.indexOf(biggest);
     }
 
-    private static Integer findSmallest(List<Integer> collection) {
+    private static Integer findSmallest(LinkedList<Integer> collection) {
         Integer smallest = Integer.MAX_VALUE;
 
         for (int j = 0; j < collection.size(); j++) {
@@ -51,7 +51,7 @@ public class MySelectSort {
     }
 
     public static void main(String[] args) {
-        List<Integer> myNumbs = new ArrayList<>();
+        LinkedList<Integer> myNumbs = new LinkedList<>();
         myNumbs.add(1);
         myNumbs.add(4);
         myNumbs.add(157);
