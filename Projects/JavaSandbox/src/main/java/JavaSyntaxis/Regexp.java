@@ -1,5 +1,9 @@
 package JavaSyntaxis;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
 public class Regexp {
     public static void main(String[] args) {
         /*
@@ -20,6 +24,11 @@ public class Regexp {
             {1}
             {1, }
             {1, 2}
+
+            .split("") - получение строки в виде массива.
+            Разделять можно по разным регулярным выражениям
+            .split(".") и т.д.
+            .replace("this","to this") - можно в оригинальной строке заменить что-то на другое
          */
 
         String a = "2d";
@@ -62,5 +71,18 @@ public class Regexp {
         System.out.println(a.matches("[a-z]{4}")); // false
         a = "aaaa";
         System.out.println(a.matches("[a-z]{4}")); // true
+
+        a = "Oh, Hello there";
+        List<String> aString = new LinkedList<>();
+        aString = Arrays.asList(a.split(" ")); // разделяется по пробелы
+        System.out.println(aString);
+
+        a = "What1 a2 fuck3 is4 that5?";
+        aString = Arrays.asList(a.split("\\d")); // разделяется по любой цифре
+        System.out.println(aString);
+
+        a = "What1 a2 fuck3 is4 that5?";
+        String newString = a.replaceAll("\\d+", ""); // What a fuck is that? теперь без цифр.
+        System.out.println(newString);
     }
 }
