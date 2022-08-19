@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Regexp {
+public class RegexpExample {
     public static void main(String[] args) {
         /*
         regexlib.com - вся инфа об этой хуйне
