@@ -501,3 +501,38 @@ SELECT *
 FROM orders
 NATURAL JOIN employees
 ```
+
+# Подзапросы
+В первом случае используем подзапрос, во втором случае обычный JOIN.
+Но такая замена JOIN не всегда возможна.
+```SQL
+-- Вывести страны, одинаковые для поставщиков и для заказчиков
+SELECT suppliers.company_name
+FROM suppliers
+WHERE suppliers.country IN
+(SELECT customers.country FROM customers)
+ORDER BY suppliers.company_name ASC;
+
+SELECT DISTINCT suppliers.company_name
+FROM suppliers
+JOIN customers USING (country)
+ORDER BY suppliers.company_name ASC;
+```
+```SQL
+-- вывести сумму единиц товара, разбитых на группы
+-- и лимитировать результат числом = (наименьший продукт id + 4)
+SELECT categories.category_name, SUM( products.units_in_stock)
+FROM products
+JOIN categories USING(category_id)
+GROUP BY categories.category_name
+ORDER BY SUM( products.units_in_stock) DESC
+LIMIT (SELECT MIN(product_id) + 4 FROM products);
+
+-- вывести такие товары, кол-во которых в наличии больше чем в среднем
+SELECT products.product_name, products.units_in_stock
+FROM products
+WHERE products.units_in_stock > 
+(SELECT AVG(products.units_in_stock)
+FROM products)
+ORDER BY products.units_in_stock DESC;
+```
