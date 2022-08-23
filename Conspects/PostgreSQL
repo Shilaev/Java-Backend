@@ -536,3 +536,6 @@ WHERE products.units_in_stock >
 FROM products)
 ORDER BY products.units_in_stock DESC;
 ```
+
+## WHERE EXISTS
+Эта конструкция с подзапросом внутри возвращает true, когда подзапрос вернет хотя бы одну строку.
