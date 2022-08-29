@@ -26,3 +26,5 @@
 <img src="./images/Spring_Dependency_Injection_example.png" alt="alt text" width="900"/>
 
 ## Spring Intellij Idea настройка
+Лучше всего создать через создание проекта Maven. Затем на сайте [Maven repository](https://mvnrepository.com/) найти Нужные зависимости и указать их в Maven.pom
+<img src="./images/maven_pom_example_dependency.png" alt="alt text" width="900"/>
