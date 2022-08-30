@@ -39,6 +39,15 @@ public class LambdaExpressionExample3 {
 
         myArrayList.stream().forEach(System.out::println);
 
+        int[] arr3 = new int[10];
+        List<Integer> list3 = new ArrayList<>();
+
+        fillArray(arr3);
+        fillList(list3);
+
+        int sum = Arrays.stream(arr3).reduce((acc, b) -> acc + b).getAsInt();
+        System.out.println("SUM" + sum);
+
         System.out.println();
         System.out.println(Arrays.toString(myArray));
         System.out.println(myArrayList);
