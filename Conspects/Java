@@ -644,3 +644,23 @@ Pattern email = Pattern.compile("\\w+@(gmail|yandex)\\.(com|ru)");
             System.out.println(emailMatcher.group());
         }
     
+# Лямбда выражения
+() -> {}
+() - аргументы
+{} - тело
+Это синтаксический ссахар, который делает проще передачу кода в метод, без использования анонимных класссов.
+Так же ее называют анонимной функцией. Функция, которая определена без привязки к идентификатору.
+Вместо того, чтобы создавать новый объект Runnable, мы сразу реализуем интерфейс Runnable, а именно метод run();
+То есть все анонимные классы можно поменять на лямбда выражения.
+```Java
+Thread myThread1 = new Thread(new Runnable() {
+    @Override
+    public void run() {
+        System.out.println("do some");
+    }
+});
+     
+Thread myThread2 = new Thread(() -> {
+    System.out.println("do some");
+});
+```
