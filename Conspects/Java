@@ -664,3 +664,6 @@ Thread myThread2 = new Thread(() -> {
     System.out.println("do some");
 });
 ```
+
+## Операции над коллекциями
+смотри LambdaExpressionExample3 в проекте Javasandbox
