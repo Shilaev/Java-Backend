@@ -1,4 +1,4 @@
-package shilaev;
+package shilaev.MusicPlayerExample;
 
 public class Deathcore implements Music {
 

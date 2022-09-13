@@ -1,4 +1,4 @@
-package shilaev;
+package shilaev.MusicPlayerExample;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

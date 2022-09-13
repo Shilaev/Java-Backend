@@ -1,4 +1,4 @@
-package shilaev;
+package shilaev.MusicPlayerExample;
 
 public class MusicPlayer {
     private Music music;
@@ -8,6 +8,6 @@ public class MusicPlayer {
     }
 
     public void play() {
-        System.out.println("Playing" + music.getSong());
+        System.out.println("Playing: " + music.getSong());
     }
 }
