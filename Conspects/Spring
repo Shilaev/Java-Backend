@@ -28,3 +28,59 @@
 ## Spring Intellij Idea настройка
 Лучше всего создать через создание проекта Maven. Затем на сайте [Maven repository](https://mvnrepository.com/) найти Нужные зависимости и указать их в Maven.pom
 <img src="./images/maven_pom_example_dependency.png" alt="alt text" width="900"/>
+
+# Инверсия управления
+Проблема в том, что в коде очень часто появляются зависимости.
+<img src="./images/inversion_of_control.png" alt="alt text" width="900"/>
+<img src="./images/inversion_of_control2.png" alt="alt text" width="900"/>
+
+```Java
+interface Music {
+}
+
+class Deathcore implements Music {
+}
+
+class Mathhcore implements Music {
+}
+
+/*
+public class MyMusicPlayer {
+    private Music music;
+
+    public void playDeathcore() {
+        music = new Deathcore();
+    }
+
+    public void playMathcore() {
+        music = new Mathhcore();
+    }
+}
+ */
+
+public class MyMusicPlayer {
+    Music music;
+
+    public MyMusicPlayer(Music music) {
+        this.music = music;
+    }
+
+    public void playMusic(){
+        System.out.println(music.toString());
+    }
+}
+```
+
+## Bean
+Это просто Java объект. Когда Java объекты создаются с помощью Spring, они называются бинами. Бины создаются из Java классов (так же, как и обычные объекты)
+```XML
+<bean id="testBean"
+      class = "ru.shilaev.TestBean">
+      <constructor-arg value="Neil"/>
+</bean>
+```
+
+Спринг файлы можно конфигурировать через:
+1) XML
+2) Java аннотации и XML
+3) Java код
