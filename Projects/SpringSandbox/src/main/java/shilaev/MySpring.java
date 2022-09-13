@@ -9,8 +9,10 @@ public class MySpring {
                 "applicationContext.xml"
         );
 
-        MyBean myBean = context.getBean("myBean", MyBean.class);
-        System.out.println(myBean.getName());
+        Music music = context.getBean("musicBean", Music.class);
+
+        MusicPlayer myMusicPlayer = new MusicPlayer(music);
+        myMusicPlayer.play();
 
         context.close();
     }

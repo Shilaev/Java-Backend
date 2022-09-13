@@ -3,9 +3,6 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="myBean"
-          class="shilaev.MyBean">
-        <constructor-arg value="Valentin"/>
-
+    <bean id="musicBean" class="shilaev.NeoClassic">
     </bean>
 </beans>

@@ -1,2 +1,9 @@
-package shilaev;public class Neoclassic {
+package shilaev;
+
+public class NeoClassic implements Music {
+
+    @Override
+    public String getSong() {
+        return "Lukas King - Sociopath";
+    }
 }
