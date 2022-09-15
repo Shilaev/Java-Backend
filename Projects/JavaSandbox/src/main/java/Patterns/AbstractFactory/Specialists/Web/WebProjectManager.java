@@ -1,4 +1,4 @@
-package Patterns.AbstractFactory.Specialists;
+package Patterns.AbstractFactory.Specialists.Web;
 
 import Patterns.AbstractFactory.SpecialistsInterfaces.ProjectManager;
 

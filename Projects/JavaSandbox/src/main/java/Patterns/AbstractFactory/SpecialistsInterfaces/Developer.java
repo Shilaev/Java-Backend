@@ -1,5 +1,5 @@
-package Patterns.AbstractFactory;
+package Patterns.AbstractFactory.SpecialistsInterfaces;
 
-public interface JavaDeveloper {
+public interface Developer {
     void getCode();
 }

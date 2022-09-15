@@ -1,5 +1,5 @@
-package Patterns.AbstractFactory;
+package Patterns.AbstractFactory.SpecialistsInterfaces;
 
 public interface Tester {
-    void testProduct();
+    void getTest();
 }

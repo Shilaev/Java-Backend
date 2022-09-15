@@ -1,7 +1,11 @@
-package Patterns.AbstractFactory;
+package Patterns.AbstractFactory.FactoryInterfaces;
 
-public interface WebTeamFactory {
-    void getDeveloper();
-    void getProjectManager();
-    void getTester();
+import Patterns.AbstractFactory.SpecialistsInterfaces.Developer;
+import Patterns.AbstractFactory.SpecialistsInterfaces.ProjectManager;
+import Patterns.AbstractFactory.SpecialistsInterfaces.Tester;
+
+public interface TeamFactory {
+    Developer getDeveloper();
+    ProjectManager getProjectManager();
+    Tester getTester();
 }
