@@ -1,10 +1,10 @@
-package Patterns.AbstractFactory.CompanyProjects;
+package Patterns.Creational.AbstractFactory.CompanyProjects;
 
-import Patterns.AbstractFactory.FactoryInterfaces.TeamFactory;
-import Patterns.AbstractFactory.SpecialistsInterfaces.Developer;
-import Patterns.AbstractFactory.SpecialistsInterfaces.ProjectManager;
-import Patterns.AbstractFactory.SpecialistsInterfaces.Tester;
-import Patterns.AbstractFactory.TeamFactories.WebTeamFactory;
+import Patterns.Creational.AbstractFactory.FactoryInterfaces.TeamFactory;
+import Patterns.Creational.AbstractFactory.SpecialistsInterfaces.Developer;
+import Patterns.Creational.AbstractFactory.SpecialistsInterfaces.ProjectManager;
+import Patterns.Creational.AbstractFactory.SpecialistsInterfaces.Tester;
+import Patterns.Creational.AbstractFactory.TeamFactories.WebTeamFactory;
 
 public class WebProject {
     public static void main(String[] args) {

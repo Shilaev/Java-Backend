@@ -1,6 +1,6 @@
-package Patterns.AbstractFactory.Specialists.PC;
+package Patterns.Creational.AbstractFactory.Specialists.PC;
 
-import Patterns.AbstractFactory.SpecialistsInterfaces.ProjectManager;
+import Patterns.Creational.AbstractFactory.SpecialistsInterfaces.ProjectManager;
 
 public class PCProjectManager implements ProjectManager {
 

@@ -1,7 +1,7 @@
-package Patterns.Creational.Builder;
+package Patterns.Creational.Builder.CarFactory;
 
 import Patterns.Creational.Builder.CarBuilders.AudiBuilder;
-import Patterns.Creational.Builder.CarBuilders.BugattiBuilder;
+import Patterns.Creational.Builder.CarBuilders.Car;
 import Patterns.Creational.Builder.CarBuilders.CarBuilder;
 
 public class CarFactory {

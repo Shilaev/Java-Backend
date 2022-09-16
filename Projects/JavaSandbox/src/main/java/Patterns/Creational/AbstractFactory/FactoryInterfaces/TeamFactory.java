@@ -1,8 +1,8 @@
-package Patterns.AbstractFactory.FactoryInterfaces;
+package Patterns.Creational.AbstractFactory.FactoryInterfaces;
 
-import Patterns.AbstractFactory.SpecialistsInterfaces.Developer;
-import Patterns.AbstractFactory.SpecialistsInterfaces.ProjectManager;
-import Patterns.AbstractFactory.SpecialistsInterfaces.Tester;
+import Patterns.Creational.AbstractFactory.SpecialistsInterfaces.Developer;
+import Patterns.Creational.AbstractFactory.SpecialistsInterfaces.ProjectManager;
+import Patterns.Creational.AbstractFactory.SpecialistsInterfaces.Tester;
 
 public interface TeamFactory {
     Developer getDeveloper();

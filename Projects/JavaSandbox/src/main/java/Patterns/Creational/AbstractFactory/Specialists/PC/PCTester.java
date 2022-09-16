@@ -1,6 +1,6 @@
-package Patterns.AbstractFactory.Specialists.PC;
+package Patterns.Creational.AbstractFactory.Specialists.PC;
 
-import Patterns.AbstractFactory.SpecialistsInterfaces.Tester;
+import Patterns.Creational.AbstractFactory.SpecialistsInterfaces.Tester;
 
 public class PCTester implements Tester {
     @Override

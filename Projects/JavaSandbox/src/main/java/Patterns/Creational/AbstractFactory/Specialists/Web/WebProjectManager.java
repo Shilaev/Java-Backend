@@ -1,6 +1,6 @@
-package Patterns.AbstractFactory.Specialists.Web;
+package Patterns.Creational.AbstractFactory.Specialists.Web;
 
-import Patterns.AbstractFactory.SpecialistsInterfaces.ProjectManager;
+import Patterns.Creational.AbstractFactory.SpecialistsInterfaces.ProjectManager;
 
 public class WebProjectManager implements ProjectManager {
     @Override

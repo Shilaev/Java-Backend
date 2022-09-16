@@ -1,6 +1,6 @@
-package Patterns.AbstractFactory.Specialists.Web;
+package Patterns.Creational.AbstractFactory.Specialists.Web;
 
-import Patterns.AbstractFactory.SpecialistsInterfaces.Developer;
+import Patterns.Creational.AbstractFactory.SpecialistsInterfaces.Developer;
 
 public class WebJavaDeveloper implements Developer {
 

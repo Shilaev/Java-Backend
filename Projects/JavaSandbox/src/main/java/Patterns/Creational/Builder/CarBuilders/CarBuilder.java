@@ -1,4 +1,4 @@
-package Patterns.Creational.Builder;
+package Patterns.Creational.Builder.CarBuilders;
 
 public abstract class CarBuilder {
     Car car;
@@ -7,11 +7,11 @@ public abstract class CarBuilder {
         car = new Car();
     }
 
-    abstract void buildCompany();
+    public abstract void buildCompany();
 
-    abstract void buildTitle();
+    public abstract void buildTitle();
 
-    abstract void buildCost();
+    public abstract void buildCost();
 
     public Car getCar() {
         return car;

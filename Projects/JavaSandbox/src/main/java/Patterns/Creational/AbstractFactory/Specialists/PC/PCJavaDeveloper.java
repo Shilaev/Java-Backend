@@ -1,6 +1,6 @@
-package Patterns.AbstractFactory.Specialists.PC;
+package Patterns.Creational.AbstractFactory.Specialists.PC;
 
-import Patterns.AbstractFactory.SpecialistsInterfaces.Developer;
+import Patterns.Creational.AbstractFactory.SpecialistsInterfaces.Developer;
 
 public class PCJavaDeveloper  implements Developer {
     @Override

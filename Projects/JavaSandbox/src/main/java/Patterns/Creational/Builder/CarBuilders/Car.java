@@ -1,4 +1,4 @@
-package Patterns.Creational.Builder;
+package Patterns.Creational.Builder.CarBuilders;
 
 public class Car {
     private String company = "no info";

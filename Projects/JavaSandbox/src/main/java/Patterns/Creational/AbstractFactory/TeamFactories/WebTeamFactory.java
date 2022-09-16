@@ -1,12 +1,12 @@
-package Patterns.AbstractFactory.TeamFactories;
+package Patterns.Creational.AbstractFactory.TeamFactories;
 
-import Patterns.AbstractFactory.FactoryInterfaces.TeamFactory;
-import Patterns.AbstractFactory.Specialists.Web.WebJavaDeveloper;
-import Patterns.AbstractFactory.Specialists.Web.WebProjectManager;
-import Patterns.AbstractFactory.Specialists.Web.WebTester;
-import Patterns.AbstractFactory.SpecialistsInterfaces.Developer;
-import Patterns.AbstractFactory.SpecialistsInterfaces.ProjectManager;
-import Patterns.AbstractFactory.SpecialistsInterfaces.Tester;
+import Patterns.Creational.AbstractFactory.FactoryInterfaces.TeamFactory;
+import Patterns.Creational.AbstractFactory.Specialists.Web.WebJavaDeveloper;
+import Patterns.Creational.AbstractFactory.Specialists.Web.WebProjectManager;
+import Patterns.Creational.AbstractFactory.Specialists.Web.WebTester;
+import Patterns.Creational.AbstractFactory.SpecialistsInterfaces.Developer;
+import Patterns.Creational.AbstractFactory.SpecialistsInterfaces.ProjectManager;
+import Patterns.Creational.AbstractFactory.SpecialistsInterfaces.Tester;
 
 public class WebTeamFactory implements TeamFactory {
 

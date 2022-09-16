@@ -1,6 +1,6 @@
-package Patterns.AbstractFactory.Specialists.Web;
+package Patterns.Creational.AbstractFactory.Specialists.Web;
 
-import Patterns.AbstractFactory.SpecialistsInterfaces.Tester;
+import Patterns.Creational.AbstractFactory.SpecialistsInterfaces.Tester;
 
 public class WebTester implements Tester {
     @Override

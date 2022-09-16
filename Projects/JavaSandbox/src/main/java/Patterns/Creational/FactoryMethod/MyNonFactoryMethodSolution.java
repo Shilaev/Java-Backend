@@ -1,4 +1,4 @@
-package Patterns.FactoryMethod;
+package Patterns.Creational.FactoryMethod;
 
 class JavaDeveloper{
     public void getCode(){

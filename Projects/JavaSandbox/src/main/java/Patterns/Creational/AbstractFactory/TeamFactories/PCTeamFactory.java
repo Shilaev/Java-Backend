@@ -1,12 +1,12 @@
-package Patterns.AbstractFactory.TeamFactories;
+package Patterns.Creational.AbstractFactory.TeamFactories;
 
-import Patterns.AbstractFactory.FactoryInterfaces.TeamFactory;
-import Patterns.AbstractFactory.Specialists.PC.PCJavaDeveloper;
-import Patterns.AbstractFactory.Specialists.PC.PCProjectManager;
-import Patterns.AbstractFactory.Specialists.PC.PCTester;
-import Patterns.AbstractFactory.SpecialistsInterfaces.Developer;
-import Patterns.AbstractFactory.SpecialistsInterfaces.ProjectManager;
-import Patterns.AbstractFactory.SpecialistsInterfaces.Tester;
+import Patterns.Creational.AbstractFactory.FactoryInterfaces.TeamFactory;
+import Patterns.Creational.AbstractFactory.Specialists.PC.PCJavaDeveloper;
+import Patterns.Creational.AbstractFactory.Specialists.PC.PCProjectManager;
+import Patterns.Creational.AbstractFactory.Specialists.PC.PCTester;
+import Patterns.Creational.AbstractFactory.SpecialistsInterfaces.Developer;
+import Patterns.Creational.AbstractFactory.SpecialistsInterfaces.ProjectManager;
+import Patterns.Creational.AbstractFactory.SpecialistsInterfaces.Tester;
 
 public class PCTeamFactory implements TeamFactory {
     @Override
