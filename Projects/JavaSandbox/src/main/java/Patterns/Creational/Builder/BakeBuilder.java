@@ -1,10 +1,7 @@
 package Patterns.Creational.Builder;
 
-public interface PizzaBuilder {
-    void reset();
-    void setDough();
-    void setStuff();
-    void bake();
+public interface BakeBuilder {
+    void setBase(String base);
+    void setStuff(String stuff);
+    void bake(int bakeTime);
 }
-
-interface 

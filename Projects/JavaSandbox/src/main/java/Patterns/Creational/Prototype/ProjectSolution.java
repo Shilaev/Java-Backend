@@ -1,13 +1,13 @@
 package Patterns.Creational.Prototype;
 
-public class PrototypeSolution {
+public class ProjectSolution implements Copyable {
     private int id;
-    private String projectName;
+    private String solutionName;
     private String sourceCode;
 
-    public PrototypeSolution(int id, String projectName, String sourceCode) {
+    public ProjectSolution(int id, String projectName, String sourceCode) {
         this.id = id;
-        this.projectName = projectName;
+        this.solutionName = projectName;
         this.sourceCode = sourceCode;
     }
 
@@ -19,12 +19,12 @@ public class PrototypeSolution {
         this.id = id;
     }
 
-    public String getProjectName() {
-        return projectName;
+    public String getSolutionName() {
+        return solutionName;
     }
 
-    public void setProjectName(String projectName) {
-        this.projectName = projectName;
+    public void setSolutionName(String solutionName) {
+        this.solutionName = solutionName;
     }
 
     public String getSourceCode() {
@@ -33,5 +33,20 @@ public class PrototypeSolution {
 
     public void setSourceCode(String sourceCode) {
         this.sourceCode = sourceCode;
+    }
+
+    @Override
+    public String toString() {
+        return "ProjectSolution{" +
+                "id=" + id +
+                ", solutionName='" + solutionName + '\'' +
+                ", sourceCode='" + sourceCode + '\'' +
+                '}';
+    }
+
+    @Override
+    public Object copy() {
+        ProjectSolution projectSolutionCopy = new ProjectSolution(getId(), getSolutionName(), getSourceCode());
+        return projectSolutionCopy;
     }
 }
