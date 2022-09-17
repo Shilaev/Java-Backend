@@ -5,6 +5,10 @@
 
     <bean id="musicBean" class="shilaev.MusicPlayerExample.Rap"/>
 
+    <bean id="musicPlayerBean" class="shilaev.MusicPlayerExample.MusicPlayer">
+        <constructor-arg ref="musicBean"/>
+    </bean>
+
     <bean id="carBean" class="shilaev.CarExample.Car">
         <constructor-arg value="Mozeratti"/>
     </bean>
