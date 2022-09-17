@@ -98,10 +98,42 @@ public class MyMusicPlayer {
 - autowiring - авоматизированная система внедрения зависимостей
 
 ## Внедрение зависимости через XML
+Используем конструктор
 ```XML
 <bean id="musicBean" class="shilaev.MusicPlayerExample.Rap"/>
 
 <bean id="musicPlayerBean" class="shilaev.MusicPlayerExample.MusicPlayer">
    <constructor-arg ref="musicBean"/>
+</bean>
+```
+
+Используем setter
+```XML
+<bean id="musicPlayerBean" class="shilaev.MusicPlayerExample.MusicPlayer">
+    <property name="music" ref="musicBean"/>
+</bean>
+```
+
+используем файл .properties
+внутри файла все выглядит так
+musicPlayer.volume=50
+```XML
+<context:property-placeholder location="musicPlayer.properties"/>
+<bean id="musicPlayerBean" class="shilaev.MusicPlayerExample.MusicPlayer">
+    <constructor-arg ref="musicBean"/>
+    <property name="volume" value="${musicPlayer.volume}"/>
+</bean>
+```
+Несколько значений сразу
+```XML
+<bean id="musicPlayerBean" class="shilaev.MusicPlayerExample.MusicPlayer">
+    <property name="volume" value="${musicPlayer.volume}"/>
+    <property name="musicList">
+        <list>
+            <ref bean="deathcoreMusicBean"/>
+            <ref bean="rapMusicBean"/>
+            <ref bean="neoClassicalMusicBean"/>
+        </list>
+    </property>
 </bean>
 ```

@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <bean id="musicBean" class="shilaev.MusicPlayerExample.Deathcore"/>
+    <context:property-placeholder location="musicPlayer.properties"/>
+
+    <bean id="deathcoreMusicBean" class="shilaev.MusicPlayerExample.Deathcore"/>
+    <bean id="neoClassicalMusicBean" class="shilaev.MusicPlayerExample.NeoClassic"/>
+    <bean id="rapMusicBean" class="shilaev.MusicPlayerExample.Rap"/>
 
     <bean id="musicPlayerBean" class="shilaev.MusicPlayerExample.MusicPlayer">
-        <constructor-arg ref="musicBean"/>
-    </bean>
-
-    <bean id="carBean" class="shilaev.CarExample.Car">
-        <constructor-arg value="Mozeratti"/>
-    </bean>
-
-    <bean id="mobilePhoneBean" class="shilaev.MobileExample.MobilePhone">
-        <constructor-arg value="Samsung"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
+        <property name="musicList">
+            <list>
+                <ref bean="deathcoreMusicBean"/>
+                <ref bean="rapMusicBean"/>
+                <ref bean="neoClassicalMusicBean"/>
+            </list>
+        </property>
     </bean>
 </beans>
