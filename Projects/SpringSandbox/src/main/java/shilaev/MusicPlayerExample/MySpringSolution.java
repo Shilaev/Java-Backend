@@ -17,6 +17,10 @@ public class MySpringSolution {
         MusicPlayer myMusicPlayer = context.getBean("musicPlayerBean", MusicPlayer.class);
         myMusicPlayer.play();
 
+        MusicPlayer myMusicPlayer2 = context.getBean("musicPlayerBean", MusicPlayer.class);
+
+        System.out.println(myMusicPlayer2.equals(myMusicPlayer));
+
         context.close();
     }
 }

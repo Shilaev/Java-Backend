@@ -13,7 +13,7 @@
     <bean id="neoClassicalMusicBean" class="shilaev.MusicPlayerExample.NeoClassic"/>
     <bean id="rapMusicBean" class="shilaev.MusicPlayerExample.Rap"/>
 
-    <bean id="musicPlayerBean" class="shilaev.MusicPlayerExample.MusicPlayer">
+    <bean id="musicPlayerBean" class="shilaev.MusicPlayerExample.MusicPlayer" scope="prototype">
         <property name="volume" value="${musicPlayer.volume}"/>
         <property name="musicList">
             <list>
