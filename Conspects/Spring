@@ -84,3 +84,62 @@ public class MyMusicPlayer {
 1) XML
 2) Java аннотации и XML
 3) Java код
+
+## Типичные шаги при разработке с помощью Spring
+- Создать Java классы - будущие бины
+- Создать бины и связать их с помощью спринга
+- При использовании все бины брать из контейнера Spring
+
+## Способы внедрения зависимостей
+- через конструктор
+- через setter
+- scope, factory method и т.д
+- xml, аннотации, java-code
+- autowiring - авоматизированная система внедрения зависимостей
+
+## Внедрение зависимости через XML
+Используем конструктор
+```XML
+<bean id="musicBean" class="shilaev.MusicPlayerExample.Rap"/>
+
+<bean id="musicPlayerBean" class="shilaev.MusicPlayerExample.MusicPlayer">
+   <constructor-arg ref="musicBean"/>
+</bean>
+```
+
+Используем setter
+```XML
+<bean id="musicPlayerBean" class="shilaev.MusicPlayerExample.MusicPlayer">
+    <property name="music" ref="musicBean"/>
+</bean>
+```
+
+используем файл .properties
+внутри файла все выглядит так
+musicPlayer.volume=50
+```XML
+<context:property-placeholder location="musicPlayer.properties"/>
+<bean id="musicPlayerBean" class="shilaev.MusicPlayerExample.MusicPlayer">
+    <constructor-arg ref="musicBean"/>
+    <property name="volume" value="${musicPlayer.volume}"/>
+</bean>
+```
+Несколько значений сразу
+```XML
+<bean id="musicPlayerBean" class="shilaev.MusicPlayerExample.MusicPlayer">
+    <property name="volume" value="${musicPlayer.volume}"/>
+    <property name="musicList">
+        <list>
+            <ref bean="deathcoreMusicBean"/>
+            <ref bean="rapMusicBean"/>
+            <ref bean="neoClassicalMusicBean"/>
+        </list>
+    </property>
+</bean>
+```
+
+## Область видимости бинов - Scope
+Scope - задает то, как Spring будет создавать бины.
+По умолчанию используется Singletone scope. То есть при создании объекта создается только один объект. Ссылка на который потом используется единая и везде.
+Scope prototype - исопльзуется, когда у бин с изменяемыми состояниями.
+<img src="./images/BeanLifeCycle.png" alt="alt text" width="900"/>
