@@ -9,11 +9,10 @@ public class MySpringSolution {
                 "applicationContext.xml");
 
         MusicPlayer myMusicPlayer = context.getBean("musicPlayerBean", MusicPlayer.class);
-        myMusicPlayer.play();
-
         MusicPlayer myMusicPlayer2 = context.getBean("musicPlayerBean", MusicPlayer.class);
 
-        System.out.println(myMusicPlayer2.equals(myMusicPlayer));
+        myMusicPlayer.play();
+        myMusicPlayer2.play();
 
         context.close();
     }

@@ -9,7 +9,7 @@
 
     <context:property-placeholder location="musicPlayer.properties"/>
 
-    <bean id="deathcoreMusicBean" class="shilaev.MusicPlayerExample.Deathcore"/>
+    <bean id="deathcoreMusicBean" class="shilaev.MusicPlayerExample.Deathcore" scope="singleton"/>
     <bean id="neoClassicalMusicBean" class="shilaev.MusicPlayerExample.NeoClassic"/>
     <bean id="rapMusicBean" class="shilaev.MusicPlayerExample.Rap"/>
 
@@ -23,4 +23,5 @@
             </list>
         </property>
     </bean>
+
 </beans>
