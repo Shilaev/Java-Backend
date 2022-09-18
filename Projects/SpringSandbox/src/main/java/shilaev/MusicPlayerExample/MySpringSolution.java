@@ -6,13 +6,7 @@ public class MySpringSolution {
 
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                "applicationContext.xml"
-        );
-
-//        Music music = context.getBean("musicBean", Music.class);
-//
-//        MusicPlayer myMusicPlayer = new MusicPlayer(music);
-//        myMusicPlayer.play();
+                "applicationContext.xml");
 
         MusicPlayer myMusicPlayer = context.getBean("musicPlayerBean", MusicPlayer.class);
         myMusicPlayer.play();
