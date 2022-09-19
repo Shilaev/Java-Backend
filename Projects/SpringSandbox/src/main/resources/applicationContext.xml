@@ -12,6 +12,7 @@
     <bean id="deathcoreMusicBean" class="shilaev.MusicPlayerExample.Deathcore"
           init-method="doMyInit"
           destroy-method="doMyDestroy"
+          factory-method="getDeathcoreMusic"
     />
 
     <bean id="neoClassicalMusicBean" class="shilaev.MusicPlayerExample.NeoClassic"/>

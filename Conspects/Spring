@@ -142,4 +142,39 @@ musicPlayer.volume=50
 Scope - задает то, как Spring будет создавать бины.
 По умолчанию используется Singletone scope. То есть при создании объекта создается только один объект. Ссылка на который потом используется единая и везде.
 Scope prototype - исопльзуется, когда у бин с изменяемыми состояниями.
+
+## Жизненный цикл бина
 <img src="./images/BeanLifeCycle.png" alt="alt text" width="900"/>
+
+__init-method__ - запускается в ходе инициализации бина.
+Инициализация ресурсов, обращений к внешним файлам, запуск БД.
+
+__destroy-method__ - запускается в ходе уничтожения бина (при завершении приложения)
+Очищение ресурсов, закрытие потоков ввода-вывода, закрытие доступа к БД.
+
+```XML
+<bean id="deathcoreMusicBean" class="shilaev.MusicPlayerExample.Deathcore"
+    init-method="doMyInit"
+    destroy-method="doMyDestroy"
+/>
+```
+Методы создаются в классе Deathcore в данном случае.
+
+__Тонкости Init, Destroy методов__
+- __Модификатор доступа__. У этих методов может быть любой модификатор
+- __Возвращаемое значение__. Может быть любое, но чаще void, так как нет возможности получить возвращаемое значение.
+- __Название__. Любое.
+- __Аргументы__. Не принимают на вход аргументы.
+- __Prototype__. Для бинов с Prototype scope медот destroy не вызывается.
+
+__factory-method__ - фабричный метод, паттерн программирования. Предлагает делегировать создание объектов особому фабричному методу.
+
+```XML
+<bean id="deathcoreMusicBean" class="shilaev.MusicPlayerExample.Deathcore"
+    init-method="doMyInit"
+    destroy-method="doMyDestroy"
+    factory-method="getClassicalMusic"
+/>
+```
+
+В данном случае по умолчанию стоит scope singleton, то ссылка будет на один и тот же объект.
