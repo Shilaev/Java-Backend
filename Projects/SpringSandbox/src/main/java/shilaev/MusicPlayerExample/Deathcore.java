@@ -6,4 +6,12 @@ public class Deathcore implements Music {
     public String getSong() {
         return "AngelMaker - I long for rest";
     }
+
+    void doMyInit(){
+        System.out.println("INITIALIZATION");
+    }
+
+    private void doMyDestroy() {
+        System.out.println("DESTROY");
+    }
 }
