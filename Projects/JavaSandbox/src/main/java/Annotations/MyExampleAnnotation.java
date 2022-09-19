@@ -1,2 +1,5 @@
-package Annotations;public @interface MyExampleAnnotation {
+package Annotations;
+
+public @interface MyExampleAnnotation {
+    
 }
