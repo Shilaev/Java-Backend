@@ -1,5 +1,8 @@
-package shilaev.MusicPlayerExample;
+package shilaev.musicPlayerExampleAnnotation;
 
+import org.springframework.stereotype.Component;
+
+@Component("deathcoreMusic")
 public class Deathcore implements Music {
 
     private Deathcore() {}

@@ -1,5 +1,8 @@
-package shilaev.MusicPlayerExample;
+package shilaev.musicPlayerExampleAnnotation;
 
+import org.springframework.stereotype.Component;
+
+//@Component("rapMusic")
 public class Rap implements Music {
     @Override
     public String getSong() {

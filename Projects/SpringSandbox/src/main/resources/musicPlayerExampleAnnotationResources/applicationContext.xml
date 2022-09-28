@@ -7,26 +7,6 @@
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <context:property-placeholder location="musicPlayerExampleXMLResources/musicPlayer.properties"/>
-
-    <bean id="deathcoreMusicBean" class="shilaev.musicPlayerExampleXML.Deathcore"
-          init-method="doMyInit"
-          destroy-method="doMyDestroy"
-          factory-method="getDeathcoreMusic"
-    />
-
-    <bean id="neoClassicalMusicBean" class="shilaev.musicPlayerExampleXML.NeoClassic"/>
-    <bean id="rapMusicBean" class="shilaev.musicPlayerExampleXML.Rap"/>
-
-    <bean id="musicPlayerBean" class="shilaev.musicPlayerExampleXML.MusicPlayer" scope="prototype">
-        <property name="volume" value="${musicPlayer.volume}"/>
-        <property name="musicList">
-            <list>
-                <ref bean="deathcoreMusicBean"/>
-                <ref bean="rapMusicBean"/>
-                <ref bean="neoClassicalMusicBean"/>
-            </list>
-        </property>
-    </bean>
+    <context:component-scan base-package="shilaev.musicPlayerExampleAnnotation"/>
 
 </beans>

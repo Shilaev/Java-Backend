@@ -1,18 +1,21 @@
-package shilaev.MusicPlayerExample;
+package shilaev.musicPlayerExampleAnnotation;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.util.List;
 
 public class MySpringSolution {
 
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                "applicationContext.xml");
+                "musicPlayerExampleAnnotationResources/applicationContext.xml");
 
-        MusicPlayer myMusicPlayer = context.getBean("musicPlayerBean", MusicPlayer.class);
-        MusicPlayer myMusicPlayer2 = context.getBean("musicPlayerBean", MusicPlayer.class);
+        MusicPlayer musicPlayer0 = context.getBean("musicPlayer", MusicPlayer.class);
 
-        myMusicPlayer.play();
-        myMusicPlayer2.play();
+        Computer computer = context.getBean("computer", Computer.class);
+        System.out.println(computer);
+
+//        System.out.println(musicPlayer0.play());
 
         context.close();
     }
