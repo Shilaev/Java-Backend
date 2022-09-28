@@ -2,7 +2,7 @@ package shilaev.musicPlayerExampleAnnotation;
 
 import org.springframework.stereotype.Component;
 
-//@Component("violaMusic")
+@Component("violaMusic")
 public class ViolaMusic implements Music{
     @Override
     public String getSong() {
