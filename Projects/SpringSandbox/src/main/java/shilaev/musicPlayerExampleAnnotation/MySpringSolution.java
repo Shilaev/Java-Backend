@@ -1,6 +1,8 @@
 package shilaev.musicPlayerExampleAnnotation;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import shilaev.musicPlayerExampleAnnotation.MusicClasses.Deathcore;
+import shilaev.musicPlayerExampleAnnotation.MusicClasses.MusicGenres;
 
 import java.util.List;
 
@@ -10,12 +12,8 @@ public class MySpringSolution {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "musicPlayerExampleAnnotationResources/applicationContext.xml");
 
-        MusicPlayer musicPlayer0 = context.getBean("musicPlayer", MusicPlayer.class);
-
-        Computer computer = context.getBean("computer", Computer.class);
-        System.out.println(computer);
-
-//        System.out.println(musicPlayer0.play());
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        System.out.println(musicPlayer.play(MusicGenres.DEATHCORE));
 
         context.close();
     }

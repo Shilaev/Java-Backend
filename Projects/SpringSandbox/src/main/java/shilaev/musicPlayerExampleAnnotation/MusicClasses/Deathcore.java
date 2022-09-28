@@ -1,26 +1,37 @@
-package shilaev.musicPlayerExampleAnnotation;
+package shilaev.musicPlayerExampleAnnotation.MusicClasses;
 
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
 
 @Component("deathcoreMusic")
 public class Deathcore implements Music {
 
-    private Deathcore() {}
+    List<String> songs;
 
-    public static Deathcore getDeathcoreMusic(){
-        return new Deathcore();
+    private Deathcore() {
+        this.songs = new LinkedList<>();
+        this.songs.add("AngelMaker - Godless");
+        this.songs.add("AngelMaker - Leech");
+        this.songs.add("AngelMaker - I long for Rest");
     }
 
     @Override
-    public String getSong() {
-        return "AngelMaker - I long for rest";
-    }
+    public String getSongs() {
+        Random random = new Random();
+        int randomIndex = random.nextInt(songs.size());
 
-    void doMyInit() {
-        System.out.println("INITIALIZATION");
+        return songs.get(randomIndex) + "\n";
     }
-
-    private void doMyDestroy() {
-        System.out.println("DESTROY");
-    }
+//
+//    void doMyInit() {
+//        System.out.println("INITIALIZATION");
+//    }
+//
+//    private void doMyDestroy() {
+//        System.out.println("DESTROY");
+//    }
 }

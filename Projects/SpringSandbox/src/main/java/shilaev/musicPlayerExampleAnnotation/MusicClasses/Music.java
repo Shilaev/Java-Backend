@@ -1,5 +1,7 @@
-package shilaev.musicPlayerExampleAnnotation;
+package shilaev.musicPlayerExampleAnnotation.MusicClasses;
+
+import java.util.List;
 
 public interface Music {
-    String getSong();
+    String getSongs();
 }

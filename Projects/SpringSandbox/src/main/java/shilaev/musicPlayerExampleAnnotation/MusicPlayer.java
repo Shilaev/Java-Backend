@@ -1,43 +1,35 @@
 package shilaev.musicPlayerExampleAnnotation;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import shilaev.musicPlayerExampleAnnotation.MusicClasses.Music;
+import shilaev.musicPlayerExampleAnnotation.MusicClasses.MusicGenres;
 
+import java.util.LinkedList;
 import java.util.List;
 
 @Component("musicPlayer")
 public class MusicPlayer {
-    private List<ViolaMusic> musicList;
-    private Music music;
-    private int volume;
+    Music deathcore;
+    Music neoclassic;
 
-    private Deathcore deathcoreMusic;
-    private NeoClassic neoClassicMusic;
-
-    @Autowired
-    public MusicPlayer(Deathcore deathcoreMusic, NeoClassic neoClassicMusic) {
-        this.deathcoreMusic = deathcoreMusic;
-        this.neoClassicMusic = neoClassicMusic;
+    public MusicPlayer(@Qualifier("deathcoreMusic") Music deathcore,
+                       @Qualifier("neoclassicMusic") Music neoclassic) {
+        this.deathcore = deathcore;
+        this.neoclassic = neoclassic;
     }
 
-    //    @Autowired
-//    public void setMusic(Music music) {
-//        this.music = music;
-//    }
-
-    public void setVolume(int volume) {
-        this.volume = volume;
-    }
+    // TODO: 28.09.2022 Inject Classical Deathcore music
 //
-//    public void setMusicList(List<ViolaMusic> musicList) {
-//        this.musicList = musicList;
-//    }
-
-    public String play() {
-        return deathcoreMusic.getSong() + "\n"
-                + neoClassicMusic.getSong();
-//        for (int i = 0; i < musicList.size(); i++) {
-//            System.out.println(musicList.get(i).getSong());
-//        }
+    public String play(MusicGenres musicGenres) {
+        switch (musicGenres) {
+            case DEATHCORE -> {
+                return deathcore.getSongs();
+            }
+            case NEOCLASSIC -> {
+                return neoclassic.getSongs();
+            }
+        }
+        return null;
     }
 }
