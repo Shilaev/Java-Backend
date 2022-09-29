@@ -11,7 +11,7 @@ class Solution {
 
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
         System.out.println(musicPlayer.deathcoreMusic.getSongName());
-        
+
         context.close();
     }
 }
