@@ -1,7 +1,7 @@
 package shilaev.musicPlayerExampleAnnotation.MusicClasses;
 
 public enum MusicGenres {
-   DEATHCORE,
+    DEATHCORE,
     NEOCLASSIC
 
 }

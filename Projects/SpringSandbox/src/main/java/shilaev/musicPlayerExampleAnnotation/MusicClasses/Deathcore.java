@@ -2,10 +2,8 @@ package shilaev.musicPlayerExampleAnnotation.MusicClasses;
 
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Random;
 
 @Component("deathcoreMusic")
 public class Deathcore implements Music {
@@ -20,13 +18,15 @@ public class Deathcore implements Music {
     }
 
     @Override
-    public String getSongs() {
-        Random random = new Random();
-        int randomIndex = random.nextInt(songs.size());
-
-        return songs.get(randomIndex) + "\n";
+    public String getSongs(int songNumber) {
+        return songs.get(songNumber) + "\n";
     }
-//
+
+    @Override
+    public int getSongListSize() {
+        return songs.size();
+    }
+
 //    void doMyInit() {
 //        System.out.println("INITIALIZATION");
 //    }

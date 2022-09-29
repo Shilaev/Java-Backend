@@ -1,10 +1,7 @@
 package shilaev.musicPlayerExampleAnnotation;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import shilaev.musicPlayerExampleAnnotation.MusicClasses.Deathcore;
 import shilaev.musicPlayerExampleAnnotation.MusicClasses.MusicGenres;
-
-import java.util.List;
 
 public class MySpringSolution {
 
@@ -13,7 +10,9 @@ public class MySpringSolution {
                 "musicPlayerExampleAnnotationResources/applicationContext.xml");
 
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        System.out.println(musicPlayer.play(MusicGenres.DEATHCORE));
+
+        System.out.println(musicPlayer.printVolume());
+        System.out.println(musicPlayer.playRandomSong(MusicGenres.NEOCLASSIC));
 
         context.close();
     }

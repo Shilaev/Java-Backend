@@ -1,17 +1,20 @@
 package shilaev.musicPlayerExampleAnnotation;
 
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import shilaev.musicPlayerExampleAnnotation.MusicClasses.Music;
 import shilaev.musicPlayerExampleAnnotation.MusicClasses.MusicGenres;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.Random;
 
 @Component("musicPlayer")
 public class MusicPlayer {
-    Music deathcore;
-    Music neoclassic;
+    private final Music deathcore;
+    private final Music neoclassic;
+
+    @Value("${musicPlayer.volume}")
+    private int volume;
 
     public MusicPlayer(@Qualifier("deathcoreMusic") Music deathcore,
                        @Qualifier("neoclassicMusic") Music neoclassic) {
@@ -19,15 +22,19 @@ public class MusicPlayer {
         this.neoclassic = neoclassic;
     }
 
-    // TODO: 28.09.2022 Inject Classical Deathcore music
-//
-    public String play(MusicGenres musicGenres) {
+    public String printVolume() {
+        return "volume=" + volume;
+    }
+
+    public String playRandomSong(MusicGenres musicGenres) {
+        Random random = new Random();
+
         switch (musicGenres) {
             case DEATHCORE -> {
-                return deathcore.getSongs();
+                return deathcore.getSongs(random.nextInt(deathcore.getSongListSize()));
             }
             case NEOCLASSIC -> {
-                return neoclassic.getSongs();
+                return neoclassic.getSongs(random.nextInt(neoclassic.getSongListSize()));
             }
         }
         return null;

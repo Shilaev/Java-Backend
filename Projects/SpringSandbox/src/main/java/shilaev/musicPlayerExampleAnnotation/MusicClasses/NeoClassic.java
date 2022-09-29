@@ -2,10 +2,8 @@ package shilaev.musicPlayerExampleAnnotation.MusicClasses;
 
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Random;
 
 @Component("neoclassicMusic")
 public class NeoClassic implements Music {
@@ -20,10 +18,12 @@ public class NeoClassic implements Music {
     }
 
     @Override
-    public String getSongs() {
-        Random random = new Random();
-        int randomIndex = random.nextInt(songs.size());
+    public String getSongs(int songNumber) {
+        return songs.get(songNumber) + "\n";
+    }
 
-        return songs.get(randomIndex) + "\n";
+    @Override
+    public int getSongListSize() {
+        return songs.size();
     }
 }
