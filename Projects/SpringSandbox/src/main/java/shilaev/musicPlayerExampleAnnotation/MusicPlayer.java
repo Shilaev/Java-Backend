@@ -1,17 +1,24 @@
 package shilaev.musicPlayerExampleAnnotation;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import shilaev.musicPlayerExampleAnnotation.MusicClasses.Music;
 import shilaev.musicPlayerExampleAnnotation.MusicClasses.MusicGenres;
 
 import java.util.Random;
 
+@Scope("singleton")
 @Component("musicPlayer")
 public class MusicPlayer {
     private final Music deathcore;
     private final Music neoclassic;
+
+    @Value("${musicPlayer.name}")
+    private String name;
 
     @Value("${musicPlayer.volume}")
     private int volume;
@@ -23,10 +30,12 @@ public class MusicPlayer {
     }
 
     public String printVolume() {
-        return "volume=" + volume;
+        return "name= " + name +
+                " " +
+                "volume= " + volume;
     }
 
-    public String playRandomSong(MusicGenres musicGenres) {
+    public String playRandomSong(@NotNull MusicGenres musicGenres) {
         Random random = new Random();
 
         switch (musicGenres) {

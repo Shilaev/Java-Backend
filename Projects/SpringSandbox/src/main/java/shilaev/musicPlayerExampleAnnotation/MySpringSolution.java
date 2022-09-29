@@ -12,7 +12,7 @@ public class MySpringSolution {
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 
         System.out.println(musicPlayer.printVolume());
-        System.out.println(musicPlayer.playRandomSong(MusicGenres.NEOCLASSIC));
+        System.out.print(musicPlayer.playRandomSong(MusicGenres.NEOCLASSIC));
 
         context.close();
     }

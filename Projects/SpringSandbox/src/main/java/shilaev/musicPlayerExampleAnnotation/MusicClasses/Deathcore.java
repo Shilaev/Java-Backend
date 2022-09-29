@@ -2,6 +2,8 @@ package shilaev.musicPlayerExampleAnnotation.MusicClasses;
 
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -27,11 +29,13 @@ public class Deathcore implements Music {
         return songs.size();
     }
 
-//    void doMyInit() {
-//        System.out.println("INITIALIZATION");
-//    }
-//
-//    private void doMyDestroy() {
-//        System.out.println("DESTROY");
-//    }
+    @PostConstruct
+    void doMyInit() {
+        System.out.println("INITIALIZATION");
+    }
+
+    @PreDestroy
+    private void doMyDestroy() {
+        System.out.println("DESTROY");
+    }
 }
