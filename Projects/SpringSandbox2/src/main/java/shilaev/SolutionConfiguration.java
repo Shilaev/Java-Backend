@@ -2,10 +2,9 @@ package shilaev;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
+
+import java.util.Collections;
 
 @Configuration
 @ComponentScan("shilaev")
@@ -14,8 +13,9 @@ class SolutionConfiguration {
 
     @Bean
     @Autowired
-    MusicPlayer musicPlayer(@Value("${song.name}") String songname) {
-        return new MusicPlayer(deathcore(songname));
+    @Scope("prototype")
+    MusicPlayer musicPlayer(@Value("${song.listOfValues}") String songname) {
+        return new MusicPlayer(Collections.singletonList(songname));
     }
 
     @Bean

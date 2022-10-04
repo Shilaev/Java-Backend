@@ -10,7 +10,7 @@ class Solution {
                 new AnnotationConfigApplicationContext(SolutionConfiguration.class);
 
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        System.out.println(musicPlayer.deathcoreMusic.getSongName());
+        System.out.println(musicPlayer.getMusicList());
 
         context.close();
     }
