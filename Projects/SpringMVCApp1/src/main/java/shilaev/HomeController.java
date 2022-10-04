@@ -1,13 +1,14 @@
 package shilaev;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class HelloController {
+public class HomeController {
 
-    @GetMapping("/hello")
-    public String sayHello() {
-        return "hello_world";
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    public String viewHome() {
+        return "hello";
     }
 }
