@@ -37,14 +37,6 @@
       <version>2.7.4</version>
     </dependency>
 
-    <!--        &lt;!&ndash; https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-api &ndash;&gt;-->
-    <!--        <dependency>-->
-    <!--            <groupId>jakarta.platform</groupId>-->
-    <!--            <artifactId>jakarta.jakartaee-api</artifactId>-->
-    <!--            <version>9.1.0</version>-->
-    <!--            <scope>provided</scope>-->
-    <!--        </dependency>-->
-
     <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
