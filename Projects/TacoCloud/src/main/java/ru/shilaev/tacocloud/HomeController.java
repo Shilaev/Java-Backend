@@ -1,2 +1,13 @@
-package ru.shilaev.tacocloud;public class HomeController {
+package ru.shilaev.tacocloud;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class HomeController {
+
+    @GetMapping("/home")
+    public String home(){
+        return "home";
+    }
 }
