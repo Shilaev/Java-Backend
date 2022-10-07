@@ -7,10 +7,18 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+    <title>Taco page</title>
+</head>
+<body>
+<h1>Taco page</h1>
+<p>
+    <%
+        String tacoText = "This is taco page";
+        for (int i = 0; i < 10; i++) {
+            out.println(tacoText);
+        }
+    %>
+</p>
+</body>
 </html>
