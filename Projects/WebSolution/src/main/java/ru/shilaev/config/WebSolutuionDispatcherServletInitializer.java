@@ -1,7 +1,10 @@
-package ru.shilaev.spring;
+package ru.shilaev.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+/**
+ * @author Neil Alishev
+ */
 public class WebSolutuionDispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {

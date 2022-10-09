@@ -1,4 +1,4 @@
-package ru.shilaev.spring;
+package ru.shilaev.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -12,10 +12,14 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
+/**
+ * @author Neil Alishev
+ */
 @Configuration
 @ComponentScan("ru.shilaev")
 @EnableWebMvc
 public class WebSolutionConfiguration implements WebMvcConfigurer {
+
     private final ApplicationContext applicationContext;
 
     @Autowired
