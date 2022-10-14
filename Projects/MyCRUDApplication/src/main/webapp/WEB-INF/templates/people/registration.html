@@ -1,0 +1,34 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>registration</title>
+</head>
+<body>
+
+<!--REGISTRATION FORM-->
+<form action="#" th:action="@{/people/registration}" th:object="${newPerson}" th:method="post">
+    <!--Name-->
+    <label for="first_name">First name: </label><br>
+    <input type="text" th:field="*{name}" id="first_name"><br>
+    <div style="color: firebrick" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Error message</div>
+
+    <!--Age-->
+    <label for="age">age</label><br>
+    <input type="text" th:field="*{age}" id="age"><br>
+    <div style="color: firebrick" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Error message</div>
+
+    <!--Email-->
+    <label for="email">email</label><br>
+    <input type="text" th:field="*{email}" id="email"><br>
+    <div style="color: firebrick" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Error message</div>
+
+    <!--Submit button-->
+    <input type="submit" value="Submit">
+</form>
+<!--REGISTRATION FORM-->
+
+</body>
+</html>

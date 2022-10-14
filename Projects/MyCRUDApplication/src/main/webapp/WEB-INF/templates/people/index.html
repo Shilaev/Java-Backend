@@ -1,0 +1,26 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>person list</title>
+</head>
+<body>
+
+<!--All people list-->
+<div th:each="person : ${personList}">
+    <a th:href="@{/people/{id}(id=${person.getId()})}"
+       th:text="
+       ${person.getId()} + ' '+
+       ${person.getName()} + ' ' +
+       ${person.getAge()} + ' ' +
+       ${person.getEmail()}"
+    >user</a>
+</div>
+<br>
+
+<!--Registration button-->
+<a th:href="@{/people/registration}">registrate new person</a>
+
+</body>
+</html>

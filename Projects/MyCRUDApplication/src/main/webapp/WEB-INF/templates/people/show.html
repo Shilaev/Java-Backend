@@ -1,0 +1,27 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>person</title>
+</head>
+<body>
+<!--Person data list-->
+<p th:text="${personById.getId()}">id</p>
+<p th:text="${personById.getName()}">name</p>
+<p th:text="${personById.getAge()}">age</p>
+<p th:text="${personById.getEmail()}">email</p>
+<hr/>
+
+<!--To People list link-->
+<a th:href="@{/people/{id}/edit(id=${personById.getId})}">edit</a><br>
+<a th:href="@{/people}">to all people</a><br>
+<hr/>
+
+<!--Delete button-->
+<form th:method="delete" th:action="@{/people/{id}(id=${personById.getId})}">
+    <input th:type="submit" value="Delete"/>
+</form>
+
+</body>
+</html>
