@@ -1,7 +1,5 @@
 package Algorithms;
 
-import JavaSyntaxis.basics.Array;
-
 import java.util.ArrayList;
 import java.util.List;
 /*
@@ -9,7 +7,7 @@ import java.util.List;
  */
 public class MyBinarySearch {
 
-    public static Integer search(List<Integer> array, int element) {
+    public static Integer binarySearch(List<Integer> array, int element) {
         int low = -1;
         int high = array.size() - 1;
         int mid;
@@ -36,6 +34,6 @@ public class MyBinarySearch {
             myList.add(i);
         }
 
-        System.out.println(search(myList, 2));
+        System.out.println(binarySearch(myList, 2));
     }
 }
