@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "34f4c7e3f3ec23b0",
+        "id": "32f53b3908523671",
         "type": "tabs",
         "children": [
           {
-            "id": "cea530250e3d617a",
+            "id": "523eccf13fe13b08",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -81,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Old_Conspects/Algoritms and data structures.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Old_Conspects/Algoritms and data structures.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -120,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Old_Conspects/Algoritms and data structures.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -137,13 +133,14 @@
   },
   "active": "1301f7e44fa20998",
   "lastOpenFiles": [
-    "Old_Conspects/images/binary_search.png",
+    "Untitled.md",
+    "Old_Conspects/Data base.md",
     "Old_Conspects/Algoritms and data structures.md",
+    "Old_Conspects/images/binary_search.png",
     "Old_Conspects/images/bus_topology.png",
     "Old_Conspects/images/array_visualization.png",
     "Old_Conspects/images/array_of_lists.png",
     "Old_Conspects/images/algorytm_graphics.png",
-    "Old_Conspects/Data base.md",
     "Old_Conspects/SQL_Cheat.pdf"
   ]
 }
