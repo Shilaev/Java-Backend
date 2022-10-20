@@ -1,12 +1,14 @@
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.stream.Stream;
-
 public class VowelCount {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
-        String userString = scanner.nextLine();
-        Arrays.stream(userString.split("")).filter(i -> va)
+    public static String encode(String s) {
+        return new StringBuilder(s).reverse().toString();
+    }
+
+    public static String decode(String s) {
+        return new StringBuilder(s).reverse().toString();
+    }
+
+    public static void main(String[] args) {
+
     }
 }
