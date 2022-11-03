@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Graph {
     private final Hashtable<Node, LinkedList<Node>> graph;
-    private Node head;
+    private final Node head;
 
     public Graph(Node head) {
         graph = new Hashtable<>(100);
@@ -29,7 +29,7 @@ public class Graph {
     }
 
     public String bfs(Node searchNode) {
-        Queue<Node> searchQueue = new LinkedList(graph.get(head));
+        Queue<Node> searchQueue = new PriorityQueue<>(graph.get(head));
         LinkedList<Node> visited = new LinkedList(List.of(head));
 
         Hashtable<Node, LinkedList<Node>> savedPrevNodes = new Hashtable<>();

@@ -1,2 +1,5 @@
-package Algorithms;public class Dijkstra {
+package Algorithms;
+
+public class Dijkstra {
+
 }
