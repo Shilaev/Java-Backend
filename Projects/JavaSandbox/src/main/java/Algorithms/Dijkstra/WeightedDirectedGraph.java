@@ -47,7 +47,7 @@ public class WeightedDirectedGraph {
         isUnvisited.add(rootNode);
 
         while (!isUnvisited.isEmpty()){
-
+            // TODO: 08.11.2022 Do Dijkstra algorithm
         }
 
         System.out.println(graph);
