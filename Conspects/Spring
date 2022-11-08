@@ -1,5 +1,72 @@
 # Зависимости
-# Инверсия управления
-# Внедрение зависимостей
-# Spring MVC
+В каждом коде со временем появляются зависимости, которые мешают расширению программы.
+Например в классе __ChatPrinter__ есть зависимость от Класса __Reader__. Это отношение __композиция__.
+Это плохо, так как при такой сильной зависимости сложно менять класс reader и его методы. Как только нужно будет изменить метод __print()__, сразу придется менять метод __chat()__. 
+Это __Сильная зависимость__
+```Java
+public class ChatPrinter {
+    // зависимость от Reader
+   private Reader reader = new Reader();
+
+    public void chat(String s){
+        reader.print(s);
+    }
+}
+```
+Один из способов облегчения данной зависимости, это выделениее из класса __Reader__ интерфейс. Тогда будет легче работать с разными реализациями этого интерфейса. Но это не решает проблему прямой зависимости, это все еще композиция.
+Это __Слабая зависимость__
+```Java
+public class ChatPrinter {
+   private Reader helloReader = new HelloReader();
+   private Reader byeReader = new ByeReader();
+
+    public void chat(String s){
+        helloReader.print(s);
+        byeReader.print(s);
+    }
+}
+```
+Следующий шаг - это поменять __композицию__ на __агрегацию__, то есть принимать конкретную реализацию интерфейса __reader__ на вход в __конструкторе__ класса. И тогда нам будет очень просто редактировать функционал, можно просто создать другую реализацию интерфейса и передать ее на вход или поменять сам метод, клас __ChatPrinter__ теперь не зависит от конкретной реализации. Так же это называетс __инверсия зависимостей (Inversion of Control)__ - Классы должны зависеть от абстракций, а не от конкретной реализации.
+Это __Отсутсвие зависимости__ так как ChatPrinter сам не создает объект Reader, он просто получает его на вход в конструкторе.
+```Java
+// ИНТЕРФЕЙС READER
+public interface Reader {
+    public void print(String s);
+}
+
+// КЛАСС ИСПОЛЬЗУЮЩИЙ ИНТЕРФЕЙС READER
+public class ChatPrinter {
+    Reader helloReader;
+    Reader byeReader;
+
+    // Теперь у нас есть возможность управлять функционалом интерфейса Reader
+    // но класс ChatPrinter не знает о существовании и внутренней работе
+    // данного интерфейса. это еще называется Агрегация
+    public ChatPrinter(Reader helloReader, Reader byeReader) {
+        this.helloReader = helloReader;
+        this.byeReader = byeReader;
+    }
+
+    public void chat(String s){
+        helloReader.print(s);
+        byeReader.print(s);
+    }
+}
+
+// ПРОГРАММА, ИСПОЛЬЗУЮЩАЯ ChatPrinter
+public class Solution {
+    public static void main(String[] args) {
+        ChatPrinter chatPrinter = new ChatPrinter(new HelloReader(), new ByeReader());
+        chatPrinter.chat("Valya");
+    }
+}
+```
+__Инверсия зависимостей (IoC)__ - это такой архитектурный подход, когда сущность не сама создает зависимости, а ей на вход поставляются зависимости. (Пример выше)
+
+Но есть еще одна проблема. Как видно выше объект __ChatPrinter__ нужно еще __где-то создавать__. В данном случае в классе __Solution__. А это тоже __сильная зависимость__. И данная проблема решается с помощью __Внедрения зависимостей (Dependency Injection)__. А этим занимается __Spring__.
+
 # Конфигурация Spring MVC
+## XML
+
+## XML + Java Annotation
+## Java Annotation

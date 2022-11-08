@@ -1,4 +1,4 @@
-package printer;
+package MessageMaker.printer;
 
 public interface Printer {
     public void print(String s);

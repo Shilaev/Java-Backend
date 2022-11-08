@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:application.properties"/>
+    <bean id="byePrinter"
+          class="MessageMaker.printer.ByePrinter"/>
+
+    <bean id="helloPrinter"
+          class="MessageMaker.printer.HelloPrinter"/>
+
+    <bean id="messageMaker.byePrinter"
+          class="MessageMaker.MessageMaker">
+        <constructor-arg ref="byePrinter"/>
+        <property name="defaultMessage" value="${MessageMaker.defaultMessage}"/>
+    </bean>
+
+    <bean id="messageMaker.helloPrinter"
+          class="MessageMaker.MessageMaker">
+        <constructor-arg ref="helloPrinter"/>
+        <property name="defaultMessage" value="${MessageMaker.defaultMessage}"/>
+    </bean>
 
 </beans>

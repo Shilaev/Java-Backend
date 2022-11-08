@@ -1,13 +1,24 @@
-package printer;
+package MessageMaker;
 
-public class ChatPrinter {
+import MessageMaker.printer.Printer;
+
+public class MessageMaker {
+    String defaultMessage;
     Printer printer;
 
-    public ChatPrinter(Printer printer) {
+    private MessageMaker(Printer printer) {
         this.printer = printer;
     }
 
     public void print(String s) {
         printer.print(s);
+    }
+
+    public void print(){
+        printer.print(defaultMessage);
+    }
+
+    public void setDefaultMessage(String defaultMessage) {
+        this.defaultMessage = defaultMessage;
     }
 }
