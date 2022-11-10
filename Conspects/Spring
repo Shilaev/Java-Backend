@@ -196,3 +196,52 @@ __View__ - логика представления. интерфейс. Слой
 __DispatcherServlet__ - Это особый, главный сервлет. Является входной точкой Spring MVC приложения. Реализован за нас.
 __HTTP__ запрос от пользователя приходит на сервер. Сервер обрабатыват запрос и передает его на __Spring MVC__ приложение. Затем запрос попадает в __DispatcherServlet__. __DispatcherServlet__ отправляет запрос на __правильный контроллер__.
 __DispatcherServlet__ - Прослойка между __Controller__ и __HTTP Request__
+
+Для Web приложения нужно все та же Spring конфигурация, но теперь добавляется файл __web.xml__, в котором прописываются данные мапинге сервлетов, url паттернов и так далее. Этот файл должен располагаться в папке __WEB-INF__.
+
+
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+  http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+```
+В этом элементе прописываются параметр, которым инициализируются сервлеты.
+Имя параметра и его значение.
+Далее этот параметр - Hello Servlets - будет доступен всем сервлетам в приложении.
+Для его получения внутри класса сервлета есть метод 
+__getServletContext()__ - вовзращает ServletContext.
+Затем у этого объекта вызывается __getInitParameter()__
+```XML
+  <context-param>
+    <param-name>message</param-name>
+    <param-value>Hello Servlets</param-value>
+  </context-param>
+```
+Это проекция сервлета на класс. По сути описание Сервлета, один сервлет может обслуживать запросы по разным URL.
+Сервлет под именем HelloWorld - это класс HelloServlet.class в коде.
+```XML
+  <servlet>
+       <servlet-name>HelloWorld</servlet-name>
+       <servlet-class>HelloServlet</servlet-class>
+   </servlet>
+```
+Это мапинг имя сервлета и часть URL. __(http://localhost/welcome)__
+То есть при обращении к пути /welcome вызовется сервлет HelloServlet.class
+Проще говоря - HelloWorld сервлет - это URL /welcome
+```XML
+  <servlet-mapping>
+      <servlet-name>HelloWorld</servlet-name>
+      <url-pattern>/welcome</url-pattern>
+  </servlet-mapping>
+```
+Это файл, который нужно отдать по запросу http://localhost/ - или другой welcome page
+Если просто запросить корень веб приложения, то ему отдастся содержимое файла index.html
+```XML
+  <welcome-file-list>
+      <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+```
+```XML
+</web-app>
+```
