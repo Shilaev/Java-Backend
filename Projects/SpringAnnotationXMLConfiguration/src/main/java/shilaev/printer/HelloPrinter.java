@@ -1,5 +1,8 @@
-package MessageMaker.printer;
+package shilaev.printer;
 
+import org.springframework.stereotype.Component;
+
+@Component("helloPrinter")
 public class HelloPrinter implements Printer{
     @Override
     public void print(String s) {

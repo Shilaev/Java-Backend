@@ -1,6 +1,6 @@
-package MessageMaker;
+package shilaev.messageMaker;
 
-import MessageMaker.printer.Printer;
+import shilaev.printer.Printer;
 
 public class MessageMaker {
     String defaultMessage;
@@ -10,11 +10,15 @@ public class MessageMaker {
         this.printer = printer;
     }
 
+    public static MessageMaker getMessageMaker(Printer printer) {
+        return new MessageMaker(printer);
+    }
+
     public void print(String s) {
         printer.print(s);
     }
 
-    public void print(){
+    public void print() {
         printer.print(defaultMessage);
     }
 

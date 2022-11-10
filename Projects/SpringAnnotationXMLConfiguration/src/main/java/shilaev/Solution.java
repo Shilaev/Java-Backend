@@ -1,6 +1,7 @@
-package MessageMaker;
+package shilaev;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import shilaev.messageMaker.MessageMaker;
 
 public class Solution {
 
@@ -14,5 +15,7 @@ public class Solution {
 
         MessageMaker byeMessage = context.getBean("messageMaker.byePrinter", MessageMaker.class);
         byeMessage.print();
+
+        context.close();
     }
 }

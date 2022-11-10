@@ -1,4 +1,4 @@
-package MessageMaker.printer;
+package shilaev.printer;
 
 public class ByePrinter implements Printer {
     @Override
