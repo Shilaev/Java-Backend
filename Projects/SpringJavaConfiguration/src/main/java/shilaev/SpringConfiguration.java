@@ -1,22 +1,36 @@
-package shilaev.messageMaker;
+package shilaev;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import shilaev.messageMaker.MessageMaker;
 import shilaev.printer.ByePrinter;
 import shilaev.printer.HelloPrinter;
 import shilaev.printer.Printer;
 
 @Configuration
 @ComponentScan("shilaev")
+@PropertySource("classpath:/application.properties")
 public class SpringConfiguration {
 
-    @Bean("messageMaker")
+
+
+    @Bean("messageMaker.helloPrinter")
     @Autowired
-    public MessageMaker messageMaker(@Qualifier("helloPrinter") Printer printer) {
-        return MessageMaker.getMessageMaker(printer);
+    public MessageMaker messageMakerHelloPrinter(@Qualifier("helloPrinter") Printer printer) {
+        MessageMaker messageMaker = MessageMaker.getMessageMaker(printer);
+        return messageMaker;
+    }
+
+    @Bean("messageMaker.byePrinter")
+    @Autowired
+    public MessageMaker messageMakerByePrinter(@Qualifier("byePrinter") Printer printer) {
+        MessageMaker messageMaker = MessageMaker.getMessageMaker(printer);
+        return messageMaker;
     }
 
     @Bean("helloPrinter")

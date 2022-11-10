@@ -1,2 +1,5 @@
-package shilaev.printer;public class Printer {
+package shilaev.printer;
+
+public interface Printer {
+    void print(String s);
 }

@@ -67,6 +67,98 @@ __Инверсия зависимостей (IoC)__ - это такой архи
 
 # Конфигурация Spring MVC
 ## XML
+Для конфигурации с помощью XML нужен только 1 файл, например __applicationContext.xml__, внутри которого описываются все бины, а так же их properties и так далее.
+Из важного здесь надо отметить:
+__<context:property-placeholder location="classpath:application.properties"/>__ - Нужно, чтобы указать на местонахождениее файла .properties, в котором можно указывать разные данные и подставлять их, например __MessageMaker.defaultMessage__
+__MessageMaker.defaultMessage=Valya__ <- внутри application.properties
 
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:application.properties"/>
+    <bean id="byePrinter"
+          class="MessageMaker.printer.ByePrinter"/>
+
+    <bean id="helloPrinter"
+          class="MessageMaker.printer.HelloPrinter"/>
+
+    <bean id="messageMaker.byePrinter"
+          class="MessageMaker.MessageMaker">
+        <constructor-arg ref="byePrinter"/>
+        <property name="defaultMessage" value="${MessageMaker.defaultMessage}"/>
+    </bean>
+
+    <bean id="messageMaker.helloPrinter"
+          class="MessageMaker.MessageMaker"
+          scope="prototype"
+          factory-method="getMessageMaker">
+        <constructor-arg ref="helloPrinter"/>
+        <property name="defaultMessage" value="${MessageMaker.defaultMessage}"/>
+    </bean>
+</beans>
+```
+Далее для создания объектов и внедрения зависимостей используется такой синтаксис:
+```Java
+ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+        "applicationContext.xml"
+);
+
+MessageMaker helloMessage = context.getBean("messageMaker.helloPrinter", MessageMaker.class);
+helloMessage.print();
+
+context.close();
+```
+В конце используем __context.close()__. Чтобы подчистить все бины, удалить фабрики и так далее.
 ## XML + Java Annotation
+Это почти как XML конфигурация, но многое делается автоматически спрингом.
+В данном случае опять понадобится файл конфигурации XML, но вместо создания бинов вручную, мы просто пишем аннотацию @Component
+Для создания нескольких бинов, на основе одного класса в данном случае можно воспользоваться наследствием, подробнее:
+https://www.baeldung.com/spring-same-class-multiple-beans
+
+Добавили Компонент скан и проперти плейсхолдер.
+```XML
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+    <context:property-placeholder location="classpath:application.properties"/>
+    <context:component-scan base-package="shilaev"/>
+</beans>
+```
+@Value - Для подставления значений из файла __.properties__ или просто значений
+@Autowired - для авто-инъекции зависимостей
+@Qualifired - для выбора какой именно класс внедрить
+```Java
+    @Value("${MessageMaker.gefaultMessage}")
+    public void setDefaultMessage(String defaultMessage) {
+        this.defaultMessage = defaultMessage;
+    }
+
+    @Autowired
+    public MessageMakerByePrinter(@Qualifier("byePrinter") Printer printer) {
+        super(printer);
+    }
+    
+```
+С контекстом все то же самое.
+```Java
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+                "applicationContext.xml"
+        );
+
+        MessageMaker helloMessage = context.getBean("messageMaker.helloPrinter", MessageMaker.class);
+        helloMessage.print();
+
+        MessageMaker byeMessage = context.getBean("messageMaker.byePrinter", MessageMaker.class);
+        byeMessage.print();
+
+        context.close();
+```
+
 ## Java Annotation
