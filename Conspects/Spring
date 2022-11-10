@@ -113,6 +113,7 @@ helloMessage.print();
 context.close();
 ```
 В конце используем __context.close()__. Чтобы подчистить все бины, удалить фабрики и так далее.
+
 ## XML + Java Annotation
 Это почти как XML конфигурация, но многое делается автоматически спрингом.
 В данном случае опять понадобится файл конфигурации XML, но вместо создания бинов вручную, мы просто пишем аннотацию @Component
@@ -162,3 +163,36 @@ https://www.baeldung.com/spring-same-class-multiple-beans
 ```
 
 ## Java Annotation
+Ну с аннотациями все еще проще и компактнее, нужен только один класс, который будет выполнять задачи конфигурационного файла с аннотацией:
+@Configuration - определяет конфигурационный файл
+@ComponentScan - аналог компонент скана из XML конфигурации. Указывает на папку в которой искать бины
+@PropertySource - аналог Property-placeholder. Указывает на местоположение файла проперти.
+@Autowired - автоподстановка
+@Bean - аналог <bean></bean>
+Исопльзование выглядит так. 
+Так же берем бины из контекста, только класс контекста поменялся, теперь это __AnnotationConfigApplicationContext__.
+```Java
+public class Solution {
+    public static void main(String[] args) {
+        AnnotationConfigApplicationContext context =
+                new AnnotationConfigApplicationContext(SpringConfiguration.class);
+
+        MessageMaker helloMessage = context.getBean("messageMaker.helloPrinter", MessageMaker.class);
+        helloMessage.print();
+
+        MessageMaker byeMessage = context.getBean("messageMaker.byePrinter", MessageMaker.class);
+        byeMessage.print();
+
+        context.close();
+    }
+}
+```
+
+## Model View Controller
+Это паттерн проектирования приложений, который состоит из 3 компонентов
+__Model__ - Логика работы с данными. В основном работа с базой данных, и запросами в контроллер
+__Controller__ - логика навигации, обработка запросов. Сюда попадает HTTP Запрос
+__View__ - логика представления. интерфейс. Слой презентации, то что видит пользователь.
+__DispatcherServlet__ - Это особый, главный сервлет. Является входной точкой Spring MVC приложения. Реализован за нас.
+__HTTP__ запрос от пользователя приходит на сервер. Сервер обрабатыват запрос и передает его на __Spring MVC__ приложение. Затем запрос попадает в __DispatcherServlet__. __DispatcherServlet__ отправляет запрос на __правильный контроллер__.
+__DispatcherServlet__ - Прослойка между __Controller__ и __HTTP Request__

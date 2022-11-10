@@ -16,9 +16,6 @@ import shilaev.printer.Printer;
 @ComponentScan("shilaev")
 @PropertySource("classpath:/application.properties")
 public class SpringConfiguration {
-
-
-
     @Bean("messageMaker.helloPrinter")
     @Autowired
     public MessageMaker messageMakerHelloPrinter(@Qualifier("helloPrinter") Printer printer) {
