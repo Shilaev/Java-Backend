@@ -1,6 +1,21 @@
-h1{
-    color: rebeccapurple;
+table,
+td {
+    width: 40%;
+    height: 10pt;
+    margin-bottom: 15pt;
+    margin-top: 15pt;
+    margin-left: 15pt;
+    margin-right: 15pt;
+
+    size: 25pt;
+
+    border-collapse: collapse;
+    border: 1px solid #333;
 }
-h2{
-    color: blue;
+
+thead,
+tfoot {
+    text-decoration-style: solid;
+    background-color: #c9c9c9;
+    color: #000000;
 }

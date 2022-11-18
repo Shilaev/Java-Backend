@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:content-type="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Accounts</title>
-
+    <link rel="stylesheet" href="/resources/accounts/index.css" content-type:="text/css">
 </head>
 <body>
+
+<table th:each="account : ${accounts}">
+    <thead>
+    <tr>
+        <td colspan="2" th:text=" ${account.id} + ') ' + ${account.name}">account.name</td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td th:text="'balance:' + ' ' + ${account.balance}">account.balance</td>
+        <td th:text="'type:' + ' ' + ${account.type}">account.type</td>
+    </tr>
+    </tbody>
+
+</table>
 
 </body>
 </html>
