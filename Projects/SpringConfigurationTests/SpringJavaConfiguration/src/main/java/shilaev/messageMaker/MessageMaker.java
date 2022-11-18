@@ -1,7 +1,10 @@
 package shilaev.messageMaker;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import shilaev.printer.Printer;
+
+import javax.annotation.PreDestroy;
 
 public class MessageMaker {
     String defaultMessage;
@@ -26,5 +29,10 @@ public class MessageMaker {
     @Value("${MessageMaker.defaultValue}")
     private void setDefaultMessage(String defaultMessage) {
         this.defaultMessage = defaultMessage;
+    }
+
+    @PreDestroy
+    private void doMyDestroy(){
+        System.out.println("DESTROY");
     }
 }

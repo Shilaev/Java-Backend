@@ -2,17 +2,11 @@ package shilaev.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import org.springframework.web.servlet.view.JstlView;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
@@ -60,6 +54,7 @@ public class SpringConfiguration implements WebMvcConfigurer {
 
     @Bean("messageMaker.helloPrinter")
     @Autowired
+    @Scope(value = "prototype")
     public MessageMaker messageMakerHelloPrinter(@Qualifier("helloPrinter") Printer printer) {
         MessageMaker messageMaker = MessageMaker.getMessageMaker(printer);
         return messageMaker;
