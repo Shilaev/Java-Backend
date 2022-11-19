@@ -19,16 +19,22 @@ public class AccountDAO {
                 "Visa"
         ));
         accounts.add(new Account(
-                2,
+                1,
                 "4975390938505649",
                 179626f,
                 "MasterCard"
         ));
         accounts.add(new Account(
-                3,
+                2,
                 "5050433404730823",
                 717.677413f,
                 "Mir"
+        ));
+        accounts.add(new Account(
+                3,
+                "5053454404730467",
+                1717.677413f,
+                "Visa"
         ));
     }
 

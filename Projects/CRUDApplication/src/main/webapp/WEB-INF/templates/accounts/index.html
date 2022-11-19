@@ -9,21 +9,46 @@
 </head>
 <body>
 
-<table th:each="account : ${accounts}">
-    <thead>
-    <tr>
-        <td colspan="2" th:text=" ${account.id} + ') ' + ${account.name}">account.name</td>
-    </tr>
-    </thead>
+<section>
+    <h1>Accounts</h1>
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Balance</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
 
-    <tbody>
-    <tr>
-        <td th:text="'balance:' + ' ' + ${account.balance}">account.balance</td>
-        <td th:text="'type:' + ' ' + ${account.type}">account.type</td>
-    </tr>
-    </tbody>
+    <div class="tbl-content">
 
-</table>
+        <table>
+            <tbody th:each="account : ${accounts}">
+            <tr>
+                <td>
+                    <a th:href="@{/accounts/{id}(id=${account.id})}" th:text="${account.id}" class="row-link">id</a>
+                </td>
+                <td>
+                    <a th:href="@{/accounts/{id}(id=${account.id})}" th:text="${account.name}" tabindex="-1"
+                       class="row-link">name</a></td>
+                <td>
+                    <a th:href="@{/accounts/{id}(id=${account.id})}" th:text="${account.type}" tabindex="-1"
+                       class="row-link">type</a></td>
+                <td>
+                    <a th:href="@{/accounts/{id}(id=${account.id})}" th:text="${account.balance}" tabindex="-1"
+                       class="row-link">balance</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</section>
+
 
 </body>
 </html>
