@@ -25,6 +25,7 @@ tr:focus-within {
 }
 
 td > a:first-child {
+
     display: flex;
     text-decoration: none;
     color: inherit;
