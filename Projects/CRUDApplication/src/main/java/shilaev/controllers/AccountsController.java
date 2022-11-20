@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import shilaev.dao.AccountDAO;
@@ -14,6 +15,11 @@ public class AccountsController {
 
     @Autowired
     AccountDAO accountDAO;
+
+    @ModelAttribute
+    public void addAttributes(Model model) {
+        model.addAttribute("testAttribute", "testAttribute");
+    }
 
     @GetMapping("/")
     public String index(Model model) {
