@@ -41,4 +41,8 @@ public class AccountDAO {
     public List<Account> getAccounts() {
         return accounts;
     }
+
+    public Account getAccount(int id) {
+        return accounts.stream().filter(account -> account.getId() == id).findFirst().orElse(null);
+    }
 }

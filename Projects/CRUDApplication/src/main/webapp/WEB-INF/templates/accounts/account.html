@@ -1,10 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:content-type="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title th:text="'account:' + ${current_account.id}">account.id</title>
+    <script content-type:="text/javascript" src="/resources/accounts/js/index.js"></script>
+    <link rel="stylesheet" href="/resources/accounts/css/standard_table.css" content-type:="text/css">
 </head>
 <body>
-$END$
+
+<section>
+    <table>
+        <caption>
+            <h1 th:text="'account:' + ${current_account.name}">account.name</h1>
+        </caption>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Balance</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td th:text="${current_account.id}">account.id</td>
+            <td th:text="${current_account.name}">account.name</td>
+            <td th:text="${current_account.type}">account.type</td>
+            <td th:text="${current_account.balance}">account.balance</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
 </body>
 </html>
