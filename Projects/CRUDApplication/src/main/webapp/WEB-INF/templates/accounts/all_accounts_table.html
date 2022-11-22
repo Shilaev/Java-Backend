@@ -26,16 +26,16 @@
         <tbody th:each="account : ${all_accounts}">
         <tr>
             <td>
-                <a th:href="@{/accounts/{id}(id=${account.id})}" th:text="${account.id}">id</a>
+                <a th:href="@{/accounts/account/{id}(id=${account.id})}" th:text="${account.id}">id</a>
             </td>
             <td>
-                <a th:href="@{/accounts/{id}(id=${account.id})}" th:text="${account.name}">name</a>
+                <a th:href="@{/accounts/account/{id}(id=${account.id})}" th:text="${account.name}">name</a>
             </td>
             <td>
-                <a th:href="@{/accounts/{id}(id=${account.id})}" th:text="${account.type}">type</a>
+                <a th:href="@{/accounts/account/{id}(id=${account.id})}" th:text="${account.type}">type</a>
             </td>
             <td>
-                <a th:href="@{/accounts/{id}(id=${account.id})}" th:text="${account.balance}">balance</a>
+                <a th:href="@{/accounts/account/{id}(id=${account.id})}" th:text="${account.balance}">balance</a>
             </td>
         </tr>
         </tbody>

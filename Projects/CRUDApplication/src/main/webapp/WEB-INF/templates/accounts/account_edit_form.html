@@ -7,7 +7,10 @@
 </head>
 <body>
 <section>
-    <h1 th:text="${current_account.name}">current_account.name</h1>
+    <form th:method="patch" th:action="@{edit_account}">
+        <input th:type="text"/>
+        <input th:type="submit" th:value="OK"/>
+    </form>
 </section>
 </body>
 </html>
