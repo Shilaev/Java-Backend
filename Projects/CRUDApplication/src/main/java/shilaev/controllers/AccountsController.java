@@ -39,4 +39,14 @@ public class AccountsController {
         accountDAO.addAccount(newAccount);
         return "redirect:/accounts";
     }
+
+    @GetMapping("/edit_account/{id}")
+    public String getEditAccont(@PathVariable("id") int id, Model model) {
+        model.addAttribute("current_account", accountDAO.getAccount(id));
+        return "accounts/edit_account";
+    }
+
+//    @PatchMapping
+
+//    @DeleteMapping
 }

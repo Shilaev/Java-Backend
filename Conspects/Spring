@@ -265,3 +265,82 @@ __DAO__ - Паттерн Data Acces Object. Чтобы модель напрям
 Внутри PersonDAO будут методы, которые будут взаимодействовать напрямую с БД, а затем передавать результаты в Person. Обычно внутри SQL код.
 
 <img src="./images/DAO_example.png" alt="alt text" width="400"/>
+
+## Post maping
+Без использования шаблонизатора Thymeleaf
+```Java
+@GetMapping("/add_account")
+public String getAddAccount(Model model,
+                            @RequestParam(value = "noname", required = false) String name,
+                            @RequestParam(value = "noname", required = false) Float balance,
+                            @RequestParam(value = "noname", required = false) String type) {
+        return "accounts/account_add_form";
+    }
+
+    @PostMapping("/add_account")
+    public String postAddedAccount(Model model,
+                                   @RequestParam() String name,
+                                   @RequestParam() Float balance,
+                                   @RequestParam() String type) {
+        Account newAccount = new Account();
+        newAccount.setName(name);
+        newAccount.setBalance(balance);
+        newAccount.setType(type);
+        accountDAO.addAccount(newAccount);
+
+        return "redirect:/accounts";
+    }
+```
+```SQL
+<section>
+    <form action="/accounts/add_account" th:method="POST">
+        <label for="name">Name</label>
+        <input name="name" type="text" id="name"/>
+        <br>
+
+        <label for="balance">surname</label>
+        <input name="balance" type="number" id="balance"/>
+        <br>
+
+        <label for="type">type</label>
+        <input name="type" type="text" id="type"/>
+        <br>
+
+        <input type="submit" value="Add account">
+    </form>
+</section>
+```
+
+С использованием шаблонизатора Thymeleaf
+```Java
+@GetMapping("/add_account")
+public String getAddAccount(@ModelAttribute("newAccount") Account newAccount) {
+    return "accounts/account_add_form";
+}
+
+@PostMapping("/add_account")
+public String postAddedAccount(@ModelAttribute("newAccount") Account newAccount) {
+    accountDAO.addAccount(newAccount);
+    return "redirect:/accounts";
+}
+```
+```SQL
+<section>
+    <form action="#" th:method="POST" th:action="@{/accounts/add_account}" th:object="${newAccount}">
+        <label for="name">Name</label>
+        <input name="name" type="text" th:field="*{name}" id="name"/>
+        <br>
+
+        <label for="balance">surname</label>
+        <input name="balance" type="number" th:field="*{balance}" id="balance"/>
+        <br>
+
+        <label for="type">type</label>
+        <input name="type" type="text" th:field="*{type}" id="type"/>
+        <br>
+
+        <input type="submit" value="Add account">
+    </form>
+</section>
+```
+

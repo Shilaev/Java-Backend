@@ -32,6 +32,11 @@
         </tr>
         </tbody>
     </table>
+
+    <form th:action="@{/accounts/edit_account/{id}(id=${current_account.id})}">
+        <button>edit</button>
+    </form>
+
 </section>
 
 </body>
