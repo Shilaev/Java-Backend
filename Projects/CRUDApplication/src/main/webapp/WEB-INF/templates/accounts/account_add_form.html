@@ -8,7 +8,7 @@
 <body>
 
 <section>
-    <form action="#" th:method="POST" th:action="@{/accounts/add_account}" th:object="${newAccount}">
+    <form th:method="post" th:action="@{/accounts/add_account}" th:object="${newAccount}">
         <label for="name">Name</label>
         <input name="name" type="text" th:field="*{name}" id="name"/>
         <br>

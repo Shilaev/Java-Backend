@@ -18,12 +18,12 @@ public class AccountsController {
     }
 
     @GetMapping()
-    public String index(Model model) {
+    public String getAllAccountsTable(Model model) {
         model.addAttribute("all_accounts", accountDAO.getAccounts());
-        return "accounts/index";
+        return "accounts/all_accounts_table";
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("account/{id}")
     public String getAccount(@PathVariable("id") int id, Model model) {
         model.addAttribute("current_account", accountDAO.getAccount(id));
         return "accounts/account";
@@ -37,16 +37,27 @@ public class AccountsController {
     @PostMapping("/add_account")
     public String postAddedAccount(@ModelAttribute("newAccount") Account newAccount) {
         accountDAO.addAccount(newAccount);
-        return "redirect:/accounts";
+        return "redirect:/accounts/account/" + newAccount.getId();
     }
 
     @GetMapping("/edit_account/{id}")
-    public String getEditAccont(@PathVariable("id") int id, Model model) {
-        model.addAttribute("current_account", accountDAO.getAccount(id));
-        return "accounts/edit_account";
+    public String getEditAccount(@PathVariable("id") int id,
+                                 @ModelAttribute("editAccount") Account editAccount) {
+        return "accounts/account_edit_form";
     }
 
-//    @PatchMapping
+    @PatchMapping("/edit_account/{id}")
+    public String patchAccount(
+            @PathVariable("id") int id,
+            @ModelAttribute("editAccount") Account editAccount) {
+        accountDAO.update(accountDAO.getAccount(id), editAccount);
 
-//    @DeleteMapping
+        return "redirect:/accounts/account/" + id;
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteAccount(@PathVariable("id") int id) {
+        accountDAO.delete(id);
+        return "redirect:/accounts";
+    }
 }

@@ -7,9 +7,20 @@
 </head>
 <body>
 <section>
-    <form th:method="patch" th:action="@{edit_account}">
-        <input th:type="text"/>
-        <input th:type="submit" th:value="OK"/>
+    <h1 th:text="${editAccount.id}">id</h1>
+    <form id="patchForm" th:method="patch" th:action="@{/accounts/edit_account/{id}(id=${editAccount.id})}"
+          th:object="${editAccount}">
+
+        <label for="name">new name: </label>
+        <input id="name" th:type="text" th:field="*{name}"><br>
+
+        <label for="balance">new balance:</label>
+        <input id="balance" th:type="numbers" th:field="*{balance}"><br>
+
+        <label for="type">new type:</label>
+        <input id="type" th:type="text" th:field="*{type}"><br>
+
+        <button form="patchForm" th:type="submit">OK</button>
     </form>
 </section>
 </body>

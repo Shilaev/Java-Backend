@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Accounts</title>
-    <link rel="stylesheet"  href="/resources/accounts/css/standard_table.css" content-type:="text/css">
+    <link rel="stylesheet" href="/resources/accounts/css/standard_table.css" content-type:="text/css">
     <script content-type:="text/javascript" src="/resources/accounts/js/index.js"></script>
 </head>
 <body>
@@ -35,11 +35,16 @@
                 <a th:href="@{/accounts/account/{id}(id=${account.id})}" th:text="${account.type}">type</a>
             </td>
             <td>
-                <a th:href="@{/accounts/account/{id}(id=${account.id})}" th:text="${account.balance}">balance</a>
+                <a th:href="@{/accounts/account/{id}(id=${account.id})}"
+                   th:text="${account.balance}">balance</a>
             </td>
         </tr>
         </tbody>
     </table>
+
+    <form th:action="@{/accounts/add_account/}">
+        <button>add</button>
+    </form>
 </section>
 
 

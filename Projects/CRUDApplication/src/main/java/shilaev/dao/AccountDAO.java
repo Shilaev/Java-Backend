@@ -51,4 +51,14 @@ public class AccountDAO {
         newAccount.setId(++ID);
         accounts.add(newAccount);
     }
+
+    public void delete(int id) {
+        accounts.removeIf(p -> p.getId() == id);
+    }
+
+    public void update(Account oldAcc, Account newAcc) {
+        oldAcc.setName(newAcc.getName());
+        oldAcc.setBalance(newAcc.getBalance());
+        oldAcc.setType(newAcc.getType());
+    }
 }

@@ -10,6 +10,21 @@
 <body>
 
 <section>
+    <a th:href="@{/accounts/edit_account/{id}(id=${current_account.id})}">
+        <button>edit</button>
+    </a>
+
+    <a th:href="@{/accounts}">
+        <button>to all accounts</button>
+    </a>
+
+    <form id="deleteForm" th:method="delete" th:action="@{/accounts/delete/{id}(id=${current_account.id})}">
+        <button type="submit" form="deleteForm">delete</button>
+    </form>
+
+</section>
+
+<section>
     <table>
         <caption>
             <h1 th:text="'account:' + ${current_account.name}">account.name</h1>
@@ -32,11 +47,6 @@
         </tr>
         </tbody>
     </table>
-
-    <form th:action="@{/accounts/edit_account/{id}(id=${current_account.id})}">
-        <button>edit</button>
-    </form>
-
 </section>
 
 </body>
