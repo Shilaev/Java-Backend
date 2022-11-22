@@ -2,10 +2,9 @@ package shilaev.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import shilaev.dao.AccountDAO;
+import shilaev.models.Account;
 
 @Controller
 @RequestMapping("/accounts")
@@ -18,7 +17,7 @@ public class AccountsController {
         this.accountDAO = accountDAO;
     }
 
-    @GetMapping("/")
+    @GetMapping()
     public String index(Model model) {
         model.addAttribute("all_accounts", accountDAO.getAccounts());
         return "accounts/index";
@@ -28,5 +27,16 @@ public class AccountsController {
     public String getAccount(@PathVariable("id") int id, Model model) {
         model.addAttribute("current_account", accountDAO.getAccount(id));
         return "accounts/account";
+    }
+
+    @GetMapping("/add_account")
+    public String getAddAccount(@ModelAttribute("newAccount") Account newAccount) {
+        return "accounts/account_add_form";
+    }
+
+    @PostMapping("/add_account")
+    public String postAddedAccount(@ModelAttribute("newAccount") Account newAccount) {
+        accountDAO.addAccount(newAccount);
+        return "redirect:/accounts";
     }
 }

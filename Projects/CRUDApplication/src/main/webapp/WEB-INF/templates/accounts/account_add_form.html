@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:content-type="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+
+<section>
+    <form action="#" th:method="POST" th:action="@{/accounts/add_account}" th:object="${newAccount}">
+        <label for="name">Name</label>
+        <input name="name" type="text" th:field="*{name}" id="name"/>
+        <br>
+
+        <label for="balance">surname</label>
+        <input name="balance" type="number" th:field="*{balance}" id="balance"/>
+        <br>
+
+        <label for="type">type</label>
+        <input name="type" type="text" th:field="*{type}" id="type"/>
+        <br>
+
+        <input type="submit" value="Add account">
+    </form>
+</section>
 </body>
 </html>
