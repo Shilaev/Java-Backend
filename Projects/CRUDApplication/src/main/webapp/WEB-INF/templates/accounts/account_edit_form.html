@@ -12,13 +12,19 @@
           th:object="${editAccount}">
 
         <label for="name">new name: </label>
-        <input id="name" th:type="text" th:field="*{name}"><br>
+        <input id="name" th:type="text" th:field="*{name}">
+        <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+        <br>
 
         <label for="balance">new balance:</label>
-        <input id="balance" th:type="numbers" th:field="*{balance}"><br>
+        <input id="balance" th:type="number" th:field="*{balance}">
+        <div th:if="${#fields.hasErrors('balance')}" th:errors="*{balance}"></div>
+        <br>
 
         <label for="type">new type:</label>
-        <input id="type" th:type="text" th:field="*{type}"><br>
+        <input id="type" th:type="text" th:field="*{type}">
+        <div th:if="${#fields.hasErrors('type')}" th:errors="*{type}"></div>
+        <br>
 
         <button form="patchForm" th:type="submit">OK</button>
     </form>

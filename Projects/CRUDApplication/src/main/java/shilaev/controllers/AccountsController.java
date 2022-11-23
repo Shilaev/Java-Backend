@@ -2,9 +2,12 @@ package shilaev.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import shilaev.dao.AccountDAO;
 import shilaev.models.Account;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/accounts")
@@ -35,7 +38,11 @@ public class AccountsController {
     }
 
     @PostMapping("/add_account")
-    public String postAddedAccount(@ModelAttribute("newAccount") Account newAccount) {
+    public String postAddedAccount(@ModelAttribute("newAccount") @Valid Account newAccount,
+                                   BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "accounts/account_add_form";
+        }
         accountDAO.addAccount(newAccount);
         return "redirect:/accounts/account/" + newAccount.getId();
     }
@@ -49,7 +56,10 @@ public class AccountsController {
     @PatchMapping("/edit_account/{id}")
     public String patchAccount(
             @PathVariable("id") int id,
-            @ModelAttribute("editAccount") Account editAccount) {
+            @ModelAttribute("editAccount") @Valid Account editAccount, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "accounts/account_edit_form";
+        }
         accountDAO.update(accountDAO.getAccount(id), editAccount);
 
         return "redirect:/accounts/account/" + id;
