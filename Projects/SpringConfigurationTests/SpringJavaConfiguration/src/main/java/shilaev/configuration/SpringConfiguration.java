@@ -18,7 +18,7 @@ import shilaev.printer.Printer;
 @Configuration
 @ComponentScan("shilaev")
 @PropertySource("classpath:/application.properties")
-@EnableWebMvc
+//@EnableWebMvc
 public class SpringConfiguration implements WebMvcConfigurer {
 
     private final ApplicationContext applicationContext;
@@ -51,6 +51,7 @@ public class SpringConfiguration implements WebMvcConfigurer {
         resolver.setTemplateEngine(templateEngine());
         registry.viewResolver(resolver);
     }
+
 
     @Bean("messageMaker.helloPrinter")
     @Autowired

@@ -1,64 +1,53 @@
 package shilaev.dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+import shilaev.configuration.SpringConfiguration;
 import shilaev.models.Account;
 
-import java.util.LinkedList;
 import java.util.List;
 
 @Component
 public class AccountDAO {
-    private static int ID = 0;
-    private final List<Account> accounts;
 
-    {
-        accounts = new LinkedList<>();
-        accounts.add(new Account(
-                ++ID,
-                "4828629057700799",
-                423591f,
-                "Visa"
-        ));
-        accounts.add(new Account(
-                ++ID,
-                "4975390938505649",
-                179626f,
-                "MasterCard"
-        ));
-        accounts.add(new Account(
-                ++ID,
-                "5050433404730823",
-                717.677413f,
-                "Mir"
-        ));
-        accounts.add(new Account(
-                ++ID,
-                "5053454404730467",
-                1717.677413f,
-                "Visa"
-        ));
+    private final JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    public AccountDAO(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
 
     public List<Account> getAccounts() {
-        return accounts;
+        return jdbcTemplate.query("SELECT * FROM accounts", new AccountMapper());
     }
 
     public Account getAccount(int id) {
-        return accounts.stream().filter(account -> account.getId() == id).findFirst().orElse(null);
+        String query = "SELECT * FROM accounts where id = ?";
+        return jdbcTemplate.queryForObject(query, new AccountMapper(), id);
     }
 
     public void addAccount(Account newAccount) {
-        newAccount.setId(++ID);
-        accounts.add(newAccount);
+        String query = "INSERT INTO accounts (name, balance, type)\n" +
+                "VALUES (?, ?, ?)";
+        jdbcTemplate.update(query,
+                newAccount.getName(),
+                newAccount.getBalance(),
+                newAccount.getType());
     }
 
     public void delete(int id) {
-        accounts.removeIf(p -> p.getId() == id);
+        String query = "DELETE FROM accounts WHERE accounts.id = ?";
+        jdbcTemplate.update(query, id);
     }
 
-    public void update(Account oldAcc, Account newAcc) {
-        oldAcc.setName(newAcc.getName());
-        oldAcc.setBalance(newAcc.getBalance());
-        oldAcc.setType(newAcc.getType());
+    public void update(int id, Account newAcc) {
+        String query = "update accounts\n" +
+                "set name = ?,\n" +
+                "    balance = ?,\n" +
+                "    type = ?\n" +
+                "where id = ?;";
+        jdbcTemplate.update(query, newAcc.getName(), newAcc.getBalance(), newAcc.getType(), id);
     }
 }

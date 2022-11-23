@@ -82,3 +82,4 @@ nb-configuration.xml
 ##############################
 .DS_Store
 /Books/Начальный этап/Java_Polnoe_rukovodstvo_-_Gerbert_Shildt_10-e_izdanie.pdf
+/Projects/CRUDApplication/src/main/webapp/resources/database.properties

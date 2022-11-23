@@ -17,7 +17,7 @@
         <br>
 
         <label for="balance">new balance:</label>
-        <input id="balance" th:type="number" th:field="*{balance}">
+        <input id="balance" step="0.01"  th:type="number" th:field="*{balance}">
         <div th:if="${#fields.hasErrors('balance')}" th:errors="*{balance}"></div>
         <br>
 

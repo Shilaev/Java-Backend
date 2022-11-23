@@ -44,7 +44,7 @@ public class AccountsController {
             return "accounts/account_add_form";
         }
         accountDAO.addAccount(newAccount);
-        return "redirect:/accounts/account/" + newAccount.getId();
+        return "redirect:/accounts";
     }
 
     @GetMapping("/edit_account/{id}")
@@ -60,7 +60,7 @@ public class AccountsController {
         if (bindingResult.hasErrors()) {
             return "accounts/account_edit_form";
         }
-        accountDAO.update(accountDAO.getAccount(id), editAccount);
+        accountDAO.update(id, editAccount);
 
         return "redirect:/accounts/account/" + id;
     }
