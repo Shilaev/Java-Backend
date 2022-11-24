@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import shilaev.dao.AccountDAO;
 import shilaev.models.Account;
 
@@ -62,12 +63,30 @@ public class AccountsController {
         }
         accountDAO.update(id, editAccount);
 
-        return "redirect:/accounts/account/" + id;
+        return "redirect:/accounts";
     }
 
     @DeleteMapping("/delete/{id}")
     public String deleteAccount(@PathVariable("id") int id) {
         accountDAO.delete(id);
+        return "redirect:/accounts";
+    }
+
+    @GetMapping("/batchAddAccounts")
+    public String batchAddAccounts() {
+        accountDAO.batchAddAccounts();
+        return "redirect:/accounts";
+    }
+
+    @GetMapping("/batchUpdateAccounts")
+    public String batchUpdateAccounts() {
+        accountDAO.batchUpdateAccounts();
+        return "redirect:/accounts";
+    }
+
+    @GetMapping("/batchDeleteAccounts")
+    public String batchDeleteAccounts() {
+        accountDAO.batchDeleteAccounts();
         return "redirect:/accounts";
     }
 }

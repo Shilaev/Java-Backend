@@ -1,11 +1,14 @@
 package shilaev.models;
 
+import org.hibernate.validator.constraints.UniqueElements;
+
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class Account {
+    @Min(value = 0, message = "can't be less then 0")
     @NotNull(message = "can't be empty")
     private int id;
 

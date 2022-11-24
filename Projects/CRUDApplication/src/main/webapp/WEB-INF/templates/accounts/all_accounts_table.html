@@ -9,6 +9,22 @@
 </head>
 <body>
 
+<form th:action="@{/accounts/add_account/}">
+    <button>add</button>
+</form>
+
+<form th:action="@{/accounts/batchAddAccounts/}">
+    <button>add 10_000_000 accounts</button>
+</form>
+
+<form th:action="@{/accounts/batchUpdateAccounts/}">
+    <button>patch 10_000_000 accounts</button>
+</form>
+
+<form th:action="@{/accounts/batchDeleteAccounts/}">
+    <button>delete 10_000_000 accounts</button>
+</form>
+
 <section>
     <table>
         <caption>
@@ -42,9 +58,8 @@
         </tbody>
     </table>
 
-    <form th:action="@{/accounts/add_account/}">
-        <button>add</button>
-    </form>
+
+
 </section>
 
 

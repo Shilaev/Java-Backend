@@ -8,13 +8,17 @@
 
 <section>
     <form th:method="post" th:action="@{/accounts/add_account}" th:object="${newAccount}">
+        <label for="id" th:name="id"></label>
+        <input type="number" th:field="*{id}" id="id">
+        <div th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></div>
+
         <label for="name">Name</label>
-        <input type="text"  th:field="*{name}" id="name"/>
+        <input type="text" th:field="*{name}" id="name"/>
         <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
         <br>
 
         <label for="balance">balance</label>
-        <input th:type="number" step="0.01"  th:field="*{balance}" id="balance"/>
+        <input th:type="number" step="0.01" th:field="*{balance}" id="balance"/>
         <div th:if="${#fields.hasErrors('balance')}" th:errors="*{balance}"></div>
         <br>
 
