@@ -635,3 +635,11 @@ set default nextval('public.accounts_balance_seq'::regclass);
 А вот така удалить
 alter table accounts alter column id drop default;
 drop sequence accounts_id_seq;
+
+# Каскадирование
+<img src="./images/cascade_example.png" alt="alt text" width="500"/>
+user_id int REFERENCES Person (user_id) ON DELETE [CASCADE | SET NULL | RESTRICT]
+
+Cascade - при удалении, все связанные данные удалятся.
+Set Null - при удалении, данные не удалятся, а просто значение внешнего ключа обнулится (NULL)
+Restrict - при удалении, выдаст ошибку. (по умолчанию)
