@@ -10,19 +10,22 @@
 <body>
 
 <form th:action="@{/accounts/add_account/}">
-    <button>add</button>
+    <button>add account</button>
 </form>
 
 <form th:action="@{/accounts/batchAddAccounts/}">
-    <button>add 10_000_000 accounts</button>
+    <button>add random accounts</button>
 </form>
 
-<form th:action="@{/accounts/batchUpdateAccounts/}">
-    <button>patch 10_000_000 accounts</button>
-</form>
+<form id="deleteMultiplyAccounts" th:method="delete" action="/accounts/delete">
+    <label>Delete multiply accounts</label>
+    <label for="fromId">from id</label>
+    <input name="fromId" type="number" id="fromId"/>
 
-<form th:action="@{/accounts/batchDeleteAccounts/}">
-    <button>delete 10_000_000 accounts</button>
+    <label for="toId">to id</label>
+    <input name="toId" type="number" id="toId"/>
+
+    <button type="submit" form="deleteMultiplyAccounts">delete</button>
 </form>
 
 <section>
@@ -57,7 +60,6 @@
         </tr>
         </tbody>
     </table>
-
 
 
 </section>

@@ -72,6 +72,13 @@ public class AccountsController {
         return "redirect:/accounts";
     }
 
+    @DeleteMapping("/delete")
+    public String deleteMultiplyAccounts(@RequestParam("fromId") int fromId,
+                                         @RequestParam("toId") int toId) {
+        accountDAO.delete(fromId, toId);
+        return "redirect:/accounts";
+    }
+
     @GetMapping("/batchAddAccounts")
     public String batchAddAccounts() {
         accountDAO.batchAddAccounts();
@@ -81,12 +88,6 @@ public class AccountsController {
     @GetMapping("/batchUpdateAccounts")
     public String batchUpdateAccounts() {
         accountDAO.batchUpdateAccounts();
-        return "redirect:/accounts";
-    }
-
-    @GetMapping("/batchDeleteAccounts")
-    public String batchDeleteAccounts() {
-        accountDAO.batchDeleteAccounts();
         return "redirect:/accounts";
     }
 }

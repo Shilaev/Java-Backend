@@ -16,11 +16,7 @@ import java.util.Random;
 
 @Component
 public class AccountDAO {
-
     private final JdbcTemplate jdbcTemplate;
-    //////////////////////////////////
-    /////// BATCH UPDATE TEST ////////
-    //////////////////////////////////
     List<Account> accountsList = get_100_RandomAccounts();
 
     @Autowired
@@ -32,40 +28,50 @@ public class AccountDAO {
         return jdbcTemplate.query("SELECT * FROM accounts", new AccountMapper());
     }
 
-    public Account getAccount(int id) {
-        String query = "SELECT * FROM accounts where id = ?";
-        return jdbcTemplate.queryForObject(query, new AccountMapper(), id);
-    }
-
+    // CREATE
     public void addAccount(Account newAccount) {
-        String query = "INSERT INTO accounts (id, name, balance, type)\n" +
-                "VALUES (?, ?, ?, ?)";
+        String query = "INSERT INTO accounts (name, balance, type) VALUES (?, ?, ?)";
         jdbcTemplate.update(query,
-                newAccount.getId(),
                 newAccount.getName(),
                 newAccount.getBalance(),
                 newAccount.getType());
     }
 
+    // READE
+    public Account getAccount(int id) {
+        String query = "SELECT * FROM accounts where id = ?";
+        return jdbcTemplate.queryForObject(query, new AccountMapper(), id);
+    }
+
+    // UPDATE
+    public void update(int id, Account newAcc) {
+        String query = "update accounts set name = ?, balance = ?, type = ? where id = ?";
+        jdbcTemplate.update(query, newAcc.getName(), newAcc.getBalance(), newAcc.getType(), id);
+    }
+
+    // DELETE
     public void delete(int id) {
-        String query = "DELETE FROM accounts WHERE accounts.id = ?";
+        String query = "delete from accounts where id = ?";
         jdbcTemplate.update(query, id);
     }
 
-    public void update(int id, Account newAcc) {
-        String query = "update accounts set id = ?, name = ?, balance = ?, type = ? where id = ?";
-        jdbcTemplate.update(query, newAcc.getId(), newAcc.getName(), newAcc.getBalance(), newAcc.getType(), id);
+    // MULTIPLY DELETE
+    public void delete(int fromId, int toId) {
+        String query = "delete from accounts where id between ? and ?";
+        jdbcTemplate.update(query, fromId, toId);
     }
 
+    //////////////////////////////////
+    /////// BATCH UPDATE TEST ////////
+    //////////////////////////////////
     public void batchAddAccounts() {
-        String insertAccounts = "INSERT INTO accounts (id, name, balance, type) VALUES (?, ?, ?, ?)";
+        String insertAccounts = "INSERT INTO accounts (name, balance, type) VALUES (?, ?, ?)";
         jdbcTemplate.batchUpdate(insertAccounts, new BatchPreparedStatementSetter() {
             @Override
             public void setValues(PreparedStatement ps, int i) throws SQLException {
-                ps.setInt(1, accountsList.get(i).getId());
-                ps.setString(2, "Unnamed");
-                ps.setFloat(3, 0.0f);
-                ps.setString(4, "No_Type");
+                ps.setString(1, "Unnamed");
+                ps.setFloat(2, 0.0f);
+                ps.setString(3, "No_Type");
             }
 
             @Override
@@ -76,6 +82,7 @@ public class AccountDAO {
     }
 
     public void batchUpdateAccounts() {
+
         String patchAccounts = "update accounts " +
                 "set name = ?, balance = ?, type = ?" +
                 "where id = ?";
@@ -94,17 +101,6 @@ public class AccountDAO {
             }
         });
     }
-
-    public void batchDeleteAccounts() {
-        String deleteQuery = "DELETE FROM accounts WHERE accounts.id = ?";
-        int[] argTypes = {Types.INTEGER};
-        List<Object[]> args = new LinkedList<>();
-        for (Account account : accountsList) {
-            args.add(new Object[]{account.getId()});
-        }
-        jdbcTemplate.batchUpdate(deleteQuery, args, argTypes);
-    }
-
 
     protected List<Account> get_100_RandomAccounts() {
         List<Account> patchedAccounts = new LinkedList<>();
@@ -125,8 +121,7 @@ public class AccountDAO {
 
         Random rand = new Random();
 
-        float finalX = rand.nextFloat() * (maxX - minX) + minX;
-        return finalX;
+        return (maxX - minX) * rand.nextFloat() + minX;
     }
 
     protected String getRandomString() {
