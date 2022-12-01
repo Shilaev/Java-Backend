@@ -643,3 +643,8 @@ user_id int REFERENCES Person (user_id) ON DELETE [CASCADE | SET NULL | RESTRICT
 Cascade - при удалении, все связанные данные удалятся.
 Set Null - при удалении, данные не удалятся, а просто значение внешнего ключа обнулится (NULL)
 Restrict - при удалении, выдаст ошибку. (по умолчанию)
+
+# Check
+Ограничение поля.
+например
+age int check (age > 0) // не может быть меньше 0.

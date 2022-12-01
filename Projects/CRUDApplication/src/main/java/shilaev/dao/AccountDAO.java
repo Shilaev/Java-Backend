@@ -2,16 +2,17 @@ package shilaev.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import shilaev.models.Account;
 
-import java.nio.charset.StandardCharsets;
+import javax.validation.constraints.Pattern;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Types;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 @Component
@@ -25,7 +26,7 @@ public class AccountDAO {
     }
 
     public List<Account> getAccounts() {
-        return jdbcTemplate.query("SELECT * FROM accounts", new AccountMapper());
+        return jdbcTemplate.query("SELECT * FROM accounts", new BeanPropertyRowMapper<>(Account.class));
     }
 
     // CREATE
@@ -41,6 +42,11 @@ public class AccountDAO {
     public Account getAccount(int id) {
         String query = "SELECT * FROM accounts where id = ?";
         return jdbcTemplate.queryForObject(query, new AccountMapper(), id);
+    }
+
+    public Optional<Account> getAccount(String name) {
+        String query = "SELECT * FROM accounts where name = ?";
+        return jdbcTemplate.query(query, new AccountMapper(), name).stream().findAny();
     }
 
     // UPDATE

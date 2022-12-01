@@ -1,12 +1,13 @@
 package shilaev.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import shilaev.dao.AccountDAO;
 import shilaev.models.Account;
+import shilaev.util.AccountValidator;
 
 import javax.validation.Valid;
 
@@ -17,8 +18,12 @@ public class AccountsController {
     final
     AccountDAO accountDAO;
 
-    public AccountsController(AccountDAO accountDAO) {
+    final AccountValidator accountValidator;
+
+    @Autowired
+    public AccountsController(AccountDAO accountDAO, AccountValidator accountValidator) {
         this.accountDAO = accountDAO;
+        this.accountValidator = accountValidator;
     }
 
     @GetMapping()
@@ -41,6 +46,7 @@ public class AccountsController {
     @PostMapping("/add_account")
     public String postAddedAccount(@ModelAttribute("newAccount") @Valid Account newAccount,
                                    BindingResult bindingResult) {
+        accountValidator.validate(newAccount, bindingResult);
         if (bindingResult.hasErrors()) {
             return "accounts/account_add_form";
         }
@@ -58,6 +64,7 @@ public class AccountsController {
     public String patchAccount(
             @PathVariable("id") int id,
             @ModelAttribute("editAccount") @Valid Account editAccount, BindingResult bindingResult) {
+        accountValidator.validate(editAccount, bindingResult);
         if (bindingResult.hasErrors()) {
             return "accounts/account_edit_form";
         }
