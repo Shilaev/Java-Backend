@@ -277,19 +277,19 @@ public String getAddAccount(Model model,
         return "accounts/account_add_form";
     }
 
-    @PostMapping("/add_account")
-    public String postAddedAccount(Model model,
-                                   @RequestParam() String name,
-                                   @RequestParam() Float balance,
-                                   @RequestParam() String type) {
-        Account newAccount = new Account();
-        newAccount.setName(name);
-        newAccount.setBalance(balance);
-        newAccount.setType(type);
-        accountDAO.addAccount(newAccount);
+@PostMapping("/add_account")
+public String postAddedAccount(Model model,
+                                @RequestParam() String name,
+                                @RequestParam() Float balance,
+                                @RequestParam() String type) {
+    Account newAccount = new Account();
+    newAccount.setName(name);
+    newAccount.setBalance(balance);
+    newAccount.setType(type);
+    accountDAO.addAccount(newAccount);
 
-        return "redirect:/accounts";
-    }
+    return "redirect:/accounts";
+}
 ```
 ```SQL
 <section>

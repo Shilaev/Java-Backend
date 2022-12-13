@@ -1,9 +1,11 @@
 package CodeWars;
 
 import CodeWars.VowelCounter;
-import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+
+import static org.testng.AssertJUnit.assertEquals;
+
 
 public class VowelCounterTest {
     @Test
