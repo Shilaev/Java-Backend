@@ -703,10 +703,10 @@ __Сервлеты в Spring__
 3. Каковы различные модули Spring Framework?
 4. Что такое файл конфигурации для Spring?
 5. Каковы различные компоненты приложения Spring?
-6. Что такое внедрение зависимостей?
-7. Что такое Spring IoK контейнер?
-8. Типы IoK?
-9. Что такое Аспектно-ориентированное программирование (АОП)?
+6.  Что такое внедрение зависимостей?
+7.  Что такое Spring IoK контейнер?
+8.  Типы IoK?
+9.  Что такое Аспектно-ориентированное программирование (АОП)?
 10. Что такое Spring Bean?
 11. Каковы общие реализации ApplicationContext?
 12. В чем разница между BeanFactory и ApplicationContext?
@@ -748,7 +748,36 @@ __Сервлеты в Spring__
 48. Что такое JDBCTamplate?
 
 ## Алгоритмы и структуры данных
-1. Что такое нотация О-большое?
+1. **Что такое Алгоритмы?**
+   Набор инструкций, описывающий порядок действий исполнителя для решения задач.
+
+2. **Виды алгоритмов?**
+   **Вычислительные** - Преобразуют входные данные в выходные данные. Реализуют функции.
+   **Управляющие** - Генерируют необходимое управляющее воздействие в ответ на какое-то воздействие, либо в определенный момент времени.
+
+3. **Критерии алгоритма?**
+   **Конечность** - Алгоритм должен заканчиваться за какое-то фиксированное количество шагов. 
+   Для выполнения каждого шага исопльзуется конечный отрезок времени.
+
+   **Определенность (детерминированность)** - Алгоритм должен выдавать один и тот же результат для одних и тех же выходных данных.
+   Есть вероятностные алгоритмы, это когда алгоритм содержит внутри себя стохастическую переменную, но если заменить ее на статическую,
+   то результат опять будет один и тот же для одних и тех же данных.
+
+   **Понятность исполнителю** - Инструкции должны быть понятны той системе, которой мы их даем.
+
+   **Универсальнось** - Алгоритм должен работать с разными наборами входных данных.
+
+   **Результативность** - Алгоритм должен закончиться с каким-то результатом. Либо сообщить, что достижение резулььтата невозможно.
+
+4. **Арифметические операции**.
+    Арифметика - раздел в математике, изучающий числа их отношения и свойства. Предметом Арифметики является понятие числа и его свойства.
+    (Натуральные, целые, рациональные, вещественные, комплексные) - виды числе.
+    В арифметике определены следующие операции.
+    Сложение / Вычитание
+    Умножение / Деление
+    Возведение в степень / Извлечение корня
+
+5. **Что такое нотация О-большое?**
 __Кратко__
 Время алгоритмов растет с разной скоростью. Нотация O-большое описывает скорость алгоритма, в зависимости от входных данных.
 Как сильно увеличится время выполнения алгоритма при увеличении входных данных.
@@ -830,7 +859,7 @@ void searchDublicates(List<Integer> nums){
 }
 ```
 
-2. Бинарный поиск
+2. **Бинарный поиск**
 
 __Кратко__
 Скорость O(log n).
@@ -868,7 +897,7 @@ __Подробно__
     }
 ```
 
-3. Сортировка с выбором
+3. **Сортировка с выбором**
 // Отвечено
 4. Массив
 // 
@@ -884,108 +913,3 @@ __Подробно__
 14. Исключение дубликатов хеш таблицы
 15. Использование хеш-таблиц для поиска.
 16. Поиск в ширину. 
-
-## Практические задания
-1. Matrix Diagonal Sum (задача с Leetcode).
-2. Move Zeroes (задача с Leetcode).
-3. Дан List <String> names. Удалите первую букву из каждого имени и верните отсортированный список.
-4. Перевернуть массив.
-5. Проверить, является ли строка палиндромом.
-6. Написать простой алгоритм сортировки (Bubble, Selection или Shuttle). Как его можно улучшить?
-7. Напишите алгоритм (последовательность действий) составления литерала типа int и литералов типа byte. Объясните, что происходит с памятью.
-
-## Array
-1. Two Sum
-2. Best Time to Buy and Sell Stock
-3. Contains Duplicate
-4. Product of Array Except Self
-5. Maximum Subarray
-6. Maximum Product Subarray
-7. Find Minimum in Rotated Sorted Array
-8. Search in Rotated Sorted Array
-9. 3 Sum
-10. Container With Most Water
-
-## Binary
-1. Sum of Two Integers
-2. Number of 1 Bits
-3. Counting Bits
-4. Missing Number
-5. Reverse Bits
-
-## Dynamic Programming
-1. Climbing Stairs
-2. Coin Change
-3. Longest Increasing Subsequence
-4. Longest Common Subsequence
-5. Word Break Problem
-6. Combination Sum
-7. House Robber
-8. House Robber II
-9. Decode Ways
-10. Unique Paths
-11. Jump Game
-
-## Graph
-1. Clone Graph
-2. Course Schedule
-3. Pacific Atlantic Water Flow
-4. Number of Islands
-5. Longest Consecutive Sequence
-6. Alien Dictionary (Leetcode Premium)
-7. Graph Valid Tree (Leetcode Premium)
-8. Number of Connected Components in an Undirected Graph (Leetcode Premium)
-
-## Interval
-1. Insert Interval
-2. Merge Intervals
-3. Non-overlapping Intervals
-4. Meeting Rooms (Leetcode Premium)
-5. Meeting Rooms II (Leetcode Premium)
-
-## Linked List
-1. Reverse a Linked List
-2. Detect Cycle in a Linked List
-3. Merge Two Sorted Lists
-4. Merge K Sorted Lists
-5. Remove Nth Node From End Of List
-6. Reorder List
-
-## Matrix
-1. Set Matrix Zeroes
-2. Spiral Matrix
-3. Rotate Image
-4. Word Search
-
-## String
-1. Longest Substring Without Repeating Characters
-2. Longest Repeating Character Replacement
-3. Minimum Window Substring
-4. Valid Anagram
-5. Group Anagrams
-6. Valid Parentheses
-7. Valid Palindrome
-8. Longest Palindromic Substring
-9. Palindromic Substrings
-10. Encode and Decode Strings (Leetcode Premium)
-
-## Tree
-1. Maximum Depth of Binary Tree
-2. Same Tree
-3. Invert/Flip Binary Tree
-4. Binary Tree Maximum Path Sum
-5. Binary Tree Level Order Traversal
-6. Serialize and Deserialize Binary Tree
-7. Subtree of Another Tree
-8. Construct Binary Tree from Preorder and Inorder Traversal
-9. Validate Binary Search Tree
-10. Kth Smallest Element in a BST
-11. Lowest Common Ancestor of BST
-12. Implement Trie (Prefix Tree)
-13. Add and Search Word
-14. Word Search II
-
-## Heap
-1. Merge K Sorted Lists
-2. Top K Frequent Elements
-3. Find Median from Data Stream
