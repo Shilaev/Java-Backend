@@ -2,6 +2,7 @@ package CodeWars;
 
 public class SquareEveryDigit {
     public static void main(String[] args) {
+
     }
 
     public String squareDigits(int n) {
