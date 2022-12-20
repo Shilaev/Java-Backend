@@ -16,7 +16,7 @@ public class ValidParentheses {
 
         for (char currentChar : lineForCheck) {
             if (!brackets.contains(currentChar)) continue;
-            
+
             if (currentChar == '(') charList.add('(');
             else if (currentChar == '{') charList.add('{');
             else if (currentChar == '[') charList.add('[');
