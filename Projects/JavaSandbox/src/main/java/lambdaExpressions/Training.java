@@ -1,2 +1,4 @@
-package lambdaExpressions;public class Training {
+package lambdaExpressions;
+
+public class Training {
 }
