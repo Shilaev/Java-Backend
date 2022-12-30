@@ -7,9 +7,9 @@ import java.util.List;
 import java.util.Random;
 
 
-public class SimpleNumbers {
+public class PrimeNumbers {
 
-    int mPower(int x, int e, int m) {
+    static int mPower(int x, int e, int m) {
         int res = 1;
 
         while (e > 0) {
@@ -26,23 +26,17 @@ public class SimpleNumbers {
 
     boolean isPrime(int n) {
         int k = 100;
-        if (n % 2 == 0 && n != 2) {
-            return false;
-        }
-
-        if (n <= 3) {
-            return true;
-        }
-
+        if (n % 2 == 0 && n != 2) return false;
+        if (n <= 3) return true;
         while (k > 0) {
             int a = (int) (Math.random() * (n - 3)) + 2;
-            if (mPower(a, n - 1, n) != 1) {
-                return false;
-            }
-
+            if (mPower(a, n - 1, n) != 1) return false;
             k--;
         }
-
         return true;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(mPower(2, 3, 4));
     }
 }
