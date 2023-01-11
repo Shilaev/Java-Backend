@@ -1,5 +1,0 @@
-# data source configuration
-hibernate.driver_class=org.postgresql.Driver
-hibernate.connection.url=jdbc:postgresql://localhost:5432/[db_name]
-hibernate.connection.username=
-hibernate.connection.password=
