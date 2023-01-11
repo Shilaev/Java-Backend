@@ -84,3 +84,4 @@ nb-configuration.xml
 /Books/Начальный этап/Java_Polnoe_rukovodstvo_-_Gerbert_Shildt_10-e_izdanie.pdf
 /Projects/CRUDApplication/src/main/webapp/resources/database.properties
 /Projects/HybernateORMApp/src/main/resources/hibernate.properties
+/Projects/HybernateORMApp/src/main/resources/hibernate.configuration/hibernate.properties
