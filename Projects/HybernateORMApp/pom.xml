@@ -18,7 +18,7 @@
         <maven.compiler.target>1.7</maven.compiler.target>
         <postgreSQLJdbcDriver.version>42.5.1</postgreSQLJdbcDriver.version>
         <junit.version>4.13.2</junit.version>
-        <hybernate-orm-core.version>6.1.6.Final</hybernate-orm-core.version>
+        <hibernate-orm-core.version>6.1.6.Final</hibernate-orm-core.version>
     </properties>
 
     <dependencies>
@@ -38,7 +38,7 @@
         <dependency>
             <groupId>org.hibernate.orm</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>${hybernate-orm-core.version}</version>
+            <version>${hibernate-orm-core.version}</version>
         </dependency>
     </dependencies>
 
