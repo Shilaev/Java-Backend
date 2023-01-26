@@ -35,6 +35,15 @@ public class Person {
             org.hibernate.annotations.CascadeType.REMOVE})
     private Passport passport;
 
+    @ManyToMany
+    @JoinTable(
+            name = "person_goal",
+            joinColumns = @JoinColumn(name = "person_id"),
+            inverseJoinColumns = @JoinColumn(name = "goal_id")
+    )
+    @Cascade({org.hibernate.annotations.CascadeType.PERSIST,
+            org.hibernate.annotations.CascadeType.REMOVE})
+    private List<Goal> goals;
 
     public Person(String name, int age) {
         this.name = name;
@@ -56,12 +65,21 @@ public class Person {
         passport.setOwner(this);
     }
 
+    public void addGoal(Goal newGoal) {
+        if (this.goals == null) this.goals = new LinkedList<>();
+
+        this.goals.add(newGoal);
+        newGoal.setPersonList(List.of(this));
+    }
+
     @Override
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", items=" + items +
                 ", passport=" + passport +
+                ", goals=" + goals +
                 '}';
     }
 }
