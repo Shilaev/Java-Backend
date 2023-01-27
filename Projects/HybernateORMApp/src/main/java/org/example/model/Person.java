@@ -41,8 +41,7 @@ public class Person {
             joinColumns = @JoinColumn(name = "person_id"),
             inverseJoinColumns = @JoinColumn(name = "goal_id")
     )
-    @Cascade({org.hibernate.annotations.CascadeType.PERSIST,
-            org.hibernate.annotations.CascadeType.REMOVE})
+    @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
     private List<Goal> goals;
 
     public Person(String name, int age) {
