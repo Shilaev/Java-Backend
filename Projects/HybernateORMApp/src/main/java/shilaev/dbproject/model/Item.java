@@ -1,10 +1,9 @@
-package org.example.model;
+package shilaev.dbproject.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 @Entity
 @Setter

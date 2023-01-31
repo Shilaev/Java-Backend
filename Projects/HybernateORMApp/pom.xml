@@ -16,38 +16,98 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
-        <postgreSQLJdbcDriver.version>42.5.1</postgreSQLJdbcDriver.version>
-        <junit.version>4.13.2</junit.version>
-        <hibernate-orm-core.version>6.1.6.Final</hibernate-orm-core.version>
+
+        <!--DEPENDENCIES VERSIONS-->
+        <spring.version>6.0.4</spring.version>
+        <spring.data.jpa.version>3.0.1</spring.data.jpa.version>
+        <postgresql.driver.version>42.5.1</postgresql.driver.version>
+        <hibernate.version>6.1.6.Final</hibernate.version>
+        <hibernate.validator.version>8.0.0.Final</hibernate.validator.version>
+        <junit.jupiter.version>5.9.2</junit.jupiter.version>
         <lombok.version>1.18.24</lombok.version>
     </properties>
 
     <dependencies>
+        <!--SPRING-->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!--SPRING-->
+
+        <!--JPA-->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>${spring.data.jpa.version}</version>
+        </dependency>
+        <!--JPA-->
+
+
+        <!--POSTGRESQL-->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>${postgreSQLJdbcDriver.version}</version>
+            <version>${postgresql.driver.version}</version>
         </dependency>
+        <!--POSTGRESQL-->
 
+        <!--HIBERNATE-->
         <dependency>
             <groupId>org.hibernate.orm</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>${hibernate-orm-core.version}</version>
+            <version>${hibernate.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
-            <scope>provided</scope>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate.validator.version}</version>
         </dependency>
+        <!--HIBERNATE-->
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+
+
     </dependencies>
 
     <build>

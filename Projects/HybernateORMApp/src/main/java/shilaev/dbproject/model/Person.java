@@ -1,4 +1,4 @@
-package org.example.model;
+package shilaev.dbproject.model;
 
 import jakarta.persistence.*;
 import lombok.*;
