@@ -1,17 +1,28 @@
 package ru.shilaev.springrestapi.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import ru.shilaev.springrestapi.models.Person;
+import ru.shilaev.springrestapi.services.PeopleService;
+
+import java.util.List;
 
 @RestController
-@RequestMapping("/api")
-public class MainRestController {
+@RequestMapping("/people/api")
+public class PeopleController {
 
-    @GetMapping("/hello_world")
-    public String sayHello() {
-        return "hello world";
+    private final PeopleService peopleService;
+
+    @Autowired
+    public PeopleController(PeopleService peopleService) {
+        this.peopleService = peopleService;
+    }
+
+    @GetMapping("/all")
+    public List<Person> getAllPeople() {
+        return peopleService.findAll(); // JACKSON converts json automatically
     }
 
 }
