@@ -7,8 +7,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.shilaev.springrestapi.models.Person;
 import ru.shilaev.springrestapi.repositories.PeopleRepository;
+import ru.shilaev.springrestapi.util.person.errors.PersonErrorResponse;
 import ru.shilaev.springrestapi.util.person.errors.PersonNotFoundException;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Supplier;
@@ -40,6 +42,16 @@ public class PeopleService {
     @Transactional
     public void save(Person newPerson) {
         peopleRepository.save(newPerson);
+    }
+
+    public void enrichPerson(Person person) {
+        person.setCreatedAt(LocalDateTime.now());
+        person.setUpdatedAt(LocalDateTime.now());
+        person.setCreatedWho("ADMIN"); // get name from some logic
+    }
+
+    public PersonErrorResponse makeErrorResponse(String message) {
+        return new PersonErrorResponse(message, System.currentTimeMillis());
     }
 
 }

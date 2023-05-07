@@ -14,7 +14,6 @@ import ru.shilaev.springrestapi.util.person.errors.PersonErrorResponse;
 import ru.shilaev.springrestapi.util.person.errors.PersonNotCreatedException;
 import ru.shilaev.springrestapi.util.person.errors.PersonNotFoundException;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -63,28 +62,18 @@ public class PeopleController {
         person.setName(newPersonDTO.getName());
         person.setAge(newPersonDTO.getAge());
 
-        enrichPerson(person);
+        peopleService.enrichPerson(person);
 
         return person;
     }
 
-    private void enrichPerson(Person person) {
-        person.setCreatedAt(LocalDateTime.now());
-        person.setUpdatedAt(LocalDateTime.now());
-        person.setCreatedWho("ADMIN"); // get name from some logic
-    }
-
     @ExceptionHandler
     private ResponseEntity<PersonErrorResponse> handlerException(PersonNotFoundException e) {
-        return new ResponseEntity<>(makeErrorResponse(e.getMessage()), HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(peopleService.makeErrorResponse(e.getMessage()), HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler
     private ResponseEntity<PersonErrorResponse> handlerException(PersonNotCreatedException e) {
-        return new ResponseEntity<>(makeErrorResponse(e.getMessage()), HttpStatus.BAD_REQUEST);
-    }
-
-    private PersonErrorResponse makeErrorResponse(String message) {
-        return new PersonErrorResponse(message, System.currentTimeMillis());
+        return new ResponseEntity<>(peopleService.makeErrorResponse(e.getMessage()), HttpStatus.BAD_REQUEST);
     }
 }
