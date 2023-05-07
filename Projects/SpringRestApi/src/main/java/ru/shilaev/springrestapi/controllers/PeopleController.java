@@ -63,6 +63,16 @@ public class PeopleController {
         return newPerson;
     }
 
+    @ExceptionHandler
+    private ResponseEntity<PersonErrorResponse> handlerException(PersonNotFoundException e) {
+        return new ResponseEntity<>(peopleService.makeErrorResponse(e.getMessage()), HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler
+    private ResponseEntity<PersonErrorResponse> handlerException(PersonNotCreatedException e) {
+        return new ResponseEntity<>(peopleService.makeErrorResponse(e.getMessage()), HttpStatus.BAD_REQUEST);
+    }
+
     private Person convertToPerson(PersonDTO newPersonDTO) {
         Person person = new Person();
         modelMapper.map(newPersonDTO, person);
@@ -75,15 +85,5 @@ public class PeopleController {
         personDTO.setName(person.getName());
         personDTO.setAge(person.getAge());
         return personDTO;
-    }
-
-    @ExceptionHandler
-    private ResponseEntity<PersonErrorResponse> handlerException(PersonNotFoundException e) {
-        return new ResponseEntity<>(peopleService.makeErrorResponse(e.getMessage()), HttpStatus.NOT_FOUND);
-    }
-
-    @ExceptionHandler
-    private ResponseEntity<PersonErrorResponse> handlerException(PersonNotCreatedException e) {
-        return new ResponseEntity<>(peopleService.makeErrorResponse(e.getMessage()), HttpStatus.BAD_REQUEST);
     }
 }
