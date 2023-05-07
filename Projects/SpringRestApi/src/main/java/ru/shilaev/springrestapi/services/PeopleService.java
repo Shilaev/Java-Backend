@@ -32,8 +32,7 @@ public class PeopleService {
     public Person findById(int id) {
         Optional<Person> foundPerson = peopleRepository.findById(id);
 
-        Supplier<Throwable> exception = () ->
-                new PersonNotFoundException("User with id " + id + " not found!");
+        Supplier<Throwable> exception = () -> new PersonNotFoundException("User with id " + id + " not found!");
 
         return foundPerson.orElseThrow(exception);
     }

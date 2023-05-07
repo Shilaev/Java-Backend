@@ -6,7 +6,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 import ru.shilaev.springrestapi.models.Person;
 import ru.shilaev.springrestapi.services.PeopleService;
@@ -38,17 +37,14 @@ public class PeopleController {
     }
 
     @PostMapping()
-    public Person create(@RequestBody @Valid Person newPerson,
-                         BindingResult bindingResult) {
+    public Person create(@RequestBody @Valid Person newPerson, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
             StringBuilder errorResponse = new StringBuilder();
 
             List<FieldError> errors = bindingResult.getFieldErrors();
             for (FieldError er : errors) {
-                errorResponse.append(er.getField())
-                        .append(" : ").append(er.getDefaultMessage())
-                        .append(";\n");
+                errorResponse.append(er.getField()).append(" : ").append(er.getDefaultMessage()).append(";\n");
             }
 
             throw new PersonNotCreatedException(errorResponse.toString());
@@ -61,18 +57,12 @@ public class PeopleController {
 
     @ExceptionHandler
     private ResponseEntity<PersonErrorResponse> handlerException(PersonNotFoundException e) {
-        return new ResponseEntity<>(
-                MakeErrorResponse(e.getMessage()),
-                HttpStatus.NOT_FOUND
-        );
+        return new ResponseEntity<>(MakeErrorResponse(e.getMessage()), HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler
     private ResponseEntity<PersonErrorResponse> handlerException(PersonNotCreatedException e) {
-        return new ResponseEntity<>(
-                MakeErrorResponse(e.getMessage()),
-                HttpStatus.BAD_REQUEST
-        );
+        return new ResponseEntity<>(MakeErrorResponse(e.getMessage()), HttpStatus.BAD_REQUEST);
     }
 
     private PersonErrorResponse MakeErrorResponse(String message) {
