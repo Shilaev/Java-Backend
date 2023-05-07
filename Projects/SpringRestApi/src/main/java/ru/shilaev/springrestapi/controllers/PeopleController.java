@@ -2,6 +2,7 @@ package ru.shilaev.springrestapi.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.shilaev.springrestapi.models.Person;
@@ -23,6 +24,11 @@ public class PeopleController {
     @GetMapping("/all")
     public List<Person> getAllPeople() {
         return peopleService.findAll(); // JACKSON converts json automatically
+    }
+
+    @GetMapping("/{id}")
+    public Person getPerson(@PathVariable("id") int id){
+        return peopleService.findById(id);
     }
 
 }
