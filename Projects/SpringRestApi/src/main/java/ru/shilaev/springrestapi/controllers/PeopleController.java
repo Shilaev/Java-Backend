@@ -1,6 +1,7 @@
 package ru.shilaev.springrestapi.controllers;
 
 import jakarta.validation.Valid;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -59,8 +60,11 @@ public class PeopleController {
 
     private Person convertToPerson(PersonDTO newPersonDTO) {
         Person person = new Person();
-        person.setName(newPersonDTO.getName());
-        person.setAge(newPersonDTO.getAge());
+//        person.setName(newPersonDTO.getName());
+//        person.setAge(newPersonDTO.getAge());
+
+        ModelMapper modelMapper = new ModelMapper();
+        modelMapper.map(newPersonDTO, person);
 
         peopleService.enrichPerson(person);
 
