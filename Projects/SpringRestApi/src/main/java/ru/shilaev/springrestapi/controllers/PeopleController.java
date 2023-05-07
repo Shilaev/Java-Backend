@@ -16,26 +16,31 @@ import ru.shilaev.springrestapi.util.person.errors.PersonNotCreatedException;
 import ru.shilaev.springrestapi.util.person.errors.PersonNotFoundException;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/people/api")
 public class PeopleController {
 
     private final PeopleService peopleService;
+    private final ModelMapper modelMapper;
 
     @Autowired
-    public PeopleController(PeopleService peopleService) {
+    public PeopleController(PeopleService peopleService, ModelMapper modelMapper) {
         this.peopleService = peopleService;
+        this.modelMapper = modelMapper;
     }
 
     @GetMapping("/all")
-    public List<Person> getAllPeople() {
-        return peopleService.findAll(); // JACKSON converts json automatically
+    public List<PersonDTO> getAllPeople() {
+        return peopleService.findAll()
+                .stream().map(this::convertToPersonDTO)
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/{id}")
-    public Person getPerson(@PathVariable("id") int id) {
-        return peopleService.findById(id);
+    public PersonDTO getPerson(@PathVariable("id") int id) {
+        return convertToPersonDTO(peopleService.findById(id));
     }
 
     @PostMapping()
@@ -60,15 +65,16 @@ public class PeopleController {
 
     private Person convertToPerson(PersonDTO newPersonDTO) {
         Person person = new Person();
-//        person.setName(newPersonDTO.getName());
-//        person.setAge(newPersonDTO.getAge());
-
-        ModelMapper modelMapper = new ModelMapper();
         modelMapper.map(newPersonDTO, person);
-
         peopleService.enrichPerson(person);
-
         return person;
+    }
+
+    private PersonDTO convertToPersonDTO(Person person) {
+        PersonDTO personDTO = new PersonDTO();
+        personDTO.setName(person.getName());
+        personDTO.setAge(person.getAge());
+        return personDTO;
     }
 
     @ExceptionHandler

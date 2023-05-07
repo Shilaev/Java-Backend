@@ -7,7 +7,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
 public class PersonDTO {
     @NotEmpty(message = "Name should not be empty")
     @Size(max = 180, message = "name should be less then 180 chars")
