@@ -48,12 +48,6 @@ public class PeopleService {
         peopleRepository.save(newPerson);
     }
 
-    public void enrichPerson(Person person) {
-        person.setCreatedAt(LocalDateTime.now());
-        person.setUpdatedAt(LocalDateTime.now());
-        person.setCreatedWho("ADMIN"); // get name from some logic
-    }
-
     @Transactional
     public void update(int id, PersonDTO personDTO) {
         Person person = findById(id);
@@ -70,8 +64,15 @@ public class PeopleService {
         peopleRepository.deleteById(id);
     }
 
+    // UTILS
     public PersonErrorResponse makeErrorResponse(String message) {
         return new PersonErrorResponse(message, System.currentTimeMillis());
+    }
+
+    public void enrichPerson(Person person) {
+        person.setCreatedAt(LocalDateTime.now());
+        person.setUpdatedAt(LocalDateTime.now());
+        person.setCreatedWho("ADMIN"); // get name from some logic
     }
 
     public Person convertToPerson(PersonDTO newPersonDTO) {
