@@ -2,9 +2,11 @@ package ru.shilaev.springrestapi.services;
 
 
 import lombok.SneakyThrows;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.shilaev.springrestapi.dto.PersonDTO;
 import ru.shilaev.springrestapi.models.Person;
 import ru.shilaev.springrestapi.repositories.PeopleRepository;
 import ru.shilaev.springrestapi.util.person.errors.PersonErrorResponse;
@@ -20,10 +22,12 @@ import java.util.function.Supplier;
 public class PeopleService {
 
     private final PeopleRepository peopleRepository;
+    private final ModelMapper modelMapper;
 
     @Autowired
-    public PeopleService(PeopleRepository peopleRepository) {
+    public PeopleService(PeopleRepository peopleRepository, ModelMapper modelMapper) {
         this.peopleRepository = peopleRepository;
+        this.modelMapper = modelMapper;
     }
 
     public List<Person> findAll() {
@@ -50,8 +54,38 @@ public class PeopleService {
         person.setCreatedWho("ADMIN"); // get name from some logic
     }
 
+    @Transactional
+    public void update(int id, PersonDTO personDTO) {
+        Person person = findById(id);
+
+        person.setName(personDTO.getName());
+        person.setAge(personDTO.getAge());
+        enrichPerson(person);
+
+        save(person);
+    }
+
+    @Transactional
+    public void delete(int id) {
+        peopleRepository.deleteById(id);
+    }
+
     public PersonErrorResponse makeErrorResponse(String message) {
         return new PersonErrorResponse(message, System.currentTimeMillis());
+    }
+
+    public Person convertToPerson(PersonDTO newPersonDTO) {
+        Person person = new Person();
+        modelMapper.map(newPersonDTO, person);
+        enrichPerson(person);
+        return person;
+    }
+
+    public PersonDTO convertToPersonDTO(Person person) {
+        PersonDTO personDTO = new PersonDTO();
+        personDTO.setName(person.getName());
+        personDTO.setAge(person.getAge());
+        return personDTO;
     }
 
 }

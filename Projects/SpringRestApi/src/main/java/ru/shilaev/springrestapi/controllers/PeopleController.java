@@ -1,7 +1,6 @@
 package ru.shilaev.springrestapi.controllers;
 
 import jakarta.validation.Valid;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,26 +22,27 @@ import java.util.stream.Collectors;
 public class PeopleController {
 
     private final PeopleService peopleService;
-    private final ModelMapper modelMapper;
 
     @Autowired
-    public PeopleController(PeopleService peopleService, ModelMapper modelMapper) {
+    public PeopleController(PeopleService peopleService) {
         this.peopleService = peopleService;
-        this.modelMapper = modelMapper;
     }
 
+    // READ
     @GetMapping("/all")
     public List<PersonDTO> getAllPeople() {
         return peopleService.findAll()
-                .stream().map(this::convertToPersonDTO)
+                .stream().map(peopleService::convertToPersonDTO)
                 .collect(Collectors.toList());
     }
 
+
     @GetMapping("/{id}")
     public PersonDTO getPerson(@PathVariable("id") int id) {
-        return convertToPersonDTO(peopleService.findById(id));
+        return peopleService.convertToPersonDTO(peopleService.findById(id));
     }
 
+    // CREATE
     @PostMapping()
     public Person create(@RequestBody @Valid PersonDTO newPersonDTO, BindingResult bindingResult) {
 
@@ -57,11 +57,25 @@ public class PeopleController {
             throw new PersonNotCreatedException(errorResponse.toString());
         }
 
-        Person newPerson = convertToPerson(newPersonDTO);
+        Person newPerson = peopleService.convertToPerson(newPersonDTO);
         peopleService.save(newPerson);
 
         return newPerson;
     }
+
+    // UPDATE
+    @PatchMapping("/{id}")
+    public void updatePerson(@PathVariable int id,
+                             @RequestBody PersonDTO person) {
+        peopleService.update(id, person);
+    }
+
+    // DELETE
+    @DeleteMapping("delete/{id}")
+    public void deletePerson(@PathVariable int id) {
+        peopleService.delete(id);
+    }
+
 
     @ExceptionHandler
     private ResponseEntity<PersonErrorResponse> handlerException(PersonNotFoundException e) {
@@ -73,17 +87,4 @@ public class PeopleController {
         return new ResponseEntity<>(peopleService.makeErrorResponse(e.getMessage()), HttpStatus.BAD_REQUEST);
     }
 
-    private Person convertToPerson(PersonDTO newPersonDTO) {
-        Person person = new Person();
-        modelMapper.map(newPersonDTO, person);
-        peopleService.enrichPerson(person);
-        return person;
-    }
-
-    private PersonDTO convertToPersonDTO(Person person) {
-        PersonDTO personDTO = new PersonDTO();
-        personDTO.setName(person.getName());
-        personDTO.setAge(person.getAge());
-        return personDTO;
-    }
 }
