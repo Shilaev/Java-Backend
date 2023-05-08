@@ -28,20 +28,6 @@ public class PeopleController {
         this.peopleService = peopleService;
     }
 
-    // READ
-    @GetMapping("/all")
-    public List<PersonDTO> getAllPeople() {
-        return peopleService.findAll()
-                .stream().map(peopleService::convertToPersonDTO)
-                .collect(Collectors.toList());
-    }
-
-
-    @GetMapping("/{id}")
-    public PersonDTO getPerson(@PathVariable("id") int id) {
-        return peopleService.convertToPersonDTO(peopleService.findById(id));
-    }
-
     // CREATE
     @PostMapping()
     public Person create(@RequestBody @Valid PersonDTO newPersonDTO, BindingResult bindingResult) {
@@ -63,6 +49,20 @@ public class PeopleController {
         return newPerson;
     }
 
+    // READ
+    @GetMapping("/all")
+    public List<PersonDTO> getAllPeople() {
+        return peopleService.findAll()
+                .stream().map(peopleService::convertToPersonDTO)
+                .collect(Collectors.toList());
+    }
+
+
+    @GetMapping("/{id}")
+    public PersonDTO getPerson(@PathVariable("id") int id) {
+        return peopleService.convertToPersonDTO(peopleService.findById(id));
+    }
+
     // UPDATE
     @PatchMapping("/{id}")
     public void updatePerson(@PathVariable int id,
@@ -76,7 +76,7 @@ public class PeopleController {
         peopleService.delete(id);
     }
 
-
+    // EXCEPTIONS
     @ExceptionHandler
     private ResponseEntity<PersonErrorResponse> handlerException(PersonNotFoundException e) {
         return new ResponseEntity<>(peopleService.makeErrorResponse(e.getMessage()), HttpStatus.NOT_FOUND);
