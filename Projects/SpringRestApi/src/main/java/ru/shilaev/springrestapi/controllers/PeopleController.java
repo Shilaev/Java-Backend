@@ -7,9 +7,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
-import ru.shilaev.springrestapi.dto.PersonDTO;
-import ru.shilaev.springrestapi.models.Person;
-import ru.shilaev.springrestapi.services.PeopleService;
+import ru.shilaev.springrestapi.db.dto.PersonDTO;
+import ru.shilaev.springrestapi.db.models.Person;
+import ru.shilaev.springrestapi.db.services.PeopleService;
 import ru.shilaev.springrestapi.util.person.errors.PersonErrorResponse;
 import ru.shilaev.springrestapi.util.person.errors.PersonNotCreatedException;
 import ru.shilaev.springrestapi.util.person.errors.PersonNotFoundException;
@@ -60,7 +60,8 @@ public class PeopleController {
 
     @GetMapping("/{id}")
     public PersonDTO getPerson(@PathVariable("id") int id) {
-        return peopleService.convertToPersonDTO(peopleService.findById(id));
+//        return peopleService.convertToPersonDTO(peopleService.findById(id));
+        return peopleService.convertToPersonDTO(peopleService.findByIdJDBC(id));
     }
 
     // UPDATE

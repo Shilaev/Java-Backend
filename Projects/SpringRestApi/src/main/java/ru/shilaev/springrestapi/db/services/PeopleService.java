@@ -1,4 +1,4 @@
-package ru.shilaev.springrestapi.services;
+package ru.shilaev.springrestapi.db.services;
 
 
 import lombok.SneakyThrows;
@@ -6,9 +6,10 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.shilaev.springrestapi.dto.PersonDTO;
-import ru.shilaev.springrestapi.models.Person;
-import ru.shilaev.springrestapi.repositories.PeopleRepository;
+import ru.shilaev.springrestapi.db.dao.PersonDAO;
+import ru.shilaev.springrestapi.db.dto.PersonDTO;
+import ru.shilaev.springrestapi.db.models.Person;
+import ru.shilaev.springrestapi.db.repositories.PeopleRepository;
 import ru.shilaev.springrestapi.util.person.errors.PersonErrorResponse;
 import ru.shilaev.springrestapi.util.person.errors.PersonNotFoundException;
 
@@ -22,11 +23,13 @@ import java.util.function.Supplier;
 public class PeopleService {
 
     private final PeopleRepository peopleRepository;
+    private final PersonDAO personDAO;
     private final ModelMapper modelMapper;
 
     @Autowired
-    public PeopleService(PeopleRepository peopleRepository, ModelMapper modelMapper) {
+    public PeopleService(PeopleRepository peopleRepository, PersonDAO personDAO, ModelMapper modelMapper) {
         this.peopleRepository = peopleRepository;
+        this.personDAO = personDAO;
         this.modelMapper = modelMapper;
     }
 
@@ -37,9 +40,14 @@ public class PeopleService {
     @SneakyThrows
     public Person findById(int id) {
         Optional<Person> foundPerson = peopleRepository.findById(id);
-
         Supplier<Throwable> exception = () -> new PersonNotFoundException("User with id " + id + " not found!");
+        return foundPerson.orElseThrow(exception);
+    }
 
+    @SneakyThrows
+    public Person findByIdJDBC(int id) {
+        Optional<Person> foundPerson = personDAO.get(id);
+        Supplier<Throwable> exception = () -> new PersonNotFoundException("User with id " + id + " not found!");
         return foundPerson.orElseThrow(exception);
     }
 

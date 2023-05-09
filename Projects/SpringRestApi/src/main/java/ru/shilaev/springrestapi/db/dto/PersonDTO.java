@@ -1,4 +1,4 @@
-package ru.shilaev.springrestapi.dto;
+package ru.shilaev.springrestapi.db.dto;
 
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;

@@ -46,7 +46,11 @@ public class ProjectSolution implements Copyable {
 
     @Override
     public Object copy() {
-        ProjectSolution projectSolutionCopy = new ProjectSolution(getId(), getSolutionName(), getSourceCode());
+        ProjectSolution projectSolutionCopy = new ProjectSolution(
+                getId(),
+                getSolutionName(),
+                getSourceCode()
+        );
         return projectSolutionCopy;
     }
 }

@@ -1,4 +1,4 @@
-package ru.shilaev.springrestapi.models;
+package ru.shilaev.springrestapi.db.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
